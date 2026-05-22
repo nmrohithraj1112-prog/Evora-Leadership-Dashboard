@@ -302,7 +302,7 @@ const ch={};
  */
 
 const WS=[
-  {id:'ja',num:1,name:'Job Architecture',lead:'Sarath VR',pct:17,st:'on',proj:'Level Up — E&amp;C',d:0,i:3,t:9,tot:12,
+  {id:'ja',num:1,name:'Job Architecture',lead:'Sarath VR',pct:17,st:'on',proj:'Level Up — E&C',d:0,i:3,t:9,tot:12,
    hi:['Completed Job Family taxonomy for Americas and Germany'],
    lo:['India taxonomy in-progress — updated ETA 06 May, request from Indian E&C team'],
    sup:['Active participation and timely contribution to the activities lined up for the program'],
@@ -489,7 +489,7 @@ function renderWS(){
       <div class="cell-lbl">Progress</div>
       <div class="da">
         <div class="dw"><canvas id="dn-${w.id}" width="96" height="96"></canvas>
-          <div class="dm"><div class="dp">${pd}</div><div class="dlbl">${w.pct!=null?'done':''}</div></div>
+          <div class="dm"><div class="dp" ${w.pct==null?'style="font-size:13px;letter-spacing:0"':''}>${pd}</div><div class="dlbl">${w.pct!=null?'done':''}</div></div>
         </div>
         <div class="leg">
           <div class="lr">Completed<span class="ln">${w.d}</span></div>
@@ -540,7 +540,7 @@ function renderWS(){
         <div class="ws-right">
           <span class="st-pill ${sp}">${l}</span>
           <div class="ws-pct">
-            <div class="ws-pct-val">${pd}</div>
+            <div class="ws-pct-val" ${w.pct==null?'style="font-size:15px;letter-spacing:0"':''}>${pd}</div>
             <div class="ws-pct-lbl">${w.pct!=null?'Complete':w.phase?'Phase':''}</div>
           </div>
         </div>
