@@ -176,10 +176,36 @@ ul.bl li.lo::before{background:var(--amber)}
 .blbl{display:flex;justify-content:space-between;font-size:9px;color:var(--text3);margin-top:5px;font-weight:500}
 
 /* Recruitment KPIs */
-.rkr{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
-.rk{background:var(--bg);border:1px solid var(--border);border-radius:var(--rsm);padding:10px 10px 9px;text-align:center}
+.rkr{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.rk{border:1px solid var(--border);border-radius:var(--rsm);padding:10px 10px 9px;text-align:center}
+.rk.kpi-orange{background:#F8D2BA;border-color:#F1B38E}
+.rk.kpi-green{background:#D9F0C5;border-color:#BFE59E}
+.rk.kpi-amber{background:#FBE3A6;border-color:#F4CE7B}
+.rk.kpi-blue{background:#C9D6E8;border-color:#AFC2DD}
 .rkv{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.5px;font-family:var(--font)}
-.rkl{font-size:8px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-top:3px;line-height:1.3}
+.rkl{font-size:8px;font-weight:700;color:#374151;text-transform:uppercase;letter-spacing:.5px;margin-top:3px;line-height:1.2}
+
+/* Recruitment charts */
+.rec-dash{display:grid;gap:10px;margin-bottom:10px;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+.rec-dash.three{grid-template-columns:1fr 1fr 1fr}
+.rec-span-2{grid-column:span 2}
+.rec-card{border:1px solid var(--border2);border-radius:var(--rsm);overflow:hidden;background:var(--card);width:100%;min-width:0;display:flex;flex-direction:column}
+.rec-card-head{background:linear-gradient(180deg,#173B64 0%,#123253 100%);color:#fff;font-size:11px;font-weight:700;padding:6px 10px;letter-spacing:.3px}
+.rec-card-body{padding:8px 10px;overflow:hidden;flex:1;display:flex;flex-direction:column}
+.rec-card-body.tight{padding:6px 8px}
+.rec-chart{height:130px;min-height:130px}
+.rec-chart.md{height:140px;min-height:140px}
+.rec-chart.lg{height:170px;min-height:170px}
+.rec-card-body canvas{display:block;width:100% !important;height:100% !important;max-width:100%;max-height:100%}
+.rec-legend{display:flex;gap:10px;font-size:9px;color:var(--text2);align-items:center;margin:6px 0 0}
+.rec-legend-item{display:flex;align-items:center;gap:6px}
+.rec-dot{width:7px;height:7px;border-radius:50%}
+.rec-table{width:100%;border-collapse:collapse;font-size:10px;table-layout:fixed}
+.rec-table th{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.4px;text-align:left;border-bottom:1px solid var(--border);padding:4px 0 6px}
+.rec-table th:first-child{width:78%}
+.rec-table th:last-child{width:22%;text-align:right}
+.rec-table td{padding:6px 0;border-bottom:1px solid var(--border);color:var(--text2)}
+.rec-table td:last-child{text-align:right;color:var(--text);font-weight:700}
 
 /* Jira links */
 .jls{display:flex;flex-direction:column;gap:8px}
@@ -339,7 +365,7 @@ const WS=[
    sup:['Continued partnership'],
    nx:['ACH harmonization related posting to be created','Innovation campaign support if required','Leadership comms for the upcoming week']},
 
-  {id:'rec',num:7,name:'Recruitment',lead:'Renuka Desshpande',pct:55,st:'on',proj:'Strategy Office + HARTS',d:7,i:4,t:0,tot:11,
+  {id:'rec',num:7,name:'Recruitment',lead:'Renuka Desshpande',pct:55,st:'on',proj:'Strategy Office + HARTS',d:7,i:5,t:0,tot:12,
    isRec:true,lo:[],
    closed:['Chief of Staff / SOL','Human Resource (German Speaking)','Human Resource Jr. (German Speaking)','Innovation Consultant (Ecosystem Lead)','Innovation Consultant (Tech Jr.)','Innovation Consultant (Tech Lead)','Marketing Comms Technical expert (website maintenance, content & branding)'],
    pipe:[{r:'IT Manager — India Operations / ESP (ESOH-29)',s:'Screening'},{r:'Americas Recruiter Search (ESOH-22, due 30 Jun)',s:'In Progress'},{r:'Nikhilesh — Innovation Technical Lead (ESOH-7)',s:'Offer Given'},{r:'Head of Finance — India (ESOH-58)',s:'JD Pending'},{r:'Finance — Sonja Replacement (ESOH-57)',s:'JD Pending'}],
@@ -373,7 +399,7 @@ const SUM=[
   {n:'ESP — Evora Service Partner',l:'Srimathi Ravi',s:'on',p:48,h:'Transition plan in review; Legal compliance in progress; Gen 0 active in Jira'},
   {n:'Evora-ACH Harmonization',l:'Hari Ram',s:'on',p:24,h:'Revenue & EBITDA locked; SAP S/4 HANA confirmed go-live Jan 2027; Merger timeline confirmed'},
   {n:'OCM & Communications',l:'Hari Ram',s:'on',p:48,h:'OKR assets complete; Allgeier Teams BG in progress'},
-  {n:'Recruitment',l:'Renuka Desshpande',s:'on',p:55,h:'7 closed/hired · 4 in progress · 11 total positions · Avg 58 days to fill'},
+  {n:'Recruitment',l:'Renuka Desshpande',s:'on',p:55,h:'7 closed/hired · 5 in progress · 12 total positions · Avg 58 days to fill'},
   {n:'Innovation Lab',l:'Hari Ram',s:'on',p:null,h:'Discovery done; Lab handbook & partnership plan next'},
   {n:'Fellowship Programme',l:'Srimathi Ravi',s:'on',p:null,h:'Tech Fellows 4 months in; MBA Fellows 2 months in; 5 new fellows joined May 4th'},
   {n:'IND Projects',l:'Savio James Abraham',s:'mon',p:46,h:'OOE & Utilization below pace; 4 projects need re-initiation'},
@@ -474,12 +500,68 @@ function renderWS(){
     let c3='';
     if(w.isRec){
       c3=`<div class="cell ct" style="--ca:${G}">
-      <div class="cell-lbl">Progress</div>
+      <div class="cell-lbl">Recruitment Dashboard</div>
       <div class="rkr">
-        <div class="rk"><div class="rkv" style="color:${N}">11</div><div class="rkl">Total Positions</div></div>
-        <div class="rk"><div class="rkv" style="color:${G}">7</div><div class="rkl">Closed / Hired</div></div>
-        <div class="rk"><div class="rkv" style="color:${A}">4</div><div class="rkl">In Progress</div></div>
-        <div class="rk"><div class="rkv" style="color:${N}">58</div><div class="rkl">Avg Days to Fill</div></div>
+        <div class="rk kpi-orange"><div class="rkv" style="color:#C2410C">12</div><div class="rkl">Total Positions</div></div>
+        <div class="rk kpi-green"><div class="rkv" style="color:#2E7D32">7</div><div class="rkl">Closed / Hired</div></div>
+        <div class="rk kpi-amber"><div class="rkv" style="color:#A16207">5</div><div class="rkl">In Progress</div></div>
+        <div class="rk kpi-blue"><div class="rkv" style="color:#1E3A8A">58</div><div class="rkl">Avg Days to Fill</div></div>
+      </div>
+      <div class="rec-dash">
+        <div class="rec-card rec-span-2">
+          <div class="rec-card-head">Hiring Closure Trend</div>
+          <div class="rec-card-body">
+            <div class="rec-legend">
+              <div class="rec-legend-item"><span class="rec-dot" style="background:#1E3A5F"></span>ESP</div>
+              <div class="rec-legend-item"><span class="rec-dot" style="background:#9CA3AF"></span>Others</div>
+            </div>
+            <div class="rec-chart lg"><canvas id="rec-closure"></canvas></div>
+          </div>
+        </div>
+        <div class="rec-card">
+          <div class="rec-card-head">Open Position Aging</div>
+          <div class="rec-card-body">
+            <div class="rec-chart md"><canvas id="rec-aging"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="rec-dash">
+        <div class="rec-card">
+          <div class="rec-card-head">Open Positions</div>
+          <div class="rec-card-body">
+            <div class="rec-chart md"><canvas id="rec-open"></canvas></div>
+          </div>
+        </div>
+        <div class="rec-card">
+          <div class="rec-card-head">Time Taken to Fill Analysis</div>
+          <div class="rec-card-body">
+            <div class="rec-chart md"><canvas id="rec-timefill"></canvas></div>
+          </div>
+        </div>
+        <div class="rec-card">
+          <div class="rec-card-head">Avg Days to Fill by Job Level</div>
+          <div class="rec-card-body">
+            <div class="rec-chart md"><canvas id="rec-levels"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="rec-dash">
+        <div class="rec-card" style="grid-column:1/2">
+          <div class="rec-card-head">Closed Positions</div>
+          <div class="rec-card-body tight">
+            <table class="rec-table">
+              <thead><tr><th>Position</th><th>Lvl</th></tr></thead>
+              <tbody>
+                <tr><td>Human Resource (German Speaking)</td><td>L1</td></tr>
+                <tr><td>Human Resource Jr. (German Speaking)</td><td>L2</td></tr>
+                <tr><td>Innovation Consultant (Tech Jr.)</td><td>L2</td></tr>
+                <tr><td>Innovation Consultant (Ecosystem Lead)</td><td>L3</td></tr>
+                <tr><td>Innovation Consultant (Tech Lead)</td><td>L3</td></tr>
+                <tr><td>Chief of Staff / SOL - Jan Erik</td><td>L4</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
       <div class="cell-divider"></div>
       <div class="cell-lbl">Closed Positions</div>
@@ -550,7 +632,108 @@ function renderWS(){
   });
 
   document.getElementById('wsc').innerHTML=html;
-  setTimeout(()=>WS.filter(w=>!w.isRec).forEach(w=>mkDonut('dn-'+w.id,w.d,w.i,w.t)),50);
+  setTimeout(()=>{
+    WS.filter(w=>!w.isRec).forEach(w=>mkDonut('dn-'+w.id,w.d,w.i,w.t));
+    // Recruitment Charts
+    const recValueLabels={id:'recValueLabels',afterDatasetsDraw(chart){
+      const {ctx,chartArea}=chart;
+      if(!chartArea)return;
+      const isHorizontal=chart.options&&chart.options.indexAxis==='y';
+      ctx.save();
+      chart.data.datasets.forEach((ds,di)=>{
+        const meta=chart.getDatasetMeta(di);
+        meta.data.forEach((el,idx)=>{
+          const val=ds.data[idx];
+          if(val==null||val===0)return;
+          const txt=String(val);
+          ctx.font='11px DM Sans';
+          const w=ctx.measureText(txt).width+10;
+          const h=14;const r=3;
+          let x=isHorizontal?el.x+12:el.x;
+          let y=isHorizontal?el.y:el.y-10;
+          const minX=chartArea.left+w/2+2;
+          const maxX=chartArea.right-w/2-2;
+          const minY=chartArea.top+h/2+2;
+          const maxY=chartArea.bottom-h/2-2;
+          x=Math.max(minX,Math.min(x,maxX));
+          y=Math.max(minY,Math.min(y,maxY));
+          const x0=x-w/2;const y0=y-h/2;
+          ctx.fillStyle='rgba(15,23,42,0.85)';
+          ctx.beginPath();
+          ctx.moveTo(x0+r,y0);
+          ctx.lineTo(x0+w-r,y0);
+          ctx.quadraticCurveTo(x0+w,y0,x0+w,y0+r);
+          ctx.lineTo(x0+w,y0+h-r);
+          ctx.quadraticCurveTo(x0+w,y0+h,x0+w-r,y0+h);
+          ctx.lineTo(x0+r,y0+h);
+          ctx.quadraticCurveTo(x0,y0+h,x0,y0+h-r);
+          ctx.lineTo(x0,y0+r);
+          ctx.quadraticCurveTo(x0,y0,x0+r,y0);
+          ctx.fill();
+          ctx.fillStyle='#fff';
+          ctx.textAlign='center';
+          ctx.textBaseline='middle';
+          ctx.fillText(txt,x,y+0.5);
+        });
+      });
+      ctx.restore();
+    }};
+
+    if(ch['rec-closure'])ch['rec-closure'].destroy();
+    ch['rec-closure']=new Chart(document.getElementById('rec-closure'),{
+      type:'line',
+      data:{labels:['January','February','March','April','May','June','July','August','September','October','November','December'],
+        datasets:[{data:[0,1,3,2,1,0,0,0,0,0,0,0],
+          borderColor:N,backgroundColor:'rgba(30,58,95,.25)',fill:true,pointRadius:3,pointBackgroundColor:N,tension:0.3}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:true}},
+        scales:{y:{beginAtZero:true,max:3,grid:{color:gc()},ticks:{stepSize:1,font:{size:9}}},
+          x:{grid:{display:false},ticks:{font:{size:8}}}}}
+    });
+
+    if(ch['rec-open'])ch['rec-open'].destroy();
+    ch['rec-open']=new Chart(document.getElementById('rec-open'),{
+      type:'bar',
+      data:{labels:['ESP','Mini CXO','Others'],
+        datasets:[{data:[3,1,1],backgroundColor:['#1D66B1','#F97316','#9CA3AF'],borderRadius:4}]},
+      options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:14}},plugins:{legend:{display:false},tooltip:{enabled:false}},
+        scales:{x:{beginAtZero:true,max:3,grid:{color:gc()},ticks:{stepSize:1,font:{size:8}}},
+          y:{grid:{display:false},ticks:{font:{size:8}}}}},
+      plugins:[recValueLabels]
+    });
+
+    if(ch['rec-aging'])ch['rec-aging'].destroy();
+    ch['rec-aging']=new Chart(document.getElementById('rec-aging'),{
+      type:'bar',
+      data:{labels:['0-5','5-15','15-30','30-60','60-90','>90'],
+        datasets:[{data:[0,0,1,0,2,1],backgroundColor:['#CBD5E1','#CBD5E1','#F59E0B','#CBD5E1','#F97316','#F97316'],borderRadius:4}]},
+      options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:14}},plugins:{legend:{display:false},tooltip:{enabled:false}},
+        scales:{y:{beginAtZero:true,max:3,grid:{color:gc()},ticks:{stepSize:1,font:{size:8}}},
+          x:{grid:{display:false},ticks:{font:{size:8}}}}},
+      plugins:[recValueLabels]
+    });
+
+    if(ch['rec-timefill'])ch['rec-timefill'].destroy();
+    ch['rec-timefill']=new Chart(document.getElementById('rec-timefill'),{
+      type:'bar',
+      data:{labels:['0-5','5-15','15-30','30-60','60-90','>90'],
+        datasets:[{data:[0,2,0,3,3,0],backgroundColor:['#CBD5E1','#84CC16','#CBD5E1','#F59E0B','#F97316','#CBD5E1'],borderRadius:4}]},
+      options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:14}},plugins:{legend:{display:false},tooltip:{enabled:false}},
+        scales:{y:{beginAtZero:true,max:3,grid:{color:gc()},ticks:{stepSize:1,font:{size:8}}},
+          x:{grid:{display:false},ticks:{font:{size:8}}}}},
+      plugins:[recValueLabels]
+    });
+
+    if(ch['rec-levels'])ch['rec-levels'].destroy();
+    ch['rec-levels']=new Chart(document.getElementById('rec-levels'),{
+      type:'bar',
+      data:{labels:['L1-Associate','L2-Specialist','L3-Lead','L4-Manager','L5-Senior Leadership','L6-Executive Leadership'],
+        datasets:[{data:[0,53,41,0,82,0],backgroundColor:['#CBD5E1','#F59E0B','#F97316','#CBD5E1','#EA580C','#CBD5E1'],borderRadius:4}]},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,layout:{padding:{left:12}},plugins:{legend:{display:false},tooltip:{enabled:false}},
+        scales:{x:{beginAtZero:true,max:90,grid:{color:gc()},ticks:{stepSize:10,font:{size:8}}},
+          y:{grid:{display:false},ticks:{font:{size:8}}}}},
+      plugins:[recValueLabels]
+    });
+  },50);
 }
 
 function go(id,btn){
@@ -572,6 +755,7 @@ function tgDark(){
   document.getElementById('dtb').textContent=dk?'':'';
   Object.keys(ch).forEach(k=>{if(ch[k]){ch[k].destroy();delete ch[k];}});
   if(document.getElementById('s-ov').classList.contains('active'))setTimeout(renderOvCharts,50);
+  if(document.getElementById('s-ws').classList.contains('active'))setTimeout(renderWS,50);
 }
 
 renderSumTable();
