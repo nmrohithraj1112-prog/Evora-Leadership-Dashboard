@@ -235,7 +235,7 @@ ul.bl li.lo::before{background:var(--amber)}
     </div>
   </div>
   <div class="topbar-r">
-    <div class="live-badge">Live from Jira · 22 May 2026 (refreshed)</div>
+    <div class="live-badge">Live from Jira · 22 May 2026</div>
     <button class="dark-btn" id="dtb" onclick="tgDark()">◑</button>
   </div>
 </header>
@@ -260,7 +260,7 @@ ul.bl li.lo::before{background:var(--amber)}
     </div>
     <div class="kpi" style="--kc:var(--teal)">
       <div class="kpi-lbl">Avg. Completion</div>
-      <div class="kpi-val">36<span class="kpi-u">%</span></div>
+      <div class="kpi-val">37<span class="kpi-u">%</span></div>
       <div class="kpi-meta">Current program phase</div>
       <div class="kpi-trend up"> On plan</div>
     </div>
@@ -352,7 +352,7 @@ const WS=[
    sup:['Continued partnership with HARTS Legal Team','Connect with Viktor Soldo from Timo\'s office for further legal compliance (ESP-70: To Do)'],
    nx:['ESP Pricing model finalization — Commercial model ESP-68 In Progress','Alignment with Victor Soldo, Timo\'s Office (ESP-70)','Complete Gen 0 (Setup & Design — ESP-55) and transition to Gen 1']},
 
-  {id:'ha',num:5,name:'Evora-ACH Harmonization',lead:'Hari Ram',pct:24,st:'on',proj:'Evora-ACH Harmonization',d:28,i:20,t:22,tot:70,
+  {id:'ha',num:5,name:'Evora-ACH Harmonization',lead:'Hari Ram',pct:34,st:'on',proj:'Evora-ACH Harmonization',d:28,i:20,t:22,tot:70,
    hi:['Finance: Revenue & EBITDA targets locked; SAP S/4 HANA confirmed as unified system, go-live Jan 2027','Admin, Legal & Compliance: Final merger timeline confirmed — Allgeier CH + Evora CH + a4c CH → one unified legal entity, go-live 1 Jan 2027','Comms: Evora-ACH Teams background circulated to ACH'],
    lo:['Admin & Legal: Transfer of Administrative Policies from ACH to Evora CH — data privacy, risk & compliance under review','Finance: Transfer pricing & cost rate mapping in progress','Channel: MS Germany partnership; CH MS certifications for DE','People: Expense policy alignment underway'],
    sup:['Continued HARTS Legal Team partnership','Finance sign-off on transfer pricing framework'],
@@ -365,11 +365,16 @@ const WS=[
    sup:['Continued partnership'],
    nx:['ACH harmonization related posting to be created','Innovation campaign support if required','Leadership comms for the upcoming week']},
 
-  {id:'rec',num:7,name:'Recruitment',lead:'Renuka Desshpande',pct:55,st:'on',proj:'Strategy Office + HARTS',d:7,i:5,t:0,tot:12,
+  {id:'rec',num:7,name:'Recruitment',lead:'Renuka Desshpande',pct:55,st:'on',proj:'Strategy Office + HARTS',d:8,i:4,t:0,tot:12,
    isRec:true,lo:[],
-   closed:['Chief of Staff / SOL','Human Resource (German Speaking)','Human Resource Jr. (German Speaking)','Innovation Consultant (Ecosystem Lead)','Innovation Consultant (Tech Jr.)','Innovation Consultant (Tech Lead)','Marketing Comms Technical expert (website maintenance, content & branding)'],
-   pipe:[{r:'IT Manager — India Operations / ESP (ESOH-29)',s:'Screening'},{r:'Americas Recruiter Search (ESOH-22, due 30 Jun)',s:'In Progress'},{r:'Nikhilesh — Innovation Technical Lead (ESOH-7)',s:'Offer Given'},{r:'Head of Finance — India (ESOH-58)',s:'JD Pending'},{r:'Finance — Sonja Replacement (ESOH-57)',s:'JD Pending'}],
-   hi:['Chetan joined 26 Mar — Innovation Business Lead (Done)','Haripreeth joins 25 May — Marketing Comms Technical Expert (Done)','Nikhilesh: offer given — Innovation Technical Lead (In Progress)','IT Manager India/ESP: hiring in progress (ESOH-29)','Americas Recruiter: active search, due 30 Jun (ESOH-22)'],
+   closed:['Chief of Staff / SOL - Jan Erik','Human Resource (German Speaking)','Human Resource Jr. (German Speaking)','Innovation Consultant (Ecosystem Lead)','Innovation Consultant (Tech Jr.)','Innovation Consultant (Tech Lead)','Web Marketing Specialist','Marketing Comms Technical Expert - Haripreeth (joined 25 May)'],
+   pipe:[
+     {b:'ESP',    r:'IT Manager - India Operations (ESOH-29)', l:'L4', st:'WIP', s:'Screening'},
+     {b:'ESP',    r:'Innovation Technical Lead - Nikhilesh (ESOH-7)', l:'L4', st:'WIP', s:'Offer Given'},
+     {b:'Others', r:'Americas Recruiter (ESOH-22)', l:'L3', st:'WIP', s:'In Progress'},
+     {b:'ESP',    r:'Head of Finance - India (ESOH-58)', l:'L5', st:'WIP', s:'JD Pending'}
+   ],
+   hi:['Chetan joined 26 Mar — Innovation Business Lead (Done)','Haripreeth joined 25 May — Marketing Comms Technical Expert (Done)','Nikhilesh: offer given — Innovation Technical Lead (In Progress)','IT Manager India/ESP: hiring in progress (ESOH-29)','Americas Recruiter: active search, due 30 Jun (ESOH-22)'],
    sup:['Timely availability of hiring managers for interview panels','JD finalisation for upcoming roles'],
    nx:['Confirm Nikhilesh joining date — Innovation Technical Lead offer given (ESOH-7)','Complete IT Manager India/ESP hiring (ESOH-29 In Progress)','Head of Finance — India: JD to be created (ESOH-58, new, unassigned)','Finance Sonja replacement: JD to be created (ESOH-57, new, unassigned)']},
 
@@ -397,9 +402,9 @@ const SUM=[
   {n:'Talent Evaluation 2.0',l:'Hari Ram',s:'on',p:20,h:'Kick-off aligned for 15 May; BARS framework buy-in received'},
   {n:'Talent Attraction & Acquisition',l:'Renuka Desshpande',s:'on',p:27,h:'Round-I playback completed for Americas, DE and IND'},
   {n:'ESP — Evora Service Partner',l:'Srimathi Ravi',s:'on',p:48,h:'Transition plan in review; Legal compliance in progress; Gen 0 active in Jira'},
-  {n:'Evora-ACH Harmonization',l:'Hari Ram',s:'on',p:24,h:'Revenue & EBITDA locked; SAP S/4 HANA confirmed go-live Jan 2027; Merger timeline confirmed'},
+  {n:'Evora-ACH Harmonization',l:'Hari Ram',s:'on',p:34,h:'Revenue & EBITDA locked; SAP S/4 HANA confirmed go-live Jan 2027; Merger timeline confirmed'},
   {n:'OCM & Communications',l:'Hari Ram',s:'on',p:48,h:'OKR assets complete; Allgeier Teams BG in progress'},
-  {n:'Recruitment',l:'Renuka Desshpande',s:'on',p:55,h:'7 closed/hired · 5 in progress · 12 total positions · Avg 58 days to fill'},
+  {n:'Recruitment',l:'Renuka Desshpande',s:'on',p:55,h:'8 closed/hired · 4 in progress · 12 total positions · Avg 58 days to fill'},
   {n:'Innovation Lab',l:'Hari Ram',s:'on',p:null,h:'Discovery done; Lab handbook & partnership plan next'},
   {n:'Fellowship Programme',l:'Srimathi Ravi',s:'on',p:null,h:'Tech Fellows 4 months in; MBA Fellows 2 months in; 5 new fellows joined May 4th'},
   {n:'IND Projects',l:'Savio James Abraham',s:'mon',p:46,h:'OOE & Utilization below pace; 4 projects need re-initiation'},
@@ -449,9 +454,9 @@ function renderOvCharts(){
     ch.s=new Chart(cS,{type:'bar',
       data:{labels:['Evora-ACH Harmonization','Level Up — E&C','Evora Service Partner','Strategy Office + HARTS'],
         datasets:[
-          {label:'Done',data:[28,14,0,21],backgroundColor:G,borderRadius:0},
+          {label:'Done',data:[28,14,0,23],backgroundColor:G,borderRadius:0},
           {label:'In Progress',data:[20,17,5,9],backgroundColor:A},
-          {label:'To Do',data:[22,69,12,21],backgroundColor:GR,borderRadius:{topRight:5,bottomRight:5}},
+          {label:'To Do',data:[22,69,12,23],backgroundColor:GR,borderRadius:{topRight:5,bottomRight:5}},
         ]},
       options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
         plugins:{legend:{position:'bottom',labels:{font:{size:11,family:'DM Sans'},boxWidth:10,padding:14,color:vc()}}},
@@ -487,85 +492,92 @@ function renderWS(){
     let c2=`<div class="cell ct" style="--ca:${A}"><div class="cell-lbl">Support Required</div><ul class="bl">`;
     wsup.forEach(s=>c2+=`<li>${s}</li>`);c2+=`</ul>`;
     if(w.isRec){
-      c2+=`<div class="cell-divider"></div><div class="cell-lbl">Hiring Pipeline</div>
-      <table style="width:100%;border-collapse:collapse">
-      <thead><tr><th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--border);font-family:var(--font)">Open Position</th><th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--border);font-family:var(--font)">Stage</th></tr></thead><tbody>`;
-      w.pipe.forEach(p=>c2+=`<tr><td style="padding:6px 0;font-size:11.5px;color:var(--text2);border-bottom:1px solid var(--border)">${p.r}</td><td style="padding:6px 0;color:${N};font-weight:700;font-size:10px;border-bottom:1px solid var(--border);white-space:nowrap">${p.s}</td></tr>`);
-      c2+=`</tbody></table>`;
-    }
-    c2+=`<div class="cell-divider"></div><div class="cell-lbl">Next Steps</div><ul class="bl">`;
+          }    c2+=`<div class="cell-divider"></div><div class="cell-lbl">Next Steps</div><ul class="bl">`;
     wnx.forEach(n=>c2+=`<li>${n}</li>`);c2+=`</ul></div>`;
 
     // CELL 3 — Progress
     let c3='';
     if(w.isRec){
-      c3=`<div class="cell ct" style="--ca:${G}">
-      <div class="cell-lbl">Recruitment Dashboard</div>
-      <div class="rkr">
+      // Build pipeline rows first (avoids nested template literal issues)
+      const pipeRows = w.pipe.map(p=>`<tr>
+        <td style="padding:6px 5px;font-size:11.5px;color:#1E3A5F;font-weight:700;border-bottom:1px solid var(--border)">${p.b}</td>
+        <td style="padding:6px 5px;font-size:11.5px;color:#2563EB;font-weight:600;border-bottom:1px solid var(--border)">${p.r}</td>
+        <td style="padding:6px 5px;font-size:11.5px;color:var(--text2);border-bottom:1px solid var(--border)">${p.l}</td>
+        <td style="padding:6px 5px;font-size:11.5px;color:#D97706;font-weight:600;border-bottom:1px solid var(--border)">${p.st}</td>
+        <td style="padding:6px 5px;font-size:11.5px;color:var(--text2);border-bottom:1px solid var(--border);white-space:nowrap">${p.s}</td>
+      </tr>`).join('');
+
+      c3 = `<div class="cell ct" style="--ca:${G}; grid-column: span 2">
+      <div class="cell-lbl" style="margin-bottom:12px">Recruitment Dashboard</div>
+
+      <!-- KPI strip -->
+      <div class="rkr" style="margin-bottom:16px">
         <div class="rk kpi-orange"><div class="rkv" style="color:#C2410C">12</div><div class="rkl">Total Positions</div></div>
-        <div class="rk kpi-green"><div class="rkv" style="color:#2E7D32">7</div><div class="rkl">Closed / Hired</div></div>
-        <div class="rk kpi-amber"><div class="rkv" style="color:#A16207">5</div><div class="rkl">In Progress</div></div>
+        <div class="rk kpi-green"><div class="rkv" style="color:#2E7D32">8</div><div class="rkl">Closed / Hired</div></div>
+        <div class="rk kpi-amber"><div class="rkv" style="color:#A16207">4</div><div class="rkl">In Progress</div></div>
         <div class="rk kpi-blue"><div class="rkv" style="color:#1E3A8A">58</div><div class="rkl">Avg Days to Fill</div></div>
       </div>
-      <div class="rec-dash">
-        <div class="rec-card rec-span-2">
+
+      <!-- Hiring Pipeline table -->
+      <div style="margin-bottom:18px">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid var(--navy)">Hiring Pipeline</div>
+        <table style="width:100%;border-collapse:collapse">
+          <thead><tr>
+            <th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding:0 5px 7px 5px;border-bottom:1px solid var(--border);width:12%">Bucket</th>
+            <th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding:0 5px 7px 5px;border-bottom:1px solid var(--border)">Open Position</th>
+            <th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding:0 5px 7px 5px;border-bottom:1px solid var(--border);width:7%">Lvl</th>
+            <th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding:0 5px 7px 5px;border-bottom:1px solid var(--border);width:9%">Status</th>
+            <th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding:0 5px 7px 5px;border-bottom:1px solid var(--border);width:20%">Hiring Stage</th>
+          </tr></thead>
+          <tbody>${pipeRows}</tbody>
+        </table>
+      </div>
+
+      <!-- Row 1: Hiring Closure Trend + Open Positions -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+        <div class="rec-card">
           <div class="rec-card-head">Hiring Closure Trend</div>
           <div class="rec-card-body">
             <div class="rec-legend">
               <div class="rec-legend-item"><span class="rec-dot" style="background:#1E3A5F"></span>ESP</div>
               <div class="rec-legend-item"><span class="rec-dot" style="background:#9CA3AF"></span>Others</div>
             </div>
-            <div class="rec-chart lg"><canvas id="rec-closure"></canvas></div>
+            <div style="position:relative;height:160px"><canvas id="rec-closure"></canvas></div>
           </div>
         </div>
-        <div class="rec-card">
-          <div class="rec-card-head">Open Position Aging</div>
-          <div class="rec-card-body">
-            <div class="rec-chart md"><canvas id="rec-aging"></canvas></div>
-          </div>
-        </div>
-      </div>
-      <div class="rec-dash">
         <div class="rec-card">
           <div class="rec-card-head">Open Positions</div>
           <div class="rec-card-body">
-            <div class="rec-chart md"><canvas id="rec-open"></canvas></div>
+            <div style="position:relative;height:160px"><canvas id="rec-open"></canvas></div>
           </div>
         </div>
+      </div>
+
+      <!-- Row 2: Time Taken to Fill + Avg Days by Level (side by side) -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
         <div class="rec-card">
           <div class="rec-card-head">Time Taken to Fill Analysis</div>
           <div class="rec-card-body">
-            <div class="rec-chart md"><canvas id="rec-timefill"></canvas></div>
+            <div style="position:relative;height:200px"><canvas id="rec-timefill"></canvas></div>
           </div>
         </div>
         <div class="rec-card">
           <div class="rec-card-head">Avg Days to Fill by Job Level</div>
           <div class="rec-card-body">
-            <div class="rec-chart md"><canvas id="rec-levels"></canvas></div>
+            <div style="position:relative;height:200px"><canvas id="rec-levels"></canvas></div>
           </div>
         </div>
       </div>
-      <div class="rec-dash">
-        <div class="rec-card" style="grid-column:1/2">
-          <div class="rec-card-head">Closed Positions</div>
-          <div class="rec-card-body tight">
-            <table class="rec-table">
-              <thead><tr><th>Position</th><th>Lvl</th></tr></thead>
-              <tbody>
-                <tr><td>Human Resource (German Speaking)</td><td>L1</td></tr>
-                <tr><td>Human Resource Jr. (German Speaking)</td><td>L2</td></tr>
-                <tr><td>Innovation Consultant (Tech Jr.)</td><td>L2</td></tr>
-                <tr><td>Innovation Consultant (Ecosystem Lead)</td><td>L3</td></tr>
-                <tr><td>Innovation Consultant (Tech Lead)</td><td>L3</td></tr>
-                <tr><td>Chief of Staff / SOL - Jan Erik</td><td>L4</td></tr>
-              </tbody>
-            </table>
-          </div>
+
+      <!-- Row 3: Open Position Aging — full width -->
+      <div class="rec-card" style="margin-bottom:0">
+        <div class="rec-card-head">Open Position Aging</div>
+        <div class="rec-card-body">
+          <div style="position:relative;height:180px"><canvas id="rec-aging"></canvas></div>
         </div>
       </div>
-      <div class="cell-divider"></div>
-      <div class="cell-lbl">Closed Positions</div>
-      <ul class="bl">`;w.closed.forEach(p=>c3+=`<li class="hi">${p}</li>`);c3+=`</ul></div>`;
+
+      </div>`
     } else {
       c3=`<div class="cell ct" style="--ca:${G}">
       <div class="cell-lbl">Progress</div>
@@ -589,6 +601,22 @@ function renderWS(){
       ${w.owners?`<div style="font-size:10px;color:var(--text3);margin-top:6px;line-height:1.5"><strong>Top contributors:</strong> ${w.owners}</div>`:''}
       </div>`;
     }
+
+    // CELL CLOSED — Closed Positions (from Jira, left of Live Jira)
+    const cClosed = w.isRec ? `<div class="cell ct" style="--ca:${G}">
+      <div class="cell-lbl">Closed Positions</div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead><tr>
+          <th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding:0 4px 7px;border-bottom:1px solid var(--border);font-family:var(--font)">Position</th>
+          <th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding:0 4px 7px;border-bottom:1px solid var(--border);font-family:var(--font);width:10%">Lvl</th>
+        </tr></thead>
+        <tbody>${w.closed.map(pos=>{
+          const lvlMap={'Human Resource Jr. (German Speaking)':'L1','Human Resource (German Speaking)':'L2','Innovation Consultant (Tech Jr.)':'L2','Web Marketing Specialist':'L2','Innovation Consultant (Ecosystem Lead)':'L3','Innovation Consultant (Tech Lead)':'L3','Chief of Staff / SOL':'L4','Marketing Comms Technical expert (website maintenance, content & branding)':'L2'};
+          const lvl=lvlMap[pos]||'';
+          return `<tr><td style="padding:6px 4px;color:var(--text2);border-bottom:1px solid var(--border);line-height:1.3">${pos}</td><td style="padding:6px 4px;color:${G};font-weight:700;border-bottom:1px solid var(--border)">${lvl}</td></tr>`;
+        }).join('')}</tbody>
+      </table>
+    </div>` : '';
 
     // CELL 4 — Live Jira
     const c4=`<div class="cell ct" style="--ca:${T}">
@@ -627,7 +655,7 @@ function renderWS(){
           </div>
         </div>
       </div>
-      <div class="g22">${c1}${c2}${c3}${c4}</div>
+      <div class="g22">${c1}${c2}${c3}${w.isRec?cClosed:""}${c4}</div>
     </div>`;
   });
 
@@ -694,9 +722,9 @@ function renderWS(){
     ch['rec-open']=new Chart(document.getElementById('rec-open'),{
       type:'bar',
       data:{labels:['ESP','Mini CXO','Others'],
-        datasets:[{data:[3,1,1],backgroundColor:['#1D66B1','#F97316','#9CA3AF'],borderRadius:4}]},
-      options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:14}},plugins:{legend:{display:false},tooltip:{enabled:false}},
-        scales:{x:{beginAtZero:true,max:3,grid:{color:gc()},ticks:{stepSize:1,font:{size:8}}},
+        datasets:[{data:[3,0,1],backgroundColor:['#1D66B1','#F97316','#9CA3AF'],borderRadius:4}]},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,layout:{padding:{right:28}},plugins:{legend:{display:false},tooltip:{enabled:false}},
+        scales:{x:{beginAtZero:true,max:4,grid:{color:gc()},ticks:{stepSize:1,font:{size:8}}},
           y:{grid:{display:false},ticks:{font:{size:8}}}}},
       plugins:[recValueLabels]
     });
@@ -705,7 +733,7 @@ function renderWS(){
     ch['rec-aging']=new Chart(document.getElementById('rec-aging'),{
       type:'bar',
       data:{labels:['0-5','5-15','15-30','30-60','60-90','>90'],
-        datasets:[{data:[0,0,1,0,2,1],backgroundColor:['#CBD5E1','#CBD5E1','#F59E0B','#CBD5E1','#F97316','#F97316'],borderRadius:4}]},
+        datasets:[{data:[0,0,1,1,1,2],backgroundColor:['#CBD5E1','#CBD5E1','#10B981','#F59E0B','#F97316','#DC2626'],borderRadius:4}]},
       options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:14}},plugins:{legend:{display:false},tooltip:{enabled:false}},
         scales:{y:{beginAtZero:true,max:3,grid:{color:gc()},ticks:{stepSize:1,font:{size:8}}},
           x:{grid:{display:false},ticks:{font:{size:8}}}}},
@@ -727,7 +755,7 @@ function renderWS(){
     ch['rec-levels']=new Chart(document.getElementById('rec-levels'),{
       type:'bar',
       data:{labels:['L1-Associate','L2-Specialist','L3-Lead','L4-Manager','L5-Senior Leadership','L6-Executive Leadership'],
-        datasets:[{data:[0,53,41,0,82,0],backgroundColor:['#CBD5E1','#F59E0B','#F97316','#CBD5E1','#EA580C','#CBD5E1'],borderRadius:4}]},
+        datasets:[{data:[53,41,75,82,0,0],backgroundColor:['#F97316','#F59E0B','#EA580C','#DC2626','#CBD5E1','#CBD5E1'],borderRadius:4}]},
       options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,layout:{padding:{left:12}},plugins:{legend:{display:false},tooltip:{enabled:false}},
         scales:{x:{beginAtZero:true,max:90,grid:{color:gc()},ticks:{stepSize:10,font:{size:8}}},
           y:{grid:{display:false},ticks:{font:{size:8}}}}},
