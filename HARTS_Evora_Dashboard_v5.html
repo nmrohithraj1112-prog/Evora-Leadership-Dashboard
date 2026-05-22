@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>HARTS × Evora — Strategic Programs Cockpit</title>
+<title>HARTS × Evora — Transformation Program Updates</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
@@ -204,8 +204,8 @@ ul.bl li.lo::before{background:var(--amber)}
   <div class="brand">
     <span class="brand-mark">HARTS × Evora</span>
     <div>
-      <div class="brand-name">Strategic Programs Cockpit</div>
-      <div class="brand-sub">Decision Cockpit · Leadership View</div>
+      <div class="brand-name">Transformation Program Updates</div>
+      <div class="brand-sub">Week ending 22 May 2026</div>
     </div>
   </div>
   <div class="topbar-r">
@@ -279,13 +279,13 @@ ul.bl li.lo::before{background:var(--amber)}
     <div class="cc"><div class="cc-lbl">Completion % by Workstream</div><div style="height:220px"><canvas id="ch-p"></canvas></div></div>
   </div>
 
-  <div class="footer">© 2026 HARTS® Consulting &nbsp;·&nbsp; HARTS × Evora IT Solutions &nbsp;·&nbsp; Strategic Programs Cockpit &nbsp;·&nbsp; Verified from Jira 22 May 2026</div>
+  <div class="footer">© 2026 HARTS® Consulting &nbsp;·&nbsp; HARTS × Evora IT Solutions &nbsp;·&nbsp; Transformation Program Updates &nbsp;·&nbsp; Week ending 22 May 2026</div>
 </div>
 
 <!--  WORKSTREAMS  -->
 <div id="s-ws" class="screen">
   <div id="wsc"></div>
-  <div class="footer">© 2026 HARTS® Consulting &nbsp;·&nbsp; HARTS × Evora IT Solutions &nbsp;·&nbsp; Strategic Programs Cockpit &nbsp;·&nbsp; Verified from Jira 22 May 2026</div>
+  <div class="footer">© 2026 HARTS® Consulting &nbsp;·&nbsp; HARTS × Evora IT Solutions &nbsp;·&nbsp; Transformation Program Updates &nbsp;·&nbsp; Week ending 22 May 2026</div>
 </div>
 
 </main>
@@ -295,51 +295,51 @@ const G='#059669',A='#D97706',R='#DC2626',N='#1E3A5F',T='#0E7490',GR='#CBD5E1';
 const ch={};
 
 /*  VERIFIED JIRA DATA — 22 May 2026 
-   EAH1DP: 70  | done:27 | inprog:17 | todo:26
-   ELUE:  100  | done:14 | inprog:13 | todo:73 (+7 Backlog +1 On-Hold)
-   ESP:    16  | done:0  | inprog:5  | todo:11
-   ESOH:   51  | done:21 | inprog:9  | todo:21
+   Evora-ACH Harmonization: 70  | done:27 | inprog:17 | todo:26
+   Level Up E&C:            100 | done:14 | inprog:13 | todo:73 (+7 Backlog +1 On-Hold)
+   Evora Service Partner:    16 | done:0  | inprog:5  | todo:11
+   Strategy Office + HARTS:  51 | done:21 | inprog:9  | todo:21
  */
 
 const WS=[
-  {id:'ja',num:1,name:'Job Architecture',lead:'Sarath VR',pct:17,st:'on',proj:'ELUE',d:0,i:3,t:9,tot:12,
+  {id:'ja',num:1,name:'Job Architecture',lead:'Sarath VR',pct:17,st:'on',proj:'Level Up — E&amp;C',d:0,i:3,t:9,tot:12,
    hi:['Completed Job Family taxonomy for Americas and Germany'],
    lo:['India taxonomy in-progress — updated ETA 06 May, request from Indian E&C team'],
    sup:['Active participation and timely contribution to the activities lined up for the program'],
    nx:['Consolidation of regional inputs to create global Job Family taxonomy for Evora — start early week of 11 May','Job levelling initiation from 06 May']},
 
-  {id:'te',num:2,name:'Talent Evaluation 2.0',lead:'Hari Ram',pct:20,st:'on',proj:'ELUE',d:4,i:2,t:10,tot:16,
+  {id:'te',num:2,name:'Talent Evaluation 2.0',lead:'Hari Ram',pct:20,st:'on',proj:'Level Up — E&amp;C',d:4,i:2,t:10,tot:16,
    hi:['Kickoff done; 1.0 retrospective documented and added to Jira','BARS framework with 9-box grid and 5-band mapping presented to E&C Head — directional buy-in received','Soft distribution guidance model proposed — managers must justify deviation from expected ranges','Confirmed all Evora entities in scope; A4C and ACH deferred to Jan 2027'],
    lo:[],
    sup:['E&C to confirm mid-year review timing (August) after internal alignment','Cluster-level headcount data needed to calibrate soft distribution ranges per cluster'],
    nx:['Legal & regulatory compliance check across IN, EU and US','Align BARS dimensions to existing Personio question set to avoid over disruption','BARS anchor statements to be made Evora-specific using inputs from regional E&C','A+ sub-category logic for consistently top-scoring "A" rated employees']},
 
-  {id:'ta',num:3,name:'Talent Attraction & Acquisition',lead:'Renuka Desshpande',pct:27,st:'on',proj:'ELUE',d:3,i:2,t:6,tot:11,
+  {id:'ta',num:3,name:'Talent Attraction & Acquisition',lead:'Renuka Desshpande',pct:27,st:'on',proj:'Level Up — E&amp;C',d:3,i:2,t:6,tot:11,
    hi:['Regional Recruitment Process flows created for playback in Lucid Chart from existing documents to E&C and Regional heads','Round-I of playback completed for Americas, DE and IND'],
    lo:[],
    sup:['Active participation and timely contribution to the activities lined up for the program'],
    nx:['Refinement of process based on feedback','Best practices and regional nuances to be documented','Create global recruitment practice']},
 
-  {id:'esp',num:4,name:'ESP — Evora Service Partner',lead:'Srimathi Ravi',pct:48,st:'on',proj:'ESP',d:0,i:5,t:11,tot:16,
+  {id:'esp',num:4,name:'ESP — Evora Service Partner',lead:'Srimathi Ravi',pct:48,st:'on',proj:'Evora Service Partner',d:0,i:5,t:11,tot:16,
    hi:['ESP Transition plan under review','Drafting ESP MSA as part of legal compliance — ESP-61 In Progress','Org set up in drafts (ESP-63: Governance model)','ESP Program now formally tracked in Jira','ESP Workshop planned with Evora India (VJ, NK, SC) Bangalore — week of June 8th','Internal alignment with HARTS Legal Team — ESP-69 In Progress'],
    lo:[],
    sup:['Continued partnership with HARTS Legal Team','Connect with Viktor Soldo from Timo\'s office for further legal compliance (ESP-70: To Do)'],
    nx:['ESP Pricing model finalization — Commercial model ESP-68 In Progress','Alignment with Victor Soldo, Timo\'s Office (ESP-70)','Complete Gen 0 (Setup & Design — ESP-55) and transition to Gen 1']},
 
-  {id:'ha',num:5,name:'Evora-ACH Harmonization',lead:'Hari Ram',pct:24,st:'on',proj:'EAH1DP',d:27,i:17,t:26,tot:70,
+  {id:'ha',num:5,name:'Evora-ACH Harmonization',lead:'Hari Ram',pct:24,st:'on',proj:'Evora-ACH Harmonization',d:27,i:17,t:26,tot:70,
    hi:['Finance: Revenue & EBITDA targets locked; SAP S/4 HANA confirmed as unified system, go-live Jan 2027','Admin, Legal & Compliance: Final merger timeline confirmed — Allgeier CH + Evora CH + a4c CH → one unified legal entity, go-live 1 Jan 2027','Comms: Evora-ACH Teams background circulated to ACH'],
    lo:['Admin & Legal: Transfer of Administrative Policies from ACH to Evora CH — data privacy, risk & compliance under review','Finance: Transfer pricing & cost rate mapping in progress','Channel: MS Germany partnership; CH MS certifications for DE','People: Expense policy alignment underway'],
    sup:['Continued HARTS Legal Team partnership','Finance sign-off on transfer pricing framework'],
    nx:['Strategy: MS Portfolio success criteria; integration in overall strategy','Operating Model: Finalize Evora CH legal entity operating model','Channel: MS Germany first engagement to present combined capabilities','Innovation: Collaboration guidelines for innovation topics'],
    owners:'Sebastian Bloch (13) · Sakthisree Venkatesan (10) · Karthik Setty (9) · Timo Elbert (8) · Hari Ram (7) · Henrik Hausen (7)'},
 
-  {id:'ocm',num:6,name:'OCM & Communications',lead:'Hari Ram',pct:48,st:'on',proj:'ESOH',d:5,i:2,t:5,tot:12,
+  {id:'ocm',num:6,name:'OCM & Communications',lead:'Hari Ram',pct:48,st:'on',proj:'Strategy Office + HARTS',d:5,i:2,t:5,tot:12,
    hi:['Evora-ACH Harmonization internal communication started with MS Teams background','Next two sets of comms posts shared and finalized with ACH — posting in the following week','Feedback from ACH has been cascaded internally'],
    lo:[],
    sup:['Continued partnership'],
    nx:['ACH harmonization related posting to be created','Innovation campaign support if required','Leadership comms for the upcoming week']},
 
-  {id:'rec',num:7,name:'Recruitment',lead:'Renuka Desshpande',pct:55,st:'on',proj:'ESOH',d:7,i:4,t:0,tot:11,
+  {id:'rec',num:7,name:'Recruitment',lead:'Renuka Desshpande',pct:55,st:'on',proj:'Strategy Office + HARTS',d:7,i:4,t:0,tot:11,
    isRec:true,lo:[],
    closed:['Chief of Staff / SOL','Human Resource (German Speaking)','Human Resource Jr. (German Speaking)','Innovation Consultant (Ecosystem Lead)','Innovation Consultant (Tech Jr.)','Innovation Consultant (Tech Lead)','Marketing Comms Technical expert (website maintenance, content & branding)'],
    pipe:[{r:'Supporting Americas recruitment — Talent Acquisition Specialist',s:'Assessing'},{r:'Chief of Staff / SOL',s:'Screening'},{r:'IT Manager — India Operations (ESP)',s:'Screening'},{r:'Head of Finance — India',s:'Sourcing'}],
@@ -347,19 +347,19 @@ const WS=[
    sup:['Timely availability of hiring managers for interview panels','JD finalisation for upcoming roles'],
    nx:['Complete IT Manager hiring — Nikhilesh offer pending confirmation','Initiate Head of Finance — India sourcing','Start Americas Talent Acquisition Specialist search']},
 
-  {id:'il',num:8,name:'Innovation Lab',lead:'Hari Ram',pct:null,st:'on',phase:'Scoping',proj:'ESOH',d:0,i:1,t:3,tot:4,
+  {id:'il',num:8,name:'Innovation Lab',lead:'Hari Ram',pct:null,st:'on',phase:'Scoping',proj:'Strategy Office + HARTS',d:0,i:1,t:3,tot:4,
    hi:['Discovery calls with idea contributors done','Market & technical research at preliminary stage','Innovation Lab visit & workshop planned for week of 4th May 2026','RPA scoped for leadership dashboard'],
    lo:[],
    sup:['Active participation from leadership to prioritise innovation ideas','External partnership introductions (universities, startups)'],
    nx:['Prioritise & finalise POC ideas','Develop Innovation Lab Handbook (governance, process, evaluation)','Create external partnership proposal (universities, startups)','Develop internal & external comms plan']},
 
-  {id:'fp',num:9,name:'Fellowship Programme',lead:'Srimathi Ravi',pct:null,st:'on',phase:'Ongoing',proj:'ESOH',d:0,i:1,t:0,tot:1,
+  {id:'fp',num:9,name:'Fellowship Programme',lead:'Srimathi Ravi',pct:null,st:'on',phase:'Ongoing',proj:'Strategy Office + HARTS',d:0,i:1,t:0,tot:1,
    hi:['Tech Fellows: 4 months in, E2E product dev across 4 tools; learning business topics and exploring Claude','MBA Fellows: 2 months in; Sathana onboarded as Interim Mini-CXO with 30-60-90 day plan from Timo; 5 fellows joined on May 4th'],
    lo:[],
    sup:['Learning topics from Sakthi to be aligned internally','Continued mentorship from leadership'],
    nx:['Learning topics from Sakthi to be aligned internally','Showcase readouts from Tech Fellows on 4 tools','MBA Fellow mid-term review planning']},
 
-  {id:'ind',num:10,name:'IND Projects',lead:'Savio James Abraham',pct:46,st:'mon',proj:'ESOH',d:4,i:3,t:8,tot:15,
+  {id:'ind',num:10,name:'IND Projects',lead:'Savio James Abraham',pct:46,st:'mon',proj:'Strategy Office + HARTS',d:4,i:3,t:8,tot:15,
    hi:['Leave Policy Harmonization: 90% completion','Employee Retention & Upskilling: 70% completion','Amber Dashboard pilot for OOE in progress'],
    lo:['OOE (Overall Operating Efficiency): 40% completion — below pace','Utilization Improvement & Governance: 20% completion — below pace','IT Gatekeeping & ESH Committee Formation yet to be formally started — 4 projects need re-initiation'],
    sup:['Active participation and timely contribution to the activities lined up for the program'],
@@ -380,6 +380,12 @@ const SUM=[
 ];
 const IDS=['ja','te','ta','esp','ha','ocm','rec','il','fp','ind'];
 
+const PROJ_NAME={
+  'EAH1DP':'Evora-ACH Harmonization',
+  'ELUE':'Level Up — E&C',
+  'ESP':'Evora Service Partner',
+  'ESOH':'Strategy Office + HARTS'
+};
 function sc(s){return s==='on'?G:s==='mon'?A:R}
 function sl(s){return s==='on'?'On Track':s==='mon'?'Monitor':'At Risk'}
 function spc(s){return s==='on'?'st-on':s==='mon'?'st-mon':'st-risk'}
@@ -415,7 +421,7 @@ function renderOvCharts(){
   const cS=document.getElementById('ch-s');
   if(cS){if(ch.s)ch.s.destroy();
     ch.s=new Chart(cS,{type:'bar',
-      data:{labels:['EAH1DP','ELUE','ESP','ESOH'],
+      data:{labels:['Evora-ACH Harmonization','Level Up — E&amp;C','Evora Service Partner','Strategy Office + HARTS'],
         datasets:[
           {label:'Done',data:[27,14,0,21],backgroundColor:G,borderRadius:0},
           {label:'In Progress',data:[17,13,5,9],backgroundColor:A},
@@ -497,7 +503,7 @@ function renderWS(){
         <div class="ss" style="width:${tp}%;background:${GR}"></div>
       </div>
       <div class="blbl"><span>${dp}% done</span><span>${ip}% active</span><span>${tp}% pending</span></div>
-      <div style="font-size:10px;color:var(--text3);margin-top:12px;line-height:1.5">${w.tot} total items &nbsp;·&nbsp; Jira: <strong>${w.proj}</strong></div>
+      <div style="font-size:10px;color:var(--text3);margin-top:12px;line-height:1.5">${w.tot} total items &nbsp;·&nbsp; <strong>${PROJ_NAME[w.proj]||w.proj}</strong></div>
       ${w.owners?`<div style="font-size:10px;color:var(--text3);margin-top:6px;line-height:1.5"><strong>Top contributors:</strong> ${w.owners}</div>`:''}
       </div>`;
     }
