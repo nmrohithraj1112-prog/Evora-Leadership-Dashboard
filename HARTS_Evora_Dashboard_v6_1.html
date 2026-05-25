@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>HARTS × Evora — Transformation Program Updates</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAF8F5;
+  --bg2:#EDE9E3;
+  --card:#FFFFFF;
+  --card2:#FAF8F5;
+  --border:#E4E7ED;
+  --border2:#D0D5DD;
+  --text:#0D1117;
+  --text2:#4B5563;
+  --text3:#9CA3AF;
+  --navy:#1E3A5F;
+  --navy2:#2D5282;
+  --teal:#0E7490;
+  --blue:#2563EB;
+  --green:#059669;
+  --green2:#D1FAE5;
+  --amber:#D97706;
+  --amber2:#FEF3C7;
+  --red:#DC2626;
+  --red2:#FEE2E2;
+  --orange:#EA580C;
+  --purple:#7C3AED;
+  --gtx:#065F46;
+  --atx:#92400E;
+  --rtx:#991B1B;
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.05);
+  --shadow:0 1px 3px rgba(0,0,0,0.08),0 4px 12px rgba(0,0,0,0.05);
+  --shadow-lg:0 4px 6px rgba(0,0,0,0.07),0 10px 30px rgba(0,0,0,0.08);
+  --r:16px;--rsm:10px;--rxs:6px;
+  --font:'DM Sans',system-ui,sans-serif;
+}
+[data-theme="dark"]{
+  --bg:#0A0F1A;--bg2:#111827;--card:#161D2E;--card2:#1C2539;
+  --border:#1F2D44;--border2:#2A3A56;
+  --text:#F1F5F9;--text2:#94A3B8;--text3:#475569;
+  --navy:#3B82F6;--navy2:#60A5FA;
+  --green2:#064E3B;--amber2:#451A03;--red2:#450A0A;
+  --gtx:#6EE7B7;--atx:#FCD34D;--rtx:#FCA5A5;
+  --shadow:0 1px 3px rgba(0,0,0,0.4),0 4px 12px rgba(0,0,0,0.3);
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;transition:background .25s,color .25s}
+a{text-decoration:none}button{font-family:var(--font);cursor:pointer}
+
+/*  TOPBAR  */
+.topbar{background:var(--card);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:200;box-shadow:var(--shadow-sm)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{background:linear-gradient(135deg,var(--navy) 0%,#1a56a0 100%);color:#fff;font-size:10px;font-weight:700;letter-spacing:1.8px;padding:5px 11px;border-radius:8px;text-transform:uppercase;box-shadow:0 2px 8px rgba(30,58,95,.35)}
+.brand-name{font-size:15px;font-weight:700;color:var(--text);letter-spacing:-.2px}
+.brand-sub{font-size:9px;color:var(--text3);letter-spacing:1.2px;text-transform:uppercase;margin-top:1px;font-weight:500}
+.topbar-r{display:flex;align-items:center;gap:10px}
+.live-badge{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:var(--text3);border:1px solid var(--border);background:var(--card2);padding:5px 12px;border-radius:20px}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#10B981;box-shadow:0 0 0 2px rgba(16,185,129,.25);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 2px rgba(16,185,129,.25)}50%{box-shadow:0 0 0 5px rgba(16,185,129,.08)}}
+.dark-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--card2);color:var(--text2);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.dark-btn:hover{background:var(--bg2);border-color:var(--border2)}
+
+/*  NAV TABS  */
+.nav{background:var(--card);border-bottom:1px solid var(--border);padding:0 32px;display:flex;gap:4px;overflow-x:auto}
+.nav::-webkit-scrollbar{height:0}
+.nb{padding:14px 18px;border:none;background:none;color:var(--text3);font-size:13px;font-weight:500;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap;transition:all .15s;font-family:var(--font);letter-spacing:-.1px}
+.nb.active{color:var(--navy);border-bottom-color:var(--navy);font-weight:600}
+.nb:hover:not(.active){color:var(--text2)}
+
+/*  LAYOUT  */
+.content{padding:28px 32px 64px;max-width:1440px;margin:0 auto}
+.screen{display:none}.screen.active{display:block}
+
+/*  KPI STRIP  */
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:32px}
+.kpi{background:var(--card);border-radius:var(--r);padding:22px 22px 18px;border:1px solid var(--border);box-shadow:var(--shadow);position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s}
+.kpi:hover{box-shadow:var(--shadow-lg);transform:translateY(-1px)}
+.kpi::after{content:'';position:absolute;top:0;left:0;right:0;height:3.5px;background:var(--kc);border-radius:var(--r) var(--r) 0 0}
+.kpi-ico{font-size:22px;margin-bottom:10px;line-height:1}
+.kpi-lbl{font-size:10px;font-weight:600;color:var(--text3);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:8px}
+.kpi-val{font-size:40px;font-weight:800;color:var(--text);line-height:1;letter-spacing:-2px}
+.kpi-u{font-size:18px;font-weight:500;color:var(--text2);letter-spacing:0}
+.kpi-meta{font-size:11px;color:var(--text3);margin-top:8px;font-weight:400;line-height:1.4}
+.kpi-trend{font-size:11px;font-weight:600;margin-top:6px;display:flex;align-items:center;gap:4px}
+.up{color:var(--green)}.neutral{color:var(--text3)}.warn{color:var(--amber)}
+
+/*  SECTION HEAD  */
+.sh{display:flex;align-items:center;gap:12px;margin:8px 0 20px}
+.sh h2{font-size:17px;font-weight:700;color:var(--text);letter-spacing:-.4px}
+.sh-line{flex:1;height:1px;background:var(--border)}
+.sh-meta{font-size:11px;color:var(--text3);font-weight:500;white-space:nowrap}
+
+/*  SUMMARY TABLE  */
+.tbl-card{background:var(--card);border-radius:var(--r);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow);margin-bottom:28px}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl thead tr{background:var(--navy)}
+[data-theme="dark"] .tbl thead tr{background:var(--navy2)}
+.tbl th{padding:12px 16px;text-align:left;font-size:10px;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.8px;text-transform:uppercase;font-family:var(--font)}
+.tbl td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:middle;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tbody tr{transition:background .12s}
+.tbl tbody tr:hover td{background:var(--bg)}
+.pl{font-weight:600;color:var(--blue);cursor:pointer;font-size:13px;transition:color .15s}
+.pl:hover{color:var(--navy)}
+[data-theme="dark"] .pl{color:#60A5FA}
+.sbadge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600}
+.sdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.pbar-wrap{display:inline-flex;align-items:center;gap:7px;min-width:100px}
+.pbar-track{width:60px;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.pbar-fill{height:100%;border-radius:3px;transition:width .8s}
+.pct-lbl{font-size:12px;font-weight:700;color:var(--text)}
+
+/*  OVERVIEW CHARTS  */
+.c2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.cc{background:var(--card);border-radius:var(--r);border:1px solid var(--border);padding:22px 24px;box-shadow:var(--shadow)}
+.cc-lbl{font-size:10px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--text3);margin-bottom:18px;font-family:var(--font)}
+
+/*  WORKSTREAM BLOCKS  */
+.wsb{margin-bottom:8px}
+
+/* Header strip */
+.wsh{background:var(--card);border:1px solid var(--border);border-radius:var(--r) var(--r) 0 0;border-bottom:none;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm)}
+.ws-left{display:flex;align-items:center;gap:14px}
+.ws-num{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(30,58,95,.3)}
+.wsn{font-size:17px;font-weight:700;color:var(--text);letter-spacing:-.3px}
+.wsm{font-size:11px;color:var(--text3);margin-top:2px;font-weight:400}
+.ws-right{display:flex;align-items:center;gap:14px}
+.st-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.2px}
+.st-on{background:var(--green2);color:var(--gtx)}
+.st-mon{background:var(--amber2);color:var(--atx)}
+.st-risk{background:var(--red2);color:var(--rtx)}
+.ws-pct{text-align:right}
+.ws-pct-val{font-size:26px;font-weight:800;color:var(--text);letter-spacing:-1px;line-height:1}
+.ws-pct-lbl{font-size:8px;font-weight:600;color:var(--text3);letter-spacing:.8px;text-transform:uppercase;margin-top:1px}
+
+/* 2×2 grid */
+.g22{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:1px;background:var(--border);border-radius:0 0 var(--r) var(--r);overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px}
+.cell{background:var(--card);padding:22px 24px}
+.ct{border-top:3px solid var(--ca)}
+.cell-lbl{font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--text3);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;font-family:var(--font)}
+
+/* Sub-labels */
+.slbl{font-size:9px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;margin-bottom:7px;display:flex;align-items:center;gap:5px;font-family:var(--font)}
+.slbl.h{color:var(--green)}.slbl.l{color:var(--amber)}
+
+/* Bullet list */
+ul.bl{list-style:none;padding:0;margin:0 0 2px}
+ul.bl li{font-size:12.5px;color:var(--text2);line-height:1.55;padding:3px 0 3px 16px;position:relative}
+ul.bl li::before{content:'';position:absolute;left:3px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--border2);flex-shrink:0}
+ul.bl li.hi{color:var(--text)}
+ul.bl li.hi::before{background:var(--green);box-shadow:0 0 0 2px rgba(5,150,105,.15)}
+ul.bl li.lo::before{background:var(--amber)}
+
+/* Divider between support + next steps */
+.cell-divider{height:1px;background:var(--border);margin:14px 0}
+
+/* Donut */
+.da{display:flex;align-items:center;gap:20px;margin-bottom:16px}
+.dw{position:relative;width:96px;height:96px;flex-shrink:0}
+.dw canvas{position:absolute;inset:0}
+.dm{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.dp{font-size:20px;font-weight:800;color:var(--text);letter-spacing:-.5px;font-family:var(--font)}
+.dlbl{font-size:8px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}
+.leg{display:flex;flex-direction:column;gap:8px}
+.lr{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--text2)}
+.ls{width:9px;height:9px;border-radius:3px;flex-shrink:0}
+.ln{font-weight:700;color:var(--text);margin-left:auto;padding-left:10px;font-size:13px}
+
+/* Stacked bar */
+.sbar{height:9px;border-radius:5px;overflow:hidden;display:flex;gap:1.5px;background:var(--border);margin-top:4px}
+.ss{height:100%;transition:width 1s cubic-bezier(.4,0,.2,1)}
+.blbl{display:flex;justify-content:space-between;font-size:9px;color:var(--text3);margin-top:5px;font-weight:500}
+
+/* Recruitment KPIs */
+.rkr{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.rk{background:var(--bg);border:1px solid var(--border);border-radius:var(--rsm);padding:10px 10px 9px;text-align:center}
+.rkv{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.5px;font-family:var(--font)}
+.rkl{font-size:8px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-top:3px;line-height:1.3}
+
+/* Jira links */
+.jls{display:flex;flex-direction:column;gap:8px}
+.jl{display:flex;align-items:center;justify-content:space-between;padding:9px 13px;background:var(--bg);border:1px solid var(--border);border-radius:var(--rsm);text-decoration:none;transition:all .15s;color:var(--text)}
+.jl:hover{background:var(--bg2);border-color:var(--border2);transform:translateX(2px)}
+.jll{font-size:12px;font-weight:500;color:var(--text2)}
+.jln{font-size:20px;font-weight:800;font-family:var(--font)}
+.jla{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;background:linear-gradient(135deg,var(--navy),var(--teal));border-radius:var(--rsm);text-decoration:none;font-size:11px;font-weight:600;color:#fff;letter-spacing:.4px;text-transform:uppercase;margin-top:2px;transition:opacity .15s;box-shadow:0 2px 8px rgba(30,58,95,.3)}
+.jla:hover{opacity:.9}
+
+/* Tag */
+.atag{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:700;background:var(--amber2);color:var(--atx);padding:2px 8px;border-radius:20px;letter-spacing:.3px}
+
+/*  FOOTER  */
+.footer{text-align:center;padding:24px 0 0;font-size:10px;color:var(--text3);letter-spacing:.5px;border-top:1px solid var(--border);margin-top:8px;font-weight:500}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">HARTS × Evora</span>
+    <div>
+      <div class="brand-name">Transformation Program Updates</div>
+      <div class="brand-sub">Week ending 22 May 2026</div>
+    </div>
+  </div>
+  <div class="topbar-r">
+    <div class="live-badge">Live from Jira · 22 May 2026 (refreshed)</div>
+    <button class="dark-btn" id="dtb" onclick="tgDark()">◑</button>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nb active" onclick="go('ov',this)">Overview</button>
+  <button class="nb" onclick="go('ws',this)">All 10 Workstreams</button>
+</nav>
+
+<main class="content">
+
+<!--  OVERVIEW  -->
+<div id="s-ov" class="screen active">
+
+  <div class="kpi-row">
+    <div class="kpi" style="--kc:var(--navy)">
+      <div class="kpi-lbl">Active Programs</div>
+      <div class="kpi-val">10</div>
+      <div class="kpi-meta">Strategic workstreams</div>
+      <div class="kpi-trend neutral">All operational</div>
+    </div>
+    <div class="kpi" style="--kc:var(--teal)">
+      <div class="kpi-lbl">Avg. Completion</div>
+      <div class="kpi-val">36<span class="kpi-u">%</span></div>
+      <div class="kpi-meta">Current program phase</div>
+      <div class="kpi-trend up"> On plan</div>
+    </div>
+    <div class="kpi" style="--kc:var(--green)">
+      <div class="kpi-lbl">On Track</div>
+      <div class="kpi-val">9</div>
+      <div class="kpi-meta">Of 10 workstreams</div>
+      <div class="kpi-trend up"> 90% green</div>
+    </div>
+    <div class="kpi" style="--kc:var(--amber)">
+      <div class="kpi-lbl">Needs Attention</div>
+      <div class="kpi-val">1</div>
+      <div class="kpi-meta">IND Projects — Monitor</div>
+      <div class="kpi-trend warn">— Watch closely</div>
+    </div>
+    <div class="kpi" style="--kc:var(--red)">
+      <div class="kpi-lbl">At Risk</div>
+      <div class="kpi-val">0</div>
+      <div class="kpi-meta">No blockers</div>
+      <div class="kpi-trend neutral">— All clear</div>
+    </div>
+  </div>
+
+  <div class="sh"><h2>Program Health at a Glance</h2><div class="sh-line"></div><span class="sh-meta">All Active Workstreams · 22 May 2026</span></div>
+
+  <div class="tbl-card">
+    <table class="tbl">
+      <thead><tr>
+        <th style="width:24%">Program</th>
+        <th style="width:13%">Program Lead</th>
+        <th style="width:10%">Status</th>
+        <th style="width:16%">Progress</th>
+        <th>Key Highlights</th>
+      </tr></thead>
+      <tbody id="stb"></tbody>
+    </table>
+  </div>
+
+  <div class="sh"><h2>Execution Snapshot</h2><div class="sh-line"></div></div>
+  <div class="c2">
+    <div class="cc"><div class="cc-lbl">Task Breakdown by Jira Project</div><div style="height:220px"><canvas id="ch-s"></canvas></div></div>
+    <div class="cc"><div class="cc-lbl">Completion % by Workstream</div><div style="height:220px"><canvas id="ch-p"></canvas></div></div>
+  </div>
+
+  <div class="footer">© 2026 HARTS® Consulting &nbsp;·&nbsp; HARTS × Evora IT Solutions &nbsp;·&nbsp; Transformation Program Updates &nbsp;·&nbsp; Week ending 22 May 2026</div>
+</div>
+
+<!--  WORKSTREAMS  -->
+<div id="s-ws" class="screen">
+  <div id="wsc"></div>
+  <div class="footer">© 2026 HARTS® Consulting &nbsp;·&nbsp; HARTS × Evora IT Solutions &nbsp;·&nbsp; Transformation Program Updates &nbsp;·&nbsp; Week ending 22 May 2026</div>
+</div>
+
+</main>
+
+<script>
+const G='#059669',A='#D97706',R='#DC2626',N='#1E3A5F',T='#0E7490',GR='#CBD5E1';
+const ch={};
+
+/*  VERIFIED JIRA DATA — 22 May 2026 
+   Evora-ACH Harmonization: 70  | done:27 | inprog:17 | todo:26
+   Level Up E&C:            100 | done:14 | inprog:13 | todo:73 (+7 Backlog +1 On-Hold)
+   Evora Service Partner:    16 | done:0  | inprog:5  | todo:11
+   Strategy Office + HARTS:  51 | done:21 | inprog:9  | todo:21
+ */
+
+const WS=[
+  {id:'ja',num:1,name:'Job Architecture',lead:'Sarath VR',pct:17,st:'on',proj:'Level Up — E&C',d:0,i:3,t:9,tot:12,
+   hi:['Completed Job Family taxonomy for Americas and Germany'],
+   lo:['India taxonomy in-progress — updated ETA 06 May, request from Indian E&C team'],
+   sup:['Active participation and timely contribution to the activities lined up for the program'],
+   nx:['Consolidation of regional inputs to create global Job Family taxonomy for Evora — start early week of 11 May','Job levelling initiation from 06 May']},
+
+  {id:'te',num:2,name:'Talent Evaluation 2.0',lead:'Hari Ram',pct:20,st:'on',proj:'Level Up — E&C',d:4,i:2,t:10,tot:16,
+   hi:['Kickoff done; 1.0 retrospective documented and added to Jira','BARS framework with 9-box grid and 5-band mapping presented to E&C Head — directional buy-in received','Soft distribution guidance model proposed — managers must justify deviation from expected ranges','Confirmed all Evora entities in scope; A4C and ACH deferred to Jan 2027'],
+   lo:[],
+   sup:['E&C to confirm mid-year review timing (August) after internal alignment','Cluster-level headcount data needed to calibrate soft distribution ranges per cluster'],
+   nx:['Legal & regulatory compliance check across IN, EU and US','Align BARS dimensions to existing Personio question set to avoid over disruption','BARS anchor statements to be made Evora-specific using inputs from regional E&C','A+ sub-category logic for consistently top-scoring "A" rated employees']},
+
+  {id:'ta',num:3,name:'Talent Attraction & Acquisition',lead:'Renuka Desshpande',pct:27,st:'on',proj:'Level Up — E&C',d:3,i:2,t:6,tot:11,
+   hi:['Regional Recruitment Process flows created for playback in Lucid Chart from existing documents to E&C and Regional heads','Round-I of playback completed for Americas, DE and IND'],
+   lo:[],
+   sup:['Active participation and timely contribution to the activities lined up for the program'],
+   nx:['Refinement of process based on feedback','Best practices and regional nuances to be documented','Create global recruitment practice']},
+
+  {id:'esp',num:4,name:'ESP — Evora Service Partner',lead:'Srimathi Ravi',pct:48,st:'on',proj:'Evora Service Partner',d:0,i:5,t:12,tot:17,
+   hi:['ESP Transition plan under review','Drafting ESP MSA as part of legal compliance — ESP-61 In Progress','Org set up in drafts (ESP-63: Governance model)','ESP Program now formally tracked in Jira','ESP Workshop planned with Evora India (VJ, NK, SC) Bangalore — week of June 8th','Internal alignment with HARTS Legal Team — ESP-69 In Progress','NEW 22 May: Comms about ESP to entire organization added (ESP-71)'],
+   lo:[],
+   sup:['Continued partnership with HARTS Legal Team','Connect with Viktor Soldo from Timo\'s office for further legal compliance (ESP-70: To Do)'],
+   nx:['ESP Pricing model finalization — Commercial model ESP-68 In Progress','Alignment with Victor Soldo, Timo\'s Office (ESP-70)','Complete Gen 0 (Setup & Design — ESP-55) and transition to Gen 1']},
+
+  {id:'ha',num:5,name:'Evora-ACH Harmonization',lead:'Hari Ram',pct:24,st:'on',proj:'Evora-ACH Harmonization',d:28,i:20,t:22,tot:70,
+   hi:['Finance: Revenue & EBITDA targets locked; SAP S/4 HANA confirmed as unified system, go-live Jan 2027','Admin, Legal & Compliance: Final merger timeline confirmed — Allgeier CH + Evora CH + a4c CH → one unified legal entity, go-live 1 Jan 2027','Comms: Evora-ACH Teams background circulated to ACH'],
+   lo:['Admin & Legal: Transfer of Administrative Policies from ACH to Evora CH — data privacy, risk & compliance under review','Finance: Transfer pricing & cost rate mapping in progress','Channel: MS Germany partnership; CH MS certifications for DE','People: Expense policy alignment underway'],
+   sup:['Continued HARTS Legal Team partnership','Finance sign-off on transfer pricing framework'],
+   nx:['Strategy: MS Portfolio success criteria; integration in overall strategy','Operating Model: Finalize Evora CH legal entity operating model','Channel: MS Germany first engagement to present combined capabilities','Innovation: Collaboration guidelines for innovation topics'],
+   owners:'Karthik Setty (12) · Sebastian Bloch (12) · Sakthisree Venkatesan (10) · Timo Elbert (8) · Henrik Hausen (6) · Hari Ram (5)'},
+
+  {id:'ocm',num:6,name:'OCM & Communications',lead:'Hari Ram',pct:48,st:'on',proj:'Strategy Office + HARTS',d:5,i:2,t:5,tot:12,
+   hi:['Evora-ACH Harmonization internal communication started with MS Teams background','Next two sets of comms posts shared and finalized with ACH — posting in the following week','Feedback from ACH has been cascaded internally'],
+   lo:[],
+   sup:['Continued partnership'],
+   nx:['ACH harmonization related posting to be created','Innovation campaign support if required','Leadership comms for the upcoming week']},
+
+  {id:'rec',num:7,name:'Recruitment',lead:'Renuka Desshpande',pct:55,st:'on',proj:'Strategy Office + HARTS',d:7,i:4,t:0,tot:11,
+   isRec:true,lo:[],
+   closed:['Chief of Staff / SOL','Human Resource (German Speaking)','Human Resource Jr. (German Speaking)','Innovation Consultant (Ecosystem Lead)','Innovation Consultant (Tech Jr.)','Innovation Consultant (Tech Lead)','Marketing Comms Technical expert (website maintenance, content & branding)'],
+   pipe:[{r:'IT Manager — India Operations / ESP (ESOH-29)',s:'Screening'},{r:'Americas Recruiter Search (ESOH-22, due 30 Jun)',s:'In Progress'},{r:'Nikhilesh — Innovation Technical Lead (ESOH-7)',s:'Offer Given'},{r:'Head of Finance — India (ESOH-58)',s:'JD Pending'},{r:'Finance — Sonja Replacement (ESOH-57)',s:'JD Pending'}],
+   hi:['Chetan joined 26 Mar — Innovation Business Lead (Done)','Haripreeth joins 25 May — Marketing Comms Technical Expert (Done)','Nikhilesh: offer given — Innovation Technical Lead (In Progress)','IT Manager India/ESP: hiring in progress (ESOH-29)','Americas Recruiter: active search, due 30 Jun (ESOH-22)'],
+   sup:['Timely availability of hiring managers for interview panels','JD finalisation for upcoming roles'],
+   nx:['Confirm Nikhilesh joining date — Innovation Technical Lead offer given (ESOH-7)','Complete IT Manager India/ESP hiring (ESOH-29 In Progress)','Head of Finance — India: JD to be created (ESOH-58, new, unassigned)','Finance Sonja replacement: JD to be created (ESOH-57, new, unassigned)']},
+
+  {id:'il',num:8,name:'Innovation Lab',lead:'Hari Ram',pct:null,st:'on',phase:'Scoping',proj:'Strategy Office + HARTS',d:0,i:1,t:3,tot:4,
+   hi:['Discovery calls with idea contributors done','Market & technical research at preliminary stage','Innovation Lab visit & workshop planned for week of 4th May 2026','RPA scoped for leadership dashboard'],
+   lo:[],
+   sup:['Active participation from leadership to prioritise innovation ideas','External partnership introductions (universities, startups)'],
+   nx:['Prioritise & finalise POC ideas','Develop Innovation Lab Handbook (governance, process, evaluation)','Create external partnership proposal (universities, startups)','Develop internal & external comms plan']},
+
+  {id:'fp',num:9,name:'Fellowship Programme',lead:'Srimathi Ravi',pct:null,st:'on',phase:'Ongoing',proj:'Strategy Office + HARTS',d:0,i:1,t:0,tot:1,
+   hi:['Tech Fellows: 4 months in, E2E product dev across 4 tools; learning business topics and exploring Claude','MBA Fellows: 2 months in; Sathana onboarded as Interim Mini-CXO with 30-60-90 day plan from Timo; 5 fellows joined on May 4th'],
+   lo:[],
+   sup:['Learning topics from Sakthi to be aligned internally','Continued mentorship from leadership'],
+   nx:['Learning topics from Sakthi to be aligned internally','Showcase readouts from Tech Fellows on 4 tools','MBA Fellow mid-term review planning']},
+
+  {id:'ind',num:10,name:'IND Projects',lead:'Savio James Abraham',pct:46,st:'mon',proj:'Strategy Office + HARTS',d:4,i:3,t:8,tot:15,
+   hi:['Leave Policy Harmonization: 90% completion','Employee Retention & Upskilling: 70% completion','Amber Dashboard pilot for OOE in progress'],
+   lo:['OOE (Overall Operating Efficiency): 40% completion — below pace','Utilization Improvement & Governance: 20% completion — below pace','IT Gatekeeping & ESH Committee Formation yet to be formally started — 4 projects need re-initiation'],
+   sup:['Active participation and timely contribution to the activities lined up for the program'],
+   nx:['Leave policy harmonization: Optimized Leave policy processes to come back on 5th May']}
+];
+
+const SUM=[
+  {n:'Job Architecture',l:'Sarath VR',s:'on',p:17,h:'Phase I done; Phase II (India) underway'},
+  {n:'Talent Evaluation 2.0',l:'Hari Ram',s:'on',p:20,h:'Kick-off aligned for 15 May; BARS framework buy-in received'},
+  {n:'Talent Attraction & Acquisition',l:'Renuka Desshpande',s:'on',p:27,h:'Round-I playback completed for Americas, DE and IND'},
+  {n:'ESP — Evora Service Partner',l:'Srimathi Ravi',s:'on',p:48,h:'Transition plan in review; Legal compliance in progress; Gen 0 active in Jira'},
+  {n:'Evora-ACH Harmonization',l:'Hari Ram',s:'on',p:24,h:'Revenue & EBITDA locked; SAP S/4 HANA confirmed go-live Jan 2027; Merger timeline confirmed'},
+  {n:'OCM & Communications',l:'Hari Ram',s:'on',p:48,h:'OKR assets complete; Allgeier Teams BG in progress'},
+  {n:'Recruitment',l:'Renuka Desshpande',s:'on',p:55,h:'7 closed/hired · 4 in progress · 11 total positions · Avg 58 days to fill'},
+  {n:'Innovation Lab',l:'Hari Ram',s:'on',p:null,h:'Discovery done; Lab handbook & partnership plan next'},
+  {n:'Fellowship Programme',l:'Srimathi Ravi',s:'on',p:null,h:'Tech Fellows 4 months in; MBA Fellows 2 months in; 5 new fellows joined May 4th'},
+  {n:'IND Projects',l:'Savio James Abraham',s:'mon',p:46,h:'OOE & Utilization below pace; 4 projects need re-initiation'},
+];
+const IDS=['ja','te','ta','esp','ha','ocm','rec','il','fp','ind'];
+
+const PROJ_NAME={
+  'EAH1DP':'Evora-ACH Harmonization',
+  'ELUE':'Level Up — E&C',
+  'ESP':'Evora Service Partner',
+  'ESOH':'Strategy Office + HARTS'
+};
+function sc(s){return s==='on'?G:s==='mon'?A:R}
+function sl(s){return s==='on'?'On Track':s==='mon'?'Monitor':'At Risk'}
+function spc(s){return s==='on'?'st-on':s==='mon'?'st-mon':'st-risk'}
+function pof(d,t){return t>0?Math.round(d/t*100):0}
+function isDk(){return document.documentElement.getAttribute('data-theme')==='dark'}
+function gc(){return isDk()?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.05)'}
+function tc(){return isDk()?'#475569':'#9CA3AF'}
+function vc(){return isDk()?'#F1F5F9':'#0D1117'}
+
+function renderSumTable(){
+  const tb=document.getElementById('stb');if(!tb)return;
+  tb.innerHTML=SUM.map((w,i)=>{
+    const c=sc(w.s),l=sl(w.s);
+    return`<tr>
+      <td><span class="pl" onclick="jTo('${IDS[i]}')">${w.n}</span></td>
+      <td style="color:var(--text2);font-size:12px">${w.l}</td>
+      <td><span class="sbadge"><span style="color:${c}">${l}</span></span></td>
+      <td><div class="pbar-wrap"><div class="pbar-track"><div class="pbar-fill" style="width:${w.p||0}%;background:${c}"></div></div><span class="pct-lbl">${w.p!=null?w.p+'%':'—'}</span></div></td>
+      <td style="font-size:12px;color:var(--text2);line-height:1.45">${w.h}</td>
+    </tr>`;
+  }).join('');
+}
+
+function mkDonut(id,d,i,t){
+  const el=document.getElementById(id);if(!el)return;
+  if(ch[id])ch[id].destroy();
+  ch[id]=new Chart(el,{type:'doughnut',
+    data:{datasets:[{data:[d||0.1,i||0,t||0],backgroundColor:[G,A,GR],borderWidth:0,hoverOffset:3}]},
+    options:{cutout:'70%',plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{animateRotate:true,duration:900}}});
+}
+
+function renderOvCharts(){
+  const cS=document.getElementById('ch-s');
+  if(cS){if(ch.s)ch.s.destroy();
+    ch.s=new Chart(cS,{type:'bar',
+      data:{labels:['Evora-ACH Harmonization','Level Up — E&C','Evora Service Partner','Strategy Office + HARTS'],
+        datasets:[
+          {label:'Done',data:[28,14,0,21],backgroundColor:G,borderRadius:0},
+          {label:'In Progress',data:[20,17,5,9],backgroundColor:A},
+          {label:'To Do',data:[22,69,12,21],backgroundColor:GR,borderRadius:{topRight:5,bottomRight:5}},
+        ]},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{position:'bottom',labels:{font:{size:11,family:'DM Sans'},boxWidth:10,padding:14,color:vc()}}},
+        scales:{x:{stacked:true,grid:{color:gc()},ticks:{font:{size:10,family:'DM Sans'},color:tc()}},y:{stacked:true,grid:{display:false},ticks:{font:{size:11,weight:'600',family:'DM Sans'},color:vc()}}}}})}
+
+  const cP=document.getElementById('ch-p');
+  const wsP=WS.filter(w=>w.pct!=null);
+  if(cP){if(ch.p)ch.p.destroy();
+    ch.p=new Chart(cP,{type:'bar',
+      data:{labels:wsP.map(w=>w.name),
+        datasets:[{data:wsP.map(w=>w.pct),backgroundColor:wsP.map(w=>w.st==='on'?N:A),borderRadius:5,borderSkipped:false}]},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false}},
+        scales:{x:{min:0,max:100,grid:{color:gc()},ticks:{font:{size:10,family:'DM Sans'},color:tc(),callback:v=>v+'%'}},y:{grid:{display:false},ticks:{font:{size:10,weight:'600',family:'DM Sans'},color:vc()}}}}})}
+}
+
+function renderWS(){
+  let html='';
+  WS.forEach(w=>{
+    const c=sc(w.st),l=sl(w.st),sp=spc(w.st);
+    const whi=w.hi||[],wlo=w.lo||[],wsup=w.sup||[],wnx=w.nx||[];
+    const dp=pof(w.d,w.tot),ip=pof(w.i,w.tot),tp=pof(w.t,w.tot);
+    const pd=w.pct!=null?w.pct+'%':w.phase||'—';
+    const jbase=`https://evorait.atlassian.net/issues/?jql=project%20%3D%20${w.proj}`;
+
+    // CELL 1 — Updates
+    let c1=`<div class="cell ct" style="--ca:${N}"><div class="cell-lbl">Updates ${w.st==='mon'?`<span class="atag">Monitor</span>`:''}</div>`;
+    if(whi.length){c1+=`<div class="slbl h"> Highlights</div><ul class="bl">`;whi.forEach(h=>c1+=`<li class="hi">${h}</li>`);c1+=`</ul>`;}
+    if(wlo.length){c1+=`<div class="slbl l" style="margin-top:12px">Lowlights</div><ul class="bl">`;wlo.forEach(l=>c1+=`<li class="lo">${l}</li>`);c1+=`</ul>`;}
+    c1+=`</div>`;
+
+    // CELL 2 — Support + Next Steps
+    let c2=`<div class="cell ct" style="--ca:${A}"><div class="cell-lbl">Support Required</div><ul class="bl">`;
+    wsup.forEach(s=>c2+=`<li>${s}</li>`);c2+=`</ul>`;
+    if(w.isRec){
+      c2+=`<div class="cell-divider"></div><div class="cell-lbl">Hiring Pipeline</div>
+      <table style="width:100%;border-collapse:collapse">
+      <thead><tr><th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--border);font-family:var(--font)">Open Position</th><th style="text-align:left;font-size:9px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--border);font-family:var(--font)">Stage</th></tr></thead><tbody>`;
+      w.pipe.forEach(p=>c2+=`<tr><td style="padding:6px 0;font-size:11.5px;color:var(--text2);border-bottom:1px solid var(--border)">${p.r}</td><td style="padding:6px 0;color:${N};font-weight:700;font-size:10px;border-bottom:1px solid var(--border);white-space:nowrap">${p.s}</td></tr>`);
+      c2+=`</tbody></table>`;
+    }
+    c2+=`<div class="cell-divider"></div><div class="cell-lbl">Next Steps</div><ul class="bl">`;
+    wnx.forEach(n=>c2+=`<li>${n}</li>`);c2+=`</ul></div>`;
+
+    // CELL 3 — Progress
+    let c3='';
+    if(w.isRec){
+      c3=`<div class="cell ct" style="--ca:${G}">
+      <div class="cell-lbl">Progress</div>
+      <div class="rkr">
+        <div class="rk"><div class="rkv" style="color:${N}">11</div><div class="rkl">Total Positions</div></div>
+        <div class="rk"><div class="rkv" style="color:${G}">7</div><div class="rkl">Closed / Hired</div></div>
+        <div class="rk"><div class="rkv" style="color:${A}">4</div><div class="rkl">In Progress</div></div>
+        <div class="rk"><div class="rkv" style="color:${N}">58</div><div class="rkl">Avg Days to Fill</div></div>
+      </div>
+      <div class="cell-divider"></div>
+      <div class="cell-lbl">Closed Positions</div>
+      <ul class="bl">`;w.closed.forEach(p=>c3+=`<li class="hi">${p}</li>`);c3+=`</ul></div>`;
+    } else {
+      c3=`<div class="cell ct" style="--ca:${G}">
+      <div class="cell-lbl">Progress</div>
+      <div class="da">
+        <div class="dw"><canvas id="dn-${w.id}" width="96" height="96"></canvas>
+          <div class="dm"><div class="dp">${pd}</div><div class="dlbl">${w.pct!=null?'done':''}</div></div>
+        </div>
+        <div class="leg">
+          <div class="lr">Completed<span class="ln">${w.d}</span></div>
+          <div class="lr">In Progress<span class="ln">${w.i}</span></div>
+          <div class="lr">Yet to Start<span class="ln">${w.t}</span></div>
+        </div>
+      </div>
+      <div class="sbar">
+        <div class="ss" style="width:${dp}%;background:${G}"></div>
+        <div class="ss" style="width:${ip}%;background:${A}"></div>
+        <div class="ss" style="width:${tp}%;background:${GR}"></div>
+      </div>
+      <div class="blbl"><span>${dp}% done</span><span>${ip}% active</span><span>${tp}% pending</span></div>
+      <div style="font-size:10px;color:var(--text3);margin-top:12px;line-height:1.5">${w.tot} total items &nbsp;·&nbsp; <strong>${PROJ_NAME[w.proj]||w.proj}</strong></div>
+      ${w.owners?`<div style="font-size:10px;color:var(--text3);margin-top:6px;line-height:1.5"><strong>Top contributors:</strong> ${w.owners}</div>`:''}
+      </div>`;
+    }
+
+    // CELL 4 — Live Jira
+    const c4=`<div class="cell ct" style="--ca:${T}">
+      <div class="cell-lbl">Live Jira Data <span style="font-size:9px;background:rgba(14,116,144,.12);color:${T};padding:2px 7px;border-radius:10px;font-weight:700;margin-left:4px">LIVE</span></div>
+      <div class="jls">
+        <a class="jl" href="${jbase}%20AND%20statusCategory%20%3D%20%22In%20Progress%22" target="_blank">
+          <span class="jll">In Progress</span><span class="jln" style="color:${A}">${w.i}</span>
+        </a>
+        <a class="jl" href="${jbase}%20AND%20statusCategory%20%3D%20Done" target="_blank">
+          <span class="jll">Completed</span><span class="jln" style="color:${G}">${w.d}</span>
+        </a>
+        <a class="jl" href="${jbase}%20AND%20statusCategory%20%3D%20%22To%20Do%22" target="_blank">
+          <span class="jll">To Do</span><span class="jln" style="color:var(--text3)">${w.t}</span>
+        </a>
+        <a class="jl" href="${jbase}%20AND%20updated%20%3E%3D%20-7d%20ORDER%20BY%20updated%20DESC" target="_blank">
+          <span class="jll">Updated this week</span><span class="jln" style="color:${T}">→</span>
+        </a>
+        <a class="jla" href="${jbase}" target="_blank">Open Full Board in Jira &nbsp;→</a>
+      </div>
+    </div>`;
+
+    html+=`<div class="wsb" id="ws-${w.id}">
+      <div class="wsh">
+        <div class="ws-left">
+          <div class="ws-num">${w.num}</div>
+          <div>
+            <div class="wsn">${w.name}</div>
+            <div class="wsm">Lead: <strong>${w.lead}</strong>${w.phase?' &nbsp;·&nbsp; Phase: '+w.phase:''}</div>
+          </div>
+        </div>
+        <div class="ws-right">
+          <span class="st-pill ${sp}">${l}</span>
+          <div class="ws-pct">
+            <div class="ws-pct-val">${pd}</div>
+            <div class="ws-pct-lbl">${w.pct!=null?'Complete':w.phase?'Phase':''}</div>
+          </div>
+        </div>
+      </div>
+      <div class="g22">${c1}${c2}${c3}${c4}</div>
+    </div>`;
+  });
+
+  document.getElementById('wsc').innerHTML=html;
+  setTimeout(()=>WS.filter(w=>!w.isRec).forEach(w=>mkDonut('dn-'+w.id,w.d,w.i,w.t)),50);
+}
+
+function go(id,btn){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('s-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  if(id==='ov')setTimeout(renderOvCharts,50);
+  if(id==='ws')renderWS();
+}
+function jTo(id){
+  go('ws',document.querySelectorAll('.nb')[1]);
+  setTimeout(()=>{const el=document.getElementById('ws-'+id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},200);
+}
+function tgDark(){
+  const d=document.documentElement;
+  const dk=d.getAttribute('data-theme')!=='dark';
+  d.setAttribute('data-theme',dk?'dark':'light');
+  document.getElementById('dtb').textContent=dk?'':'';
+  Object.keys(ch).forEach(k=>{if(ch[k]){ch[k].destroy();delete ch[k];}});
+  if(document.getElementById('s-ov').classList.contains('active'))setTimeout(renderOvCharts,50);
+}
+
+renderSumTable();
+renderOvCharts();
+</script>
+</body>
+</html>
