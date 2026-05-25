@@ -235,7 +235,7 @@ ul.bl li.lo::before{background:var(--amber)}
     </div>
   </div>
   <div class="topbar-r">
-    <div class="live-badge">Live from Jira · 22 May 2026</div>
+    <div class="live-badge">Live from Jira · 25 May 2026</div>
     <button class="dark-btn" id="dtb" onclick="tgDark()">◑</button>
   </div>
 </header>
@@ -320,27 +320,27 @@ ul.bl li.lo::before{background:var(--amber)}
 const G='#059669',A='#D97706',R='#DC2626',N='#1E3A5F',T='#0E7490',GR='#CBD5E1';
 const ch={};
 
-/*  VERIFIED JIRA DATA — 22 May 2026 
-   Evora-ACH Harmonization: 70  | done:27 | inprog:17 | todo:26
-   Level Up E&C:            100 | done:14 | inprog:13 | todo:73 (+7 Backlog +1 On-Hold)
-   Evora Service Partner:    16 | done:0  | inprog:5  | todo:11
-   Strategy Office + HARTS:  51 | done:21 | inprog:9  | todo:21
+/*  VERIFIED JIRA DATA — 25 May 2026
+   Evora-ACH Harmonization: 70  | done:28 | inprog:20 | todo:22
+   Level Up E&C (by epic):  59  | ja:40 (d:6,i:5,t:29) | te:10 (d:0,i:2,t:8) | ta:9 (d:3,i:5,t:1)
+   Evora Service Partner:    17 | done:0  | inprog:5  | todo:12
+   Strategy Office + HARTS: unchanged (ESOH sub-workstreams kept from 22 May)
  */
 
 const WS=[
-  {id:'ja',num:1,name:'Job Architecture',lead:'Sarath VR',pct:17,st:'on',proj:'Level Up — E&C',d:0,i:3,t:9,tot:12,
+  {id:'ja',num:1,name:'Job Architecture',lead:'Sarath VR',pct:17,st:'on',proj:'Level Up — E&C',d:6,i:5,t:29,tot:40,
    hi:['Completed Job Family taxonomy for Americas and Germany'],
    lo:['India taxonomy in-progress — updated ETA 06 May, request from Indian E&C team'],
    sup:['Active participation and timely contribution to the activities lined up for the program'],
    nx:['Consolidation of regional inputs to create global Job Family taxonomy for Evora — start early week of 11 May','Job levelling initiation from 06 May']},
 
-  {id:'te',num:2,name:'Talent Evaluation 2.0',lead:'Hari Ram',pct:20,st:'on',proj:'Level Up — E&C',d:4,i:2,t:10,tot:16,
+  {id:'te',num:2,name:'Talent Evaluation 2.0',lead:'Hari Ram',pct:20,st:'on',proj:'Level Up — E&C',d:0,i:2,t:8,tot:10,
    hi:['Kickoff done; 1.0 retrospective documented and added to Jira','BARS framework with 9-box grid and 5-band mapping presented to E&C Head — directional buy-in received','Soft distribution guidance model proposed — managers must justify deviation from expected ranges','Confirmed all Evora entities in scope; A4C and ACH deferred to Jan 2027'],
    lo:[],
    sup:['E&C to confirm mid-year review timing (August) after internal alignment','Cluster-level headcount data needed to calibrate soft distribution ranges per cluster'],
    nx:['Legal & regulatory compliance check across IN, EU and US','Align BARS dimensions to existing Personio question set to avoid over disruption','BARS anchor statements to be made Evora-specific using inputs from regional E&C','A+ sub-category logic for consistently top-scoring "A" rated employees']},
 
-  {id:'ta',num:3,name:'Talent Attraction & Acquisition',lead:'Renuka Desshpande',pct:27,st:'on',proj:'Level Up — E&C',d:3,i:2,t:6,tot:11,
+  {id:'ta',num:3,name:'Talent Attraction & Acquisition',lead:'Renuka Desshpande',pct:27,st:'on',proj:'Level Up — E&C',d:3,i:5,t:1,tot:9,
    hi:['Regional Recruitment Process flows created for playback in Lucid Chart from existing documents to E&C and Regional heads','Round-I of playback completed for Americas, DE and IND'],
    lo:[],
    sup:['Active participation and timely contribution to the activities lined up for the program'],
