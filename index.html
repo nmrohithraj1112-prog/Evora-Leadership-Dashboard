@@ -146,6 +146,14 @@ a{text-decoration:none}button{font-family:var(--font);cursor:pointer}
 /* Sub-labels */
 .slbl{font-size:9px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;margin-bottom:7px;display:flex;align-items:center;gap:5px;font-family:var(--font)}
 .slbl.h{color:var(--green)}.slbl.l{color:var(--amber)}.slbl.c{color:var(--teal)}
+.ws-clk{cursor:pointer;border-radius:4px;transition:background .15s;padding:1px 5px;margin:-1px -5px}
+.ws-clk:hover{background:var(--bg2)}
+.ws-clk.ws-active{background:var(--bg2);font-weight:700}
+.ws-det{padding-top:12px;margin-top:10px;border-top:1px solid var(--border);max-height:260px;overflow-y:auto}
+.ws-det-item{display:flex;align-items:baseline;gap:6px;padding:4px 0;border-bottom:1px solid var(--border);font-size:12px}
+.ws-det-item:last-child{border-bottom:none}
+.ws-det-key{font-size:10px;font-weight:700;color:var(--teal);white-space:nowrap;font-family:var(--font)}
+.ws-det-sum{color:var(--text2);line-height:1.4}
 
 /* Bullet list */
 ul.bl{list-style:none;padding:0;margin:0 0 2px}
@@ -857,7 +865,6 @@ function renderWS(){
     let c1=`<div class="cell ct" style="--ca:${N}"><div class="cell-lbl">Updates ${w.st==='mon'?`<span class="atag">Monitor</span>`:''}</div>`;
     c1+=`<div class="slbl h">${evArr(w.id,'hi',' Highlights')}</div><ul class="bl">`;whi.forEach(h=>c1+=`<li class="hi">${h}</li>`);c1+=`</ul>`;
     c1+=`<div class="slbl l" style="margin-top:12px">${evArr(w.id,'lo','Lowlights')}</div><ul class="bl">`;wlo.forEach(l=>c1+=`<li class="lo">${l}</li>`);c1+=`</ul>`;
-    c1+=`<div class="slbl c" style="margin-top:12px">${evArr(w.id,'done','Completed')}</div><ul class="bl">`;wdone.forEach(d=>c1+=`<li style="color:var(--teal)">${d}</li>`);c1+=`</ul>`;
     c1+=`</div>`;
 
     // CELL 2 — Support + Next Steps
@@ -958,9 +965,9 @@ function renderWS(){
           <div class="dm"><div class="dp">${pd}</div><div class="dlbl">${w.pct!=null?'done':''}</div></div>
         </div>
         <div class="leg">
-          <div class="lr">Completed<span class="ln">${E('ws',w.id,'d',w.d)}</span></div>
-          <div class="lr">In Progress<span class="ln">${E('ws',w.id,'i',w.i)}</span></div>
-          <div class="lr">Yet to Start<span class="ln">${E('ws',w.id,'t',w.t)}</span></div>
+          <div class="lr ws-clk" onclick="showWsDetail('${w.id}','d',this)" title="Click to view completed issues">Completed<span class="ln" style="color:${G}">${E('ws',w.id,'d',w.d)}</span></div>
+          <div class="lr ws-clk" onclick="showWsDetail('${w.id}','ip',this)" title="Click to view in-progress issues">In Progress<span class="ln" style="color:${A}">${E('ws',w.id,'i',w.i)}</span></div>
+          <div class="lr ws-clk" onclick="showWsDetail('${w.id}','td',this)" title="Click to view yet-to-start issues">Yet to Start<span class="ln">${E('ws',w.id,'t',w.t)}</span></div>
         </div>
       </div>
       <div class="sbar">
@@ -971,6 +978,7 @@ function renderWS(){
       <div class="blbl"><span>${dp}% done</span><span>${ip}% active</span><span>${tp}% pending</span></div>
       <div style="font-size:10px;color:var(--text3);margin-top:12px;line-height:1.5">${w.tot} total items &nbsp;·&nbsp; <strong>${PROJ_NAME[w.proj]||w.proj}</strong></div>
       ${w.owners?`<div style="font-size:10px;color:var(--text3);margin-top:6px;line-height:1.5"><strong>Top contributors:</strong> ${w.owners}</div>`:''}
+      <div id="ws-det-${w.id}" class="ws-det" style="display:none"></div>
       </div>`;
     }
 
@@ -1222,6 +1230,40 @@ function toggleEdit(){
   if(tb)tb.style.display=editMode?'flex':'none';
   showToast(editMode?'✏ Edit mode ON — click any value to edit':'Edit mode OFF');
   reRenderAll();
+}
+
+function showWsDetail(wsId, type, btn) {
+  const panel = document.getElementById('ws-det-' + wsId);
+  if (!panel) return;
+  const w = WS.find(x => x.id === wsId);
+  if (!w) return;
+  const btns = btn.closest('.leg').querySelectorAll('.ws-clk');
+  // Toggle off if same clicked again
+  if (panel.dataset.open === type && panel.style.display !== 'none') {
+    panel.style.display = 'none';
+    panel.dataset.open = '';
+    btns.forEach(b => b.classList.remove('ws-active'));
+    return;
+  }
+  btns.forEach(b => b.classList.remove('ws-active'));
+  btn.classList.add('ws-active');
+  panel.dataset.open = type;
+  const base = 'https://evorait.atlassian.net/browse/';
+  let list = [];
+  let label = '', color = '';
+  if (type === 'd')       { list = w.dList  || []; label = 'Completed';    color = 'var(--green)'; }
+  else if (type === 'ip') { list = w.ipList || []; label = 'In Progress';  color = 'var(--amber)'; }
+  else if (type === 'td') { list = w.tdList || []; label = 'Yet to Start'; color = 'var(--text3)'; }
+  let html = `<div style="font-size:9px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:${color};margin-bottom:8px;font-family:var(--font)">${label} Issues</div>`;
+  if (list.length) {
+    list.forEach(it => {
+      html += `<div class="ws-det-item"><a class="ws-det-key" href="${base}${it.key}" target="_blank">${it.key}</a><span class="ws-det-sum">${it.summary}</span></div>`;
+    });
+  } else {
+    html += `<div style="font-size:12px;color:var(--text3);font-style:italic">No issues loaded yet — runs at next routine refresh.</div>`;
+  }
+  panel.innerHTML = html;
+  panel.style.display = 'block';
 }
 
 function reRenderAll(){
