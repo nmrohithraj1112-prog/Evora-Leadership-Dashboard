@@ -23,6 +23,11 @@ export default async function handler(req, res) {
   const PAT = process.env.GH_PAT;
   if (!PAT) return res.status(500).json({ error: 'GH_PAT env var not configured' });
 
+  const SECRET = process.env.PUBLISH_SECRET;
+  if (SECRET && req.headers['x-publish-secret'] !== SECRET) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
   const { ws, sum, baseline } = req.body;
   if (!ws || !sum) return res.status(400).json({ error: 'Missing ws or sum in body' });
 

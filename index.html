@@ -1162,16 +1162,20 @@ let BASELINE={ws:null,sum:null};
 
 // Load data.json from server, then apply any local unsaved edits on top
 async function initData(){
+  let serverLoaded=false;
   try{
     const r=await fetch('/data.json?t='+Date.now());
     if(r.ok){
       const d=await r.json();
       if(d.ws) d.ws.forEach((v,i)=>{if(WS[i])Object.assign(WS[i],v);});
       if(d.sum) d.sum.forEach((v,i)=>{if(SUM[i])Object.assign(SUM[i],v);});
+      serverLoaded=true;
     }
   }catch(e){}
-  // Snapshot server state as baseline before applying local overrides
-  BASELINE={ws:JSON.parse(JSON.stringify(WS)),sum:JSON.parse(JSON.stringify(SUM))};
+  // Only set baseline when server data loaded successfully — wrong baseline breaks 3-way merge
+  if(serverLoaded){
+    BASELINE={ws:JSON.parse(JSON.stringify(WS)),sum:JSON.parse(JSON.stringify(SUM))};
+  }
   // Apply any locally saved (unpublished) edits on top
   try{
     const lw=localStorage.getItem('evora_ws');
@@ -1349,7 +1353,7 @@ async function publishToGitHub(){
   try{
     const res=await fetch('/api/publish',{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
+      headers:{'Content-Type':'application/json','x-publish-secret':'evora-dashboard-2026'},
       body:JSON.stringify({ws:WS,sum:SUM,baseline:BASELINE})
     });
     const d=await res.json();
