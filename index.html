@@ -356,6 +356,7 @@ ul.bl li.lo::before{background:var(--amber)}
 <script>
 const G='#059669',A='#D97706',R='#DC2626',N='#1E3A5F',T='#0E7490',GR='#CBD5E1';
 const ch={};
+let editMode=false;
 
 /*  VERIFIED JIRA DATA — 26 May 2026
    Evora-ACH Harmonization: 70  | done:28 | inprog:20 | todo:22
@@ -827,7 +828,6 @@ renderSumTable();
 renderOvCharts();
 
 // ===== EDIT MODE =====
-let editMode=false;
 
 // Helper: wrap value in editable span when edit mode is on
 function E(type,id,field,val){
