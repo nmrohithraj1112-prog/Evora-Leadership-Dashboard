@@ -145,7 +145,7 @@ a{text-decoration:none}button{font-family:var(--font);cursor:pointer}
 
 /* Sub-labels */
 .slbl{font-size:9px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;margin-bottom:7px;display:flex;align-items:center;gap:5px;font-family:var(--font)}
-.slbl.h{color:var(--green)}.slbl.l{color:var(--amber)}
+.slbl.h{color:var(--green)}.slbl.l{color:var(--amber)}.slbl.c{color:var(--teal)}
 
 /* Bullet list */
 ul.bl{list-style:none;padding:0;margin:0 0 2px}
@@ -848,7 +848,7 @@ function renderWS(){
   let html='';
   WS.forEach(w=>{
     const c=sc(w.st),l=sl(w.st),sp=spc(w.st);
-    const whi=w.hi||[],wlo=w.lo||[],wsup=w.sup||[],wnx=w.nx||[];
+    const whi=w.hi||[],wlo=w.lo||[],wsup=w.sup||[],wnx=w.nx||[],wdone=w.done||[];
     const dp=pof(w.d,w.tot),ip=pof(w.i,w.tot),tp=pof(w.t,w.tot);
     const pd=w.pct!=null?(editMode?EP('ws',w.id,'pct',w.pct):w.pct+'%'):(editMode?E('ws',w.id,'phase',w.phase||''):w.phase||'—');
     const jbase=`https://evorait.atlassian.net/issues/?jql=project%20%3D%20${w.proj}`;
@@ -857,6 +857,7 @@ function renderWS(){
     let c1=`<div class="cell ct" style="--ca:${N}"><div class="cell-lbl">Updates ${w.st==='mon'?`<span class="atag">Monitor</span>`:''}</div>`;
     c1+=`<div class="slbl h">${evArr(w.id,'hi',' Highlights')}</div><ul class="bl">`;whi.forEach(h=>c1+=`<li class="hi">${h}</li>`);c1+=`</ul>`;
     c1+=`<div class="slbl l" style="margin-top:12px">${evArr(w.id,'lo','Lowlights')}</div><ul class="bl">`;wlo.forEach(l=>c1+=`<li class="lo">${l}</li>`);c1+=`</ul>`;
+    c1+=`<div class="slbl c" style="margin-top:12px">${evArr(w.id,'done','Completed')}</div><ul class="bl">`;wdone.forEach(d=>c1+=`<li style="color:var(--teal)">${d}</li>`);c1+=`</ul>`;
     c1+=`</div>`;
 
     // CELL 2 — Support + Next Steps
@@ -1323,7 +1324,7 @@ function applyEdit(type,id,field,raw){
 function openArrEd(id,field,e){
   if(e){e.stopPropagation();e.preventDefault();}
   const w=WS.find(x=>x.id===id);if(!w)return;
-  const nm={hi:'Highlights',lo:'Lowlights',sup:'Support Required',nx:'Next Steps'};
+  const nm={hi:'Highlights',lo:'Lowlights',sup:'Support Required',nx:'Next Steps',done:'Completed'};
   document.getElementById('e-modal')?.remove();
   const m=document.createElement('div');m.id='e-modal';
   m.innerHTML=`<div class="e-mbg" onclick="document.getElementById('e-modal').remove()"></div>
