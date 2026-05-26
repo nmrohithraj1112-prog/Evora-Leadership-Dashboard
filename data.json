@@ -13,22 +13,69 @@
       "t": 29,
       "tot": 40,
       "hi": [
-        "Completed Job Family taxonomy for Americas and Germany"
+        "Regional Job family taxonomy completed",
+        "Global Job family taxonomy in progress",
+        "Alignment with cluster heads on job family taxonomy underway (ELUE-152)"
       ],
-      "lo": [
-        "India taxonomy in-progress — updated ETA 06 May, request from Indian E&C team check...."
-      ],
+      "lo": [],
       "sup": [
-        "Active participation and timely contribution to the activities lined up for the program"
+        "Global and external job titles to be factored into job architecture (ELUE-1 comment)"
       ],
       "nx": [
-        "Consolidation of regional inputs to create global Job Family taxonomy for Evora — start early week of 11 May",
-        "Job levelling initiation from 06 May"
+        "Consolidate global job family taxonomy across regions",
+        "Job levelling initiation from Phase II",
+        "Alignment sessions with cluster heads (ELUE-152)"
       ],
-      "done": [],
-      "dList": [],
-      "ipList": [],
-      "tdList": []
+      "done": [
+        "Job Architecture Phase I — Discovery & Consolidation completed (ELUE-68)",
+        "External job architecture finalized (ELUE-29)"
+      ],
+      "dList": [
+        {"key": "ELUE-68", "summary": "Job Architecture PHASE I — Discovery & Consolidation"},
+        {"key": "ELUE-29", "summary": "Finalize external for Job Architecture."},
+        {"key": "ELUE-47", "summary": "Job Arc Prog. Approach draft"},
+        {"key": "ELUE-46", "summary": "Observations & Recommendations shared"},
+        {"key": "ELUE-45", "summary": "JD files decoded → reviewed"},
+        {"key": "ELUE-44", "summary": "Review Current DE, IN, US Job Arc"}
+      ],
+      "ipList": [
+        {"key": "ELUE-73", "summary": "Job Architecture PHASE II — Global Job Families & Levels"},
+        {"key": "ELUE-1", "summary": "Job Architecture"},
+        {"key": "ELUE-152", "summary": "Alignment with Cluster head - Job family Taxonomy"},
+        {"key": "ELUE-3", "summary": "Global job families (10–12)"},
+        {"key": "ELUE-27", "summary": "Governance setup (job architecture council)"}
+      ],
+      "tdList": [
+        {"key": "ELUE-109", "summary": "Provision of Salary details for Salary.com"},
+        {"key": "ELUE-83", "summary": "Job Architecture PHASE IV — Job Cards"},
+        {"key": "ELUE-95", "summary": "Phase VII — Rollout & Change Management"},
+        {"key": "ELUE-92", "summary": "Phase VI — Global + Regional Localization"},
+        {"key": "ELUE-88", "summary": "Phase V — Compensation & Salary Bands"},
+        {"key": "ELUE-78", "summary": "Phase III — Competency Framework"},
+        {"key": "ELUE-7", "summary": "Mapping DE, IN & US roles → Global"},
+        {"key": "ELUE-5", "summary": "Salary equity check and benchmarking"},
+        {"key": "ELUE-4", "summary": "7-level Global Leveling Guide"},
+        {"key": "ELUE-64", "summary": "Fitment of Contractors into the Job Architecture"},
+        {"key": "ELUE-63", "summary": "Provision of access to salary.com"},
+        {"key": "ELUE-22", "summary": "Create Global Career Framework"},
+        {"key": "ELUE-26", "summary": "Final Job Catalogue"},
+        {"key": "ELUE-25", "summary": "Career Conversation Guide"},
+        {"key": "ELUE-24", "summary": "Employee Communication Pack"},
+        {"key": "ELUE-23", "summary": "Leaders Training"},
+        {"key": "ELUE-21", "summary": "Job title alignment especially for Customer-facing roles"},
+        {"key": "ELUE-20", "summary": "DE + IN + US Career Model Addendum"},
+        {"key": "ELUE-19", "summary": "Compensation equity check and benchmarking"},
+        {"key": "ELUE-18", "summary": "Salary banding and pay governance model"},
+        {"key": "ELUE-16", "summary": "Map global levels"},
+        {"key": "ELUE-6", "summary": "Job Card library of 60–80 roles: DE, IN & US"},
+        {"key": "ELUE-15", "summary": "Pilot 12 roles"},
+        {"key": "ELUE-14", "summary": "Alignment workshop with Delivery + HR"},
+        {"key": "ELUE-13", "summary": "Job Card template (Evora branded)"},
+        {"key": "ELUE-12", "summary": "Behavioral indicators per level"},
+        {"key": "ELUE-11", "summary": "Technical competency dictionary"},
+        {"key": "ELUE-10", "summary": "Functional competencies per job family"},
+        {"key": "ELUE-8", "summary": "Core competencies (6–8)"}
+      ]
     },
     {
       "id": "te",
@@ -43,26 +90,38 @@
       "t": 8,
       "tot": 10,
       "hi": [
-        "Kickoff done; 1.0 retrospective documented and added to Jira",
-        "BARS framework with 9-box grid and 5-band mapping presented to E&C Head — directional buy-in received",
-        "Soft distribution guidance model proposed — managers must justify deviation from expected ranges",
-        "Confirmed all Evora entities in scope; A4C and ACH deferred to Jan 2027"
+        "Got go-ahead to start talent evaluation on 6th April 2026",
+        "First connect on Talent Evaluation 1.0 retrospection on 15th April 2026",
+        "Talent 2.0 global framework scoped: unified performance & development framework for all Evora entities by Jan 2027"
       ],
-      "lo": [],
+      "lo": [
+        "Talent 2.0 overall delayed due to 2025 performance evaluation cycle and 2026 goal settings (ELUE-127)"
+      ],
       "sup": [
-        "E&C to confirm mid-year review timing (August) after internal alignment",
-        "Cluster-level headcount data needed to calibrate soft distribution ranges per cluster"
+        "Confirm mid-year review timing (August) after internal alignment",
+        "Cluster-level headcount data needed to calibrate soft distribution ranges"
       ],
       "nx": [
-        "Legal & regulatory compliance check across IN, EU and US",
-        "Align BARS dimensions to existing Personio question set to avoid over disruption",
-        "BARS anchor statements to be made Evora-specific using inputs from regional E&C",
-        "A+ sub-category logic for consistently top-scoring \"A\" rated employees"
+        "Foundation & Governance phase in progress (ELUE-127)",
+        "Legal & regulatory compliance check across IN, EU, US",
+        "Framework Design & Alignment phase next (ELUE-134)"
       ],
       "done": [],
       "dList": [],
-      "ipList": [],
-      "tdList": []
+      "ipList": [
+        {"key": "ELUE-127", "summary": "Phase 1: Foundation & Governance"},
+        {"key": "ELUE-128", "summary": "Talent Evaluation 2.0: Global Performance Management Transformation"}
+      ],
+      "tdList": [
+        {"key": "ELUE-131", "summary": "Phase 2: Change Management & Communication Strategy"},
+        {"key": "ELUE-149", "summary": "Phase 9: Continuous Improvement & Scale"},
+        {"key": "ELUE-148", "summary": "Phase 8: Year-End Implementation"},
+        {"key": "ELUE-147", "summary": "Phase 7: Feedback Loop & Refinement"},
+        {"key": "ELUE-146", "summary": "Phase 6: Mid-Year Review Pilot"},
+        {"key": "ELUE-145", "summary": "Phase 5: Training Development & Delivery"},
+        {"key": "ELUE-141", "summary": "Phase 4: Tools, Templates & System Build"},
+        {"key": "ELUE-134", "summary": "Phase 3: Framework Design & Alignment"}
+      ]
     },
     {
       "id": "ta",
@@ -77,22 +136,39 @@
       "t": 1,
       "tot": 9,
       "hi": [
-        "Regional Recruitment Process flows created for playback in Lucid Chart from existing documents to E&C and Regional heads",
-        "Round-I of playback completed for Americas, DE and IND"
+        "EU and US Requisition Excel created to feed recruitment dashboard",
+        "AS IS Recruitment Analysis completed"
       ],
       "lo": [],
       "sup": [
-        "Active participation and timely contribution to the activities lined up for the program"
+        "Active participation and timely contribution to the activities lined up"
       ],
       "nx": [
-        "Refinement of process based on feedback",
-        "Best practices and regional nuances to be documented",
-        "Create global recruitment practice"
+        "Evaluate and refine interview methods (ELUE-61)",
+        "Recruitment Dashboard development (ELUE-60)",
+        "Recruitment KPIs definition (ELUE-53)",
+        "Explore recruitment trainings for panelists (ELUE-62)"
       ],
-      "done": [],
-      "dList": [],
-      "ipList": [],
-      "tdList": []
+      "done": [
+        "EU Requisition Excel created and maintained (ELUE-59)",
+        "US Requisition Excel created and maintained (ELUE-28)",
+        "AS IS Recruitment Analysis completed (ELUE-151)"
+      ],
+      "dList": [
+        {"key": "ELUE-151", "summary": "To do AS IS Recruitment Analysis"},
+        {"key": "ELUE-59", "summary": "EU: Create, & maintain Requisition Excel"},
+        {"key": "ELUE-28", "summary": "US: Create, & maintain requisition excel"}
+      ],
+      "ipList": [
+        {"key": "ELUE-2", "summary": "Optimizing Talent Attraction and Acquisition"},
+        {"key": "ELUE-61", "summary": "Evaluate + Refine Interview Methods"},
+        {"key": "ELUE-60", "summary": "Recruitment Dashboard"},
+        {"key": "ELUE-30", "summary": "Recruitment Process"},
+        {"key": "ELUE-53", "summary": "Recruitment KPIs"}
+      ],
+      "tdList": [
+        {"key": "ELUE-62", "summary": "Explore Recruitment Trainings"}
+      ]
     },
     {
       "id": "esp",
@@ -107,28 +183,46 @@
       "t": 12,
       "tot": 17,
       "hi": [
-        "ESP Transition plan under review",
-        "Drafting ESP MSA as part of legal compliance — ESP-61 In Progress",
-        "Org set up in drafts (ESP-63: Governance model)",
-        "ESP Program now formally tracked in Jira",
-        "ESP Workshop planned with Evora India (VJ, NK, SC) Bangalore — week of June 8th",
-        "Internal alignment with HARTS Legal Team — ESP-69 In Progress",
-        "NEW 22 May: Comms about ESP to entire organization added (ESP-71)"
+        "Gen 0: Setup and Design in progress (ESP-55)",
+        "Legal Entity Setup MSA/NDA/SOW in progress (ESP-61)",
+        "Internal alignment with HARTS Legal Team ongoing (ESP-69)"
       ],
-      "lo": [],
+      "lo": [
+        "Legal advisor questions pending response for contract continuation/termination (ESP-3)"
+      ],
       "sup": [
-        "Continued partnership with HARTS Legal Team",
-        "Connect with Viktor Soldo from Timo's office for further legal compliance (ESP-70: To Do)"
+        "Legal advisor questions to be responded to for contract review (ESP-3)",
+        "Alignment needed with Victor Soldo, Timo's Office (ESP-70)"
       ],
       "nx": [
-        "ESP Pricing model finalization — Commercial model ESP-68 In Progress",
+        "Commercial model finalization (ESP-68)",
         "Alignment with Victor Soldo, Timo's Office (ESP-70)",
-        "Complete Gen 0 (Setup & Design — ESP-55) and transition to Gen 1"
+        "Comms about ESP to entire organization (ESP-71)",
+        "Transition readiness planning (ESP-67)"
       ],
       "done": [],
       "dList": [],
-      "ipList": [],
-      "tdList": []
+      "ipList": [
+        {"key": "ESP-69", "summary": "Internal Alignment"},
+        {"key": "ESP-68", "summary": "Commercial model"},
+        {"key": "ESP-61", "summary": "Legal Entity Setup - MSA, NDA and SOW"},
+        {"key": "ESP-55", "summary": "Gen 0: Setup and Design"},
+        {"key": "ESP-3", "summary": "Review Contract - Continuation + termination"}
+      ],
+      "tdList": [
+        {"key": "ESP-71", "summary": "Comms about ESP to entire organization"},
+        {"key": "ESP-70", "summary": "Alignment with Victor Soldo (Timo's Office)"},
+        {"key": "ESP-64", "summary": "Location Strategy"},
+        {"key": "ESP-65", "summary": "Hiring plan"},
+        {"key": "ESP-67", "summary": "Transition readiness"},
+        {"key": "ESP-66", "summary": "Tech stack blueprint"},
+        {"key": "ESP-63", "summary": "Governance model and Org setup"},
+        {"key": "ESP-56", "summary": "Gen 1: Stabilize Core Ops"},
+        {"key": "ESP-60", "summary": "Gen 5: Transform"},
+        {"key": "ESP-59", "summary": "Gen 4: Scale"},
+        {"key": "ESP-58", "summary": "Gen 3: Integrate and Optimize"},
+        {"key": "ESP-57", "summary": "Gen 2: Enable Business Ops"}
+      ]
     },
     {
       "id": "ha",
@@ -143,31 +237,106 @@
       "t": 22,
       "tot": 70,
       "hi": [
-        "Finance: Revenue & EBITDA targets locked; SAP S/4 HANA confirmed as unified system, go-live Jan 2027",
-        "Admin, Legal & Compliance: Final merger timeline confirmed — Allgeier CH + Evora CH + a4c CH → one unified legal entity, go-live 1 Jan 2027",
-        "Comms: Evora-ACH Teams background circulated to ACH"
+        "Microsoft Tenant 'evoragroup' registered and licensed — announcement before townhall (EAH1DP-3)",
+        "Transfer pricing details prepared for discussion (EAH1DP-48)",
+        "Personio ACH data upload preparation underway (EAH1DP-1)"
       ],
       "lo": [
-        "Admin & Legal: Transfer of Administrative Policies from ACH to Evora CH — data privacy, risk & compliance under review",
-        "Finance: Transfer pricing & cost rate mapping in progress",
-        "Channel: MS Germany partnership; CH MS certifications for DE",
-        "People: Expense policy alignment underway"
+        "Transfer pricing for CH and DE delayed — owner was sick, details now prepared (EAH1DP-48)",
+        "MS Germany first conversation pending status update (EAH1DP-60)",
+        "Expense policy final review with Ecovis starting next week (EAH1DP-18)",
+        "Administrative policy transfer timeline from ACH to Evora CH still needed (EAH1DP-22)"
       ],
       "sup": [
-        "Continued HARTS Legal Team partnership",
-        "Finance sign-off on transfer pricing framework"
+        "Status update on MS Germany first conversation needed (EAH1DP-60)",
+        "Finalize transfer pricing for CH and DE — call to discuss (EAH1DP-48)"
       ],
       "nx": [
-        "Strategy: MS Portfolio success criteria; integration in overall strategy",
-        "Operating Model: Finalize Evora CH legal entity operating model",
-        "Channel: MS Germany first engagement to present combined capabilities",
-        "Innovation: Collaboration guidelines for innovation topics"
+        "Personio integration to start after email migration complete (EAH1DP-1)",
+        "Expense policy final review with Ecovis next week (EAH1DP-18)",
+        "IT Inventories review by extended deadline (EAH1DP-68)",
+        "Microsoft Tenant announcement before townhall with email re-routing (EAH1DP-3)"
+      ],
+      "done": [
+        "Microsoft Tenant evoragroup registered, tenant and license ready (EAH1DP-3)"
       ],
       "owners": "Karthik Setty (12) · Sebastian Bloch (12) · Sakthisree Venkatesan (10) · Timo Elbert (8) · Henrik Hausen (6) · Hari Ram (5)",
-      "done": [],
-      "dList": [],
-      "ipList": [],
-      "tdList": []
+      "dList": [
+        {"key": "EAH1DP-13", "summary": "Define roles & responsibilities based on resources and competencies"},
+        {"key": "EAH1DP-49", "summary": "Clarity on the skills in all companies - skill matrix creation"},
+        {"key": "EAH1DP-74", "summary": "Meetings with all Cluster Sales Team to show detailed Evora Connect Portfolio"},
+        {"key": "EAH1DP-61", "summary": "Define when and how to get the Microsoft partnership status in Germany"},
+        {"key": "EAH1DP-59", "summary": "Understanding how CH MS Certifications can be used for DE as well"},
+        {"key": "EAH1DP-52", "summary": "Prepare for merger of Finance Systems - process and people wise"},
+        {"key": "EAH1DP-27", "summary": "Establish plan for aligning ACH processes and Evora processes (finance)"},
+        {"key": "EAH1DP-32", "summary": "Alignment of financial corporate structures"},
+        {"key": "EAH1DP-31", "summary": "Set up new resources"},
+        {"key": "EAH1DP-30", "summary": "Define future systems & tools"},
+        {"key": "EAH1DP-29", "summary": "Define future KPIs"},
+        {"key": "EAH1DP-45", "summary": "Plan final timeline for merge of Allgeier CH + Evora CH + a4c CH into one entity"},
+        {"key": "EAH1DP-55", "summary": "Assess legal, financial implications and integration steps"},
+        {"key": "EAH1DP-54", "summary": "Align yearly targets for Revenue & EBITDA and execute goals towards it"},
+        {"key": "EAH1DP-15", "summary": "Harmonization of brands"},
+        {"key": "EAH1DP-71", "summary": "Allgeier CH"},
+        {"key": "EAH1DP-65", "summary": "Evaluate Viva Engage and holistically look at a common communications platform"},
+        {"key": "EAH1DP-66", "summary": "Evaluate internal tools of collaboration and arrive at a decision paper"},
+        {"key": "EAH1DP-46", "summary": "Plan IT Integration of ONE Finance System for the merged entity"},
+        {"key": "EAH1DP-56", "summary": "Evaluate technical tools and systems for integration"},
+        {"key": "EAH1DP-26", "summary": "Create an overview of ACH portfolio to Evora & A4C sales team & vice versa"},
+        {"key": "EAH1DP-73", "summary": "Understand how Marketing currently is done in Allgeier CH"},
+        {"key": "EAH1DP-41", "summary": "Set up a unified communications hub"},
+        {"key": "EAH1DP-64", "summary": "Create a single harmonized process for recruitment of DE resources for Evora Connect"},
+        {"key": "EAH1DP-25", "summary": "Integration of existing Evora MS team with Allgeier CH Cluster as Evora Connect"},
+        {"key": "EAH1DP-63", "summary": "Create Org Chart where Evora MS team is included"},
+        {"key": "EAH1DP-58", "summary": "Review and validate the proposed merger timeline with stakeholders"},
+        {"key": "EAH1DP-57", "summary": "Draft a detailed merger timeline based on gathered information"}
+      ],
+      "ipList": [
+        {"key": "EAH1DP-48", "summary": "Gain Clear understanding of cost rates on transfer pricing"},
+        {"key": "EAH1DP-60", "summary": "Have a first conversation with MS Germany to tell our story"},
+        {"key": "EAH1DP-68", "summary": "IT Inventories"},
+        {"key": "EAH1DP-3", "summary": "Set up new Microsoft Tenant ready for Integration"},
+        {"key": "EAH1DP-10", "summary": "Define future marketing team"},
+        {"key": "EAH1DP-38", "summary": "Set up collaboration guidelines for Innovation Topics"},
+        {"key": "EAH1DP-16", "summary": "Establish aligned onboarding & payroll processes"},
+        {"key": "EAH1DP-1", "summary": "Establish plan and execute for Go-live of Personio in ACH"},
+        {"key": "EAH1DP-18", "summary": "Alignment of expense policy"},
+        {"key": "EAH1DP-67", "summary": "Finalise Target Operating for Evora CH Legal Entity"},
+        {"key": "EAH1DP-24", "summary": "Alignment on Global delivery between Evora & ACH"},
+        {"key": "EAH1DP-6", "summary": "Establish plan for the integration of the MS portfolio into our strategy"},
+        {"key": "EAH1DP-5", "summary": "Establish process/plan for harmonised IT operations"},
+        {"key": "EAH1DP-21", "summary": "Definition and Harmonization of (future) risk and compliance systems"},
+        {"key": "EAH1DP-47", "summary": "Align on data privacy concepts and documents"},
+        {"key": "EAH1DP-51", "summary": "Exchange information regarding delivery methodologies and resource scheduling"},
+        {"key": "EAH1DP-22", "summary": "Execute Merger Timeline successfully - critical steps to be focused first"},
+        {"key": "EAH1DP-62", "summary": "Align with Alexander Parker to get MS story on one common story"},
+        {"key": "EAH1DP-40", "summary": "Establish a plan for internal communication publications"},
+        {"key": "EAH1DP-37", "summary": "Define a shared innovation framework"}
+      ],
+      "tdList": [
+        {"key": "EAH1DP-2", "summary": "Define success criteria for the Microsoft Portfolio for next 3 years"},
+        {"key": "EAH1DP-42", "summary": "Set up communication toolkits for Leadership"},
+        {"key": "EAH1DP-77", "summary": "Conduct an induction session with ACH, walk through Evora's journey"},
+        {"key": "EAH1DP-43", "summary": "Create \"after harmonization\"-stories"},
+        {"key": "EAH1DP-14", "summary": "Establish plan for \"End-to-End\" Go-to-Market"},
+        {"key": "EAH1DP-50", "summary": "Defining process on how to ask and share resources"},
+        {"key": "EAH1DP-78", "summary": "Create Legal Merger execution Plan with Milestones & Checklist for Jan 1, 2027 Go-Live"},
+        {"key": "EAH1DP-17", "summary": "Identify people & culture processes at ACH & Evora and start harmonize them"},
+        {"key": "EAH1DP-70", "summary": "All4Cloud"},
+        {"key": "EAH1DP-53", "summary": "Establish collaboration process/plan for tools like Lucid, Atlassian etc."},
+        {"key": "EAH1DP-39", "summary": "Create connecting opportunities between Evora & ACH employees"},
+        {"key": "EAH1DP-69", "summary": "Evora IT"},
+        {"key": "EAH1DP-11", "summary": "Set up a marketing strategy"},
+        {"key": "EAH1DP-12", "summary": "Define target markets, marketing structure, channels"},
+        {"key": "EAH1DP-76", "summary": "Develop onboarding plan for ACH employees using Slack, Lucid, and Jira"},
+        {"key": "EAH1DP-4", "summary": "Set up Personio as an interface for People Processes"},
+        {"key": "EAH1DP-44", "summary": "Thematic AMAs (ask \"cluster\" anything)"},
+        {"key": "EAH1DP-20", "summary": "Establish a plan for future operations strategy"},
+        {"key": "EAH1DP-19", "summary": "Define common employee handbook"},
+        {"key": "EAH1DP-9", "summary": "Establish plan for the expansion of MS portfolio in DE & CH"},
+        {"key": "EAH1DP-7", "summary": "Establish plan for worldwide expansion of the Microsoft portfolio"},
+        {"key": "EAH1DP-8", "summary": "Definition of ACH eCommerce Positioning within Evora Portfolio"}
+      ]
     },
     {
       "id": "ocm",
@@ -182,23 +351,74 @@
       "t": 22,
       "tot": 48,
       "hi": [
-        "Evora-ACH Harmonization internal communication started with MS Teams background",
-        "Next two sets of comms posts shared and finalized with ACH — posting in the following week",
-        "Feedback from ACH has been cascaded internally"
+        "Sathana confirmed as interim Mini-CXO to support Timo (ESOH-30)",
+        "Talent Evaluation 2.0 assessment being supported (ESOH-53)",
+        "Job Architecture strategy office support ongoing (ESOH-54)"
       ],
       "lo": [],
       "sup": [
-        "Continued partnership"
+        "MiniCXO permanent role connection to Timo to be confirmed (ESOH-30)"
       ],
       "nx": [
-        "ACH harmonization related posting to be created",
-        "Innovation campaign support if required",
-        "Leadership comms for the upcoming week"
+        "Timo alignment on E&C topics comms (ESOH-59)",
+        "Continue routine ACH harmonisation updates (ESOH-1)",
+        "MiniCXO support for Timo to be confirmed with Sathana (ESOH-30)"
       ],
       "done": [],
-      "dList": [],
-      "ipList": [],
-      "tdList": []
+      "dList": [
+        {"key": "ESOH-51", "summary": "Agenda for Strategy Office 2026 Workshop - May 7th"},
+        {"key": "ESOH-40", "summary": "Month 1 - Update"},
+        {"key": "ESOH-35", "summary": "Introduction to AI and what Evora wishes to do"},
+        {"key": "ESOH-34", "summary": "We Transform You grow - What does it mean for Market"},
+        {"key": "ESOH-33", "summary": "We Transform You grow - What does it mean for People"},
+        {"key": "ESOH-32", "summary": "MS Teams BG to Evora Group"},
+        {"key": "ESOH-9", "summary": "Was not Needed - Strategy, OKR & Goals Comms Cascade - EU"},
+        {"key": "ESOH-3", "summary": "Create a template for OKR Tracking 2026"},
+        {"key": "ESOH-28", "summary": "Put together slides for ACH Hour on 100-Day harmonization"},
+        {"key": "ESOH-14", "summary": "Global Leadership/People Managers to their next level"},
+        {"key": "ESOH-17", "summary": "Global Leadership/People Managers to their next level"},
+        {"key": "ESOH-16", "summary": "EGL to Whole Org"},
+        {"key": "ESOH-15", "summary": "EGL to Global Leadership"},
+        {"key": "ESOH-18", "summary": "Global Leadership/People Managers to their next level"},
+        {"key": "ESOH-11", "summary": "Strategy, OKR & Goals Comms Cascade - Americas"},
+        {"key": "ESOH-10", "summary": "Strategy, OKR & Goals Comms Cascade - IN"},
+        {"key": "ESOH-5", "summary": "Support for Thomas Kredel No longer Needed"},
+        {"key": "ESOH-13", "summary": "EGL to Whole Org"},
+        {"key": "ESOH-20", "summary": "EGL to Global Leadership"},
+        {"key": "ESOH-19", "summary": "EGL to Whole Org"},
+        {"key": "ESOH-12", "summary": "EGL to Global Leadership"}
+      ],
+      "ipList": [
+        {"key": "ESOH-59", "summary": "Timo alignment on E&C topics - Comms"},
+        {"key": "ESOH-53", "summary": "Talent Evaluation Assessment - 2.0"},
+        {"key": "ESOH-54", "summary": "Job Architecture"},
+        {"key": "ESOH-1", "summary": "Evora & ACH Harmonisation: Create Routine Updates on Progress"},
+        {"key": "ESOH-30", "summary": "Support MiniCXO for Timo"}
+      ],
+      "tdList": [
+        {"key": "ESOH-57", "summary": "JD for Finance - Sonja's replacement"},
+        {"key": "ESOH-56", "summary": "Strategy office Comms - One pager"},
+        {"key": "ESOH-50", "summary": "Recognition Boxes for Innovation Champions 2025"},
+        {"key": "ESOH-52", "summary": "Clarifying Billing for ESP Partners who join Evora"},
+        {"key": "ESOH-24", "summary": "Innovation Campaign - On-going"},
+        {"key": "ESOH-25", "summary": "OMA : Organisational Maturity Assessment"},
+        {"key": "ESOH-49", "summary": "Documentation of Personio roll out & plan"},
+        {"key": "ESOH-48", "summary": "Documentation of Marketing plan for ACH"},
+        {"key": "ESOH-47", "summary": "Combined Portfolio of ACH with Evora Offerings"},
+        {"key": "ESOH-46", "summary": "Documentation of Collaboration tool between ACH and Evora Group"},
+        {"key": "ESOH-45", "summary": "Documentation of Agreed upon Merger Plan"},
+        {"key": "ESOH-44", "summary": "Consolidation and documentation of all decision, processes and plans ahead"},
+        {"key": "ESOH-43", "summary": "Evora & ACH: Confluence Page Creation"},
+        {"key": "ESOH-42", "summary": "Month 3 - Update"},
+        {"key": "ESOH-41", "summary": "Month 2 - Update"},
+        {"key": "ESOH-37", "summary": "A4C + ACH + Evora group coming together - what that means"},
+        {"key": "ESOH-36", "summary": "Unicorn Introduction and explanation"},
+        {"key": "ESOH-38", "summary": "Sunrise Goals and what it means for all"},
+        {"key": "ESOH-39", "summary": "Overall Comms around Evora Strategy: ACH - Ongoing"},
+        {"key": "ESOH-31", "summary": "Overall Comms around Evora Strategy: Evora - Ongoing"},
+        {"key": "ESOH-6", "summary": "Create Strategy Office Target Operating Model - short, mid, long term"},
+        {"key": "ESOH-21", "summary": "Talk with Thomas about general guidelines"}
+      ]
     },
     {
       "id": "rec",
@@ -289,23 +509,10 @@
       "i": 0,
       "t": 0,
       "tot": 0,
-      "hi": [
-        "Discovery calls with idea contributors done",
-        "Market & technical research at preliminary stage",
-        "Innovation Lab visit & workshop planned for week of 4th May 2026",
-        "RPA scoped for leadership dashboard"
-      ],
+      "hi": [],
       "lo": [],
-      "sup": [
-        "Active participation from leadership to prioritise innovation ideas",
-        "External partnership introductions (universities, startups)"
-      ],
-      "nx": [
-        "Prioritise & finalise POC ideas",
-        "Develop Innovation Lab Handbook (governance, process, evaluation)",
-        "Create external partnership proposal (universities, startups)",
-        "Develop internal & external comms plan"
-      ],
+      "sup": [],
+      "nx": [],
       "done": [],
       "dList": [],
       "ipList": [],
@@ -324,20 +531,10 @@
       "i": 0,
       "t": 0,
       "tot": 0,
-      "hi": [
-        "Tech Fellows: 4 months in, E2E product dev across 4 tools; learning business topics and exploring Claude",
-        "MBA Fellows: 2 months in; Sathana onboarded as Interim Mini-CXO with 30-60-90 day plan from Timo; 5 fellows joined on May 4th"
-      ],
+      "hi": [],
       "lo": [],
-      "sup": [
-        "Learning topics from Sakthi to be aligned internally",
-        "Continued mentorship from leadership"
-      ],
-      "nx": [
-        "Learning topics from Sakthi to be aligned internally",
-        "Showcase readouts from Tech Fellows on 4 tools",
-        "MBA Fellow mid-term review planning"
-      ],
+      "sup": [],
+      "nx": [],
       "done": [],
       "dList": [],
       "ipList": [],
@@ -356,25 +553,24 @@
       "t": 1,
       "tot": 2,
       "hi": [
-        "Leave Policy Harmonization: 90% completion",
-        "Employee Retention & Upskilling: 70% completion",
-        "Amber Dashboard pilot for OOE in progress"
+        "MSA currently being discussed with Evora India for ESP India setup (ESOH-55)"
       ],
-      "lo": [
-        "OOE (Overall Operating Efficiency): 40% completion — below pace",
-        "Utilization Improvement & Governance: 20% completion — below pace",
-        "IT Gatekeeping & ESH Committee Formation yet to be formally started — 4 projects need re-initiation"
-      ],
+      "lo": [],
       "sup": [
-        "Active participation and timely contribution to the activities lined up for the program"
+        "MSA finalization needed with Evora India"
       ],
       "nx": [
-        "Leave policy harmonization: Optimized Leave policy processes to come back on 5th May"
+        "Complete MSA discussion with Evora India (ESOH-55)",
+        "Finalize Head of Finance ESP India JD (ESOH-58)"
       ],
       "done": [],
       "dList": [],
-      "ipList": [],
-      "tdList": []
+      "ipList": [
+        {"key": "ESOH-55", "summary": "Setting up of ESP in Evora India"}
+      ],
+      "tdList": [
+        {"key": "ESOH-58", "summary": "Head of Finance - ESP - India Role"}
+      ]
     }
   ],
   "sum": [
@@ -449,5 +645,5 @@
       "h": "OOE & Utilization below pace; 4 projects need re-initiation"
     }
   ],
-  "updatedAt": "2026-05-26T13:17:43.634Z"
+  "updatedAt": "2026-05-26T00:00:00.000Z"
 }
