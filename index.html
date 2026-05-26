@@ -238,6 +238,7 @@ ul.bl li.lo::before{background:var(--amber)}
 .e-tb-btn{background:rgba(255,255,255,.15);border:none;color:#fff;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:500;font-family:var(--font);transition:background .15s}
 .e-tb-btn:hover{background:rgba(255,255,255,.28)}
 .e-tb-btn.ex{background:rgba(220,38,38,.35)}.e-tb-btn.ex:hover{background:rgba(220,38,38,.55)}
+.e-tb-btn.pub{background:rgba(5,150,105,.45)}.e-tb-btn.pub:hover{background:rgba(5,150,105,.7)}
 #e-modal{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center}
 .e-mbg{position:absolute;inset:0;background:rgba(0,0,0,.55)}
 .e-mbox{position:relative;background:var(--card);border-radius:16px;padding:24px;width:min(540px,93vw);box-shadow:0 20px 60px rgba(0,0,0,.35)}
@@ -272,6 +273,7 @@ ul.bl li.lo::before{background:var(--amber)}
 <!-- EDIT TOOLBAR -->
 <div id="e-toolbar">
   <span>✏ EDIT MODE &nbsp;·&nbsp; cheat code: <code>evora</code></span>
+  <button class="e-tb-btn pub" onclick="publishToGitHub()" title="Commit changes to GitHub — Vercel redeploys in ~30s">🚀 Publish</button>
   <button class="e-tb-btn" onclick="exportCode()" title="Copy WS[] and SUM[] arrays to clipboard">⬇ Export Code</button>
   <button class="e-tb-btn" onclick="if(confirm('Reset all edits to defaults?')){localStorage.removeItem('evora_ws');localStorage.removeItem('evora_sum');location.reload();}" title="Clear saved edits and reload defaults">↺ Reset</button>
   <button class="e-tb-btn ex" onclick="toggleEdit()">✕ Exit</button>
@@ -996,6 +998,20 @@ function saveArr(wsId,field){
   w[field]=ta.value.split('\n').map(s=>s.trim()).filter(Boolean);
   document.getElementById('e-modal')?.remove();
   reRenderAll();
+}
+
+async function publishToGitHub(){
+  showToast('⏳ Publishing…');
+  try{
+    const res=await fetch('/api/publish',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({ws:WS,sum:SUM})
+    });
+    const d=await res.json();
+    if(res.ok){showToast('✓ Published — Vercel deploying (~30s)');}
+    else{showToast('❌ '+(d.error||res.status));}
+  }catch(e){showToast('❌ '+e.message);}
 }
 
 function exportCode(){
