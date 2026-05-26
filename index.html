@@ -273,6 +273,7 @@ ul.bl li.lo::before{background:var(--amber)}
 <div id="e-toolbar">
   <span>✏ EDIT MODE &nbsp;·&nbsp; cheat code: <code>evora</code></span>
   <button class="e-tb-btn" onclick="exportCode()" title="Copy WS[] and SUM[] arrays to clipboard">⬇ Export Code</button>
+  <button class="e-tb-btn" onclick="if(confirm('Reset all edits to defaults?')){localStorage.removeItem('evora_ws');localStorage.removeItem('evora_sum');location.reload();}" title="Clear saved edits and reload defaults">↺ Reset</button>
   <button class="e-tb-btn ex" onclick="toggleEdit()">✕ Exit</button>
 </div>
 <div id="e-toast"></div>
@@ -824,6 +825,16 @@ function tgDark(){
   if(document.getElementById('s-ws').classList.contains('active'))setTimeout(renderWS,50);
 }
 
+// Load any previously saved edits from localStorage
+(function loadSaved(){
+  try{
+    const ws=localStorage.getItem('evora_ws');
+    const sm=localStorage.getItem('evora_sum');
+    if(ws){const d=JSON.parse(ws);d.forEach((v,i)=>{if(WS[i])Object.assign(WS[i],v);});}
+    if(sm){const d=JSON.parse(sm);d.forEach((v,i)=>{if(SUM[i])Object.assign(SUM[i],v);});}
+  }catch(e){}
+})();
+
 renderSumTable();
 renderOvCharts();
 
@@ -865,6 +876,14 @@ function toggleEdit(){
 function reRenderAll(){
   renderSumTable();
   if(document.getElementById('s-ws').classList.contains('active'))renderWS();
+  if(editMode)persistChanges();
+}
+
+function persistChanges(){
+  try{
+    localStorage.setItem('evora_ws',JSON.stringify(WS));
+    localStorage.setItem('evora_sum',JSON.stringify(SUM));
+  }catch(e){}
 }
 
 // Click handler for all edit interactions
