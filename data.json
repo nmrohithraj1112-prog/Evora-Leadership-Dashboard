@@ -98,8 +98,7 @@
         "Talent 2.0 overall delayed due to 2025 performance evaluation cycle and 2026 goal settings (ELUE-127)"
       ],
       "sup": [
-        "Confirm mid-year review timing (August) after internal alignment",
-        "Cluster-level headcount data needed to calibrate soft distribution ranges"
+        "Confirm mid-year review timing (August) after internal alignment"
       ],
       "nx": [
         "Foundation & Governance phase in progress (ELUE-127)",
@@ -191,8 +190,7 @@
         "Legal advisor questions pending response for contract continuation/termination (ESP-3)"
       ],
       "sup": [
-        "Legal advisor questions to be responded to for contract review (ESP-3)",
-        "Alignment needed with Victor Soldo, Timo's Office (ESP-70)"
+        "Legal advisor questions to be responded to for contract review (ESP-3)"
       ],
       "nx": [
         "Commercial model finalization (ESP-68)",
@@ -355,7 +353,9 @@
         "Talent Evaluation 2.0 assessment being supported (ESOH-53)",
         "Job Architecture strategy office support ongoing (ESOH-54)"
       ],
-      "lo": [],
+      "lo": [
+        "MiniCXO permanent connection to Timo still to be confirmed (ESOH-30)"
+      ],
       "sup": [
         "MiniCXO permanent role connection to Timo to be confirmed (ESOH-30)"
       ],
@@ -645,5 +645,5 @@
       "h": "OOE & Utilization below pace; 4 projects need re-initiation"
     }
   ],
-  "updatedAt": "2026-05-26T00:00:00.000Z"
+  "updatedAt": "2026-05-27T00:00:00.000Z"
 }
