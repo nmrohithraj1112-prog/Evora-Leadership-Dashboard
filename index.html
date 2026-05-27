@@ -273,7 +273,7 @@ ul.bl li.lo::before{background:var(--amber)}
     </div>
   </div>
   <div class="topbar-r">
-    <div class="live-badge">Live from Jira · 26 May 2026</div>
+    <div class="live-badge">Live from Jira · <span id="live-date">—</span></div>
     <button class="dark-btn" id="dtb" onclick="tgDark()">◑</button>
   </div>
 </header>
@@ -1178,6 +1178,7 @@ async function initData(){
       const d=await r.json();
       if(d.ws) d.ws.forEach((v,i)=>{if(WS[i])Object.assign(WS[i],v);});
       if(d.sum) d.sum.forEach((v,i)=>{if(SUM[i])Object.assign(SUM[i],v);});
+      if(d.updatedAt){const ud=new Date(d.updatedAt);document.getElementById('live-date').textContent=ud.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
       serverLoaded=true;
     }
   }catch(e){}
