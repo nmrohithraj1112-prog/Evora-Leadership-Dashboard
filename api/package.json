@@ -1,0 +1,16 @@
+{
+  "name": "evora-dashboard-api",
+  "version": "1.0.0",
+  "description": "Azure Functions API for Evora HARTS Dashboard",
+  "main": "publish.js",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests\""
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
