@@ -65,7 +65,7 @@ a{text-decoration:none}button{font-family:var(--font);cursor:pointer}
 .dark-btn:hover{background:var(--bg2);border-color:var(--border2)}
 
 /*  NAV TABS  */
-.nav{background:var(--card);border-bottom:1px solid var(--border);padding:0 32px;display:flex;gap:4px;overflow-x:auto}
+.nav{background:var(--card);border-bottom:1px solid var(--border);padding:0 32px;display:flex;gap:4px;overflow-x:auto;position:sticky;top:64px;z-index:199;box-shadow:var(--shadow-sm)}
 .nav::-webkit-scrollbar{height:0}
 .nb{padding:14px 18px;border:none;background:none;color:var(--text3);font-size:13px;font-weight:500;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap;transition:all .15s;font-family:var(--font);letter-spacing:-.1px}
 .nb.active{color:var(--navy);border-bottom-color:var(--navy);font-weight:600}
@@ -127,7 +127,7 @@ a{text-decoration:none}button{font-family:var(--font);cursor:pointer}
 .ws-left{display:flex;align-items:center;gap:14px}
 .ws-num{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(30,58,95,.3)}
 .wsn{font-size:17px;font-weight:700;color:var(--text);letter-spacing:-.3px}
-.wsm{font-size:9px;color:var(--text3);margin-top:1px;font-weight:400}
+.wsm{font-size:9px;color:var(--text2);margin-top:1px;font-weight:400}
 .ws-right{display:flex;align-items:center;gap:14px}
 .st-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.2px}
 .st-on{background:var(--green2);color:var(--gtx)}
@@ -332,7 +332,7 @@ ul.bl li.lo::before{background:var(--amber)}
     </div>
   </div>
 
-  <div class="sh"><h2>Program Health at a Glance</h2><div class="sh-line"></div><span class="sh-meta">All Active Workstreams · 22 May 2026</span></div>
+  <div class="sh"><h2>Program Health</h2><div class="sh-line"></div><span class="sh-meta"></span></div>
 
   <div class="tbl-card">
     <table class="tbl">
@@ -347,11 +347,13 @@ ul.bl li.lo::before{background:var(--amber)}
     </table>
   </div>
 
+  <!-- Execution Snapshot section hidden — not required
   <div class="sh"><h2>Execution Snapshot</h2><div class="sh-line"></div></div>
   <div class="c2">
     <div class="cc"><div class="cc-lbl">Task Breakdown by Jira Project</div><div style="height:220px"><canvas id="ch-s"></canvas></div></div>
     <div class="cc"><div class="cc-lbl">Completion % by Workstream</div><div style="height:220px"><canvas id="ch-p"></canvas></div></div>
   </div>
+  -->
 
   <div class="footer">© 2026 HARTS® Consulting &nbsp;·&nbsp; HARTS × Evora IT Solutions &nbsp;·&nbsp; Transformation Program Updates</div>
 </div>
@@ -800,6 +802,8 @@ function sc(s){return s==='on'?G:s==='mon'?A:R}
 function sl(s){return s==='on'?'On Track':s==='mon'?'Monitor':'At Risk'}
 function spc(s){return s==='on'?'st-on':s==='mon'?'st-mon':'st-risk'}
 function pof(d,t){return t>0?Math.round(d/t*100):0}
+// Auto-calculate pct from done/total when Jira has closed items; fall back to stored pct otherwise
+function wPct(w){const tot=(w.d||0)+(w.i||0)+(w.t||0);return(w.d>0&&tot>0)?Math.round(w.d/tot*100):w.pct;}
 function isDk(){return document.documentElement.getAttribute('data-theme')==='dark'}
 function gc(){return isDk()?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.05)'}
 function tc(){return isDk()?'#475569':'#9CA3AF'}
@@ -809,11 +813,14 @@ function renderSumTable(){
   const tb=document.getElementById('stb');if(!tb)return;
   tb.innerHTML=SUM.map((w,i)=>{
     const c=sc(w.s),l=sl(w.s);
+    const ws=WS.find(x=>x.name===w.n);
+    const livePct=ws?wPct(ws):w.p;
+    if(ws&&livePct!=null)w.p=livePct;
     return`<tr>
       <td>${editMode?`<span class="e" data-e="sum|${i}|n">${w.n}</span>`:`<span class="pl" onclick="jTo('${IDS[i]}')">${w.n}</span>`}</td>
       <td style="color:var(--text2);font-size:12px">${E('sum',String(i),'l',w.l)}</td>
       <td><span class="sbadge"${editMode?` data-sum-st="${i}" title="Click to cycle: On Track → Monitor → At Risk"`:''}><span style="color:${c}">${l}</span></span></td>
-      <td><div class="pbar-wrap"><div class="pbar-track"><div class="pbar-fill" style="width:${w.p||0}%;background:${c}"></div></div><span class="pct-lbl">${EP('sum',String(i),'p',w.p)}</span></div></td>
+      <td><div class="pbar-wrap"><div class="pbar-track"><div class="pbar-fill" style="width:${livePct||0}%;background:${c}"></div></div><span class="pct-lbl">${EP('sum',String(i),'p',livePct)}</span></div></td>
       <td style="font-size:12px;color:var(--text2);line-height:1.45">${E('sum',String(i),'h',w.h)}</td>
     </tr>`;
   }).join('');
@@ -858,7 +865,8 @@ function renderWS(){
     const c=sc(w.st),l=sl(w.st),sp=spc(w.st);
     const whi=w.hi||[],wlo=w.lo||[],wsup=w.sup||[],wnx=w.nx||[],wdone=w.done||[];
     const dp=pof(w.d,w.tot),ip=pof(w.i,w.tot),tp=pof(w.t,w.tot);
-    const pd=w.pct!=null?(editMode?EP('ws',w.id,'pct',w.pct):w.pct+'%'):(editMode?E('ws',w.id,'phase',w.phase||''):w.phase||'—');
+    const _pct=wPct(w);
+    const pd=_pct!=null?(editMode?EP('ws',w.id,'pct',_pct):_pct+'%'):(editMode?E('ws',w.id,'phase',w.phase||''):w.phase||'—');
     const jbase=`https://evorait.atlassian.net/issues/?jql=project%20%3D%20${w.proj}`;
 
     // CELL 1 — Updates
@@ -1025,7 +1033,7 @@ function renderWS(){
           <div class="ws-num">${w.num}</div>
           <div>
             <div class="wsn">${E('ws',w.id,'name',w.name)}</div>
-            <div class="wsm">Lead: <strong>${E('ws',w.id,'lead',w.lead)}</strong>${w.phase?' &nbsp;·&nbsp; Phase: '+E('ws',w.id,'phase',w.phase):''}</div>
+            <div class="wsm"><strong>Lead: ${E('ws',w.id,'lead',w.lead)}</strong>${w.phase?' &nbsp;·&nbsp; <strong>Phase: '+E('ws',w.id,'phase',w.phase)+'</strong>':''}</div>
           </div>
         </div>
         <div class="ws-right">
