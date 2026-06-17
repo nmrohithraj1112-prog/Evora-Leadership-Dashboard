@@ -316,7 +316,7 @@ ul.bl li.lo::before{background:var(--amber)}
       <div class="kpi-lbl">On Track</div>
       <div class="kpi-val">9</div>
       <div class="kpi-meta">Of 10 workstreams</div>
-      <div class="kpi-trend up"> 90% green</div>
+      <div class="kpi-trend up"> 90% On Track</div>
     </div>
     <div class="kpi" style="--kc:var(--amber)">
       <div class="kpi-lbl">Needs Attention</div>
@@ -1189,11 +1189,11 @@ function tgDark(){
 // Baseline = server state at load time (used for 3-way merge on publish)
 let BASELINE={ws:null,sum:null};
 
-// Load data.json from server, then apply any local unsaved edits on top
+// Load data from Azure Table Storage API, then apply any local unsaved edits on top
 async function initData(){
   let serverLoaded=false;
   try{
-    const r=await fetch('/data.json?t='+Date.now());
+    const r=await fetch('/api/data?t='+Date.now());
     if(r.ok){
       const d=await r.json();
       if(d.ws) d.ws.forEach((v,i)=>{if(WS[i])Object.assign(WS[i],v);});
