@@ -20,9 +20,9 @@ app.http('data', {
   authLevel: 'anonymous',
   handler: async (request, context) => {
     try {
-      const connectionString = process.env.AzureWebJobsStorage;
+      const connectionString = process.env.STORAGE_CONNECTION_STRING;
       if (!connectionString) {
-        return { status: 500, jsonBody: { error: 'AzureWebJobsStorage not configured' } };
+        return { status: 500, jsonBody: { error: 'STORAGE_CONNECTION_STRING not configured' } };
       }
 
       const tableClient = TableClient.fromConnectionString(connectionString, TABLE_NAME);
@@ -58,9 +58,9 @@ app.http('publish', {
     if (!ws || !sum) return { status: 400, jsonBody: { error: 'Missing ws or sum in body' } };
 
     try {
-      const connectionString = process.env.AzureWebJobsStorage;
+      const connectionString = process.env.STORAGE_CONNECTION_STRING;
       if (!connectionString) {
-        return { status: 500, jsonBody: { error: 'AzureWebJobsStorage not configured' } };
+        return { status: 500, jsonBody: { error: 'STORAGE_CONNECTION_STRING not configured' } };
       }
 
       const tableClient = TableClient.fromConnectionString(connectionString, TABLE_NAME);
