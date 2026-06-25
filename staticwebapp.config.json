@@ -6,20 +6,17 @@
   "routes": [
     {
       "route": "/api/*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["evorastaff"]
     },
     {
       "route": "/*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["evorastaff"]
     }
   ],
   "responseOverrides": {
     "401": {
       "statusCode": 302,
       "redirect": "/.auth/login/aad"
-    },
-    "403": {
-      "rewrite": "/index.html"
     }
   },
   "globalHeaders": {
