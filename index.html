@@ -281,7 +281,7 @@ ul.bl li.lo::before{background:var(--amber)}
 <!-- EDIT TOOLBAR -->
 <div id="e-toolbar">
   <span>✏ EDIT MODE &nbsp;·&nbsp;<code></code></span>
-  <button class="e-tb-btn pub" onclick="publishToGitHub()" title="Commit changes to GitHub — Vercel redeploys in ~30s">Publish</button>
+  <button class="e-tb-btn pub" onclick="publishToAzure()" title="Save changes to Azure (saved instantly)">Publish</button>
   <button class="e-tb-btn" onclick="exportCode()" title="Copy WS[] and SUM[] arrays to clipboard">⬇ Export Code</button>
   <button class="e-tb-btn" onclick="if(confirm('Reset all edits to defaults?')){localStorage.removeItem('evora_ws');localStorage.removeItem('evora_sum');location.reload();}" title="Clear saved edits and reload defaults">↺ Reset</button>
   <button class="e-tb-btn ex" onclick="toggleEdit()">✕ Exit</button>
@@ -1412,24 +1412,24 @@ function saveArr(wsId,field){
   reRenderAll();
 }
 
-async function publishToGitHub(){
-  showToast('⏳ Publishing…');
+async function publishToAzure(){
+  showToast('⏳ Saving…');
   try{
     const res=await fetch('/api/publish',{
       method:'POST',
-      headers:{'Content-Type':'application/json','x-publish-secret':'evora-dashboard-2026'},
+      headers:{'Content-Type':'application/json'},
       body:JSON.stringify({ws:WS,sum:SUM,baseline:BASELINE})
     });
     const d=await res.json();
     if(res.ok){
-      // Update baseline to reflect what was just published; clear local overrides
+      // Update baseline to reflect what was just saved; clear local overrides
       BASELINE={ws:JSON.parse(JSON.stringify(WS)),sum:JSON.parse(JSON.stringify(SUM))};
       localStorage.removeItem('evora_ws');
       localStorage.removeItem('evora_sum');
-      showToast('✓ Published — Vercel deploying (~30s)');
+      showToast('✓ Saved to Azure');
     }else if(res.status===409){
-      showToast('⚠ Conflict — someone else published simultaneously. Retrying…');
-      setTimeout(publishToGitHub,1500);
+      showToast('⚠ Conflict — someone else saved simultaneously. Retrying…');
+      setTimeout(publishToAzure,1500);
     }else{
       showToast('❌ '+(d.error||res.status));
     }
