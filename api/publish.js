@@ -59,19 +59,23 @@ app.http('publish', {
   methods: ['POST'],
   authLevel: 'anonymous',
   handler: async (request, context) => {
-    // Primary auth: require a valid signed-in identity from the SSO login.
-    // The platform injects x-ms-client-principal only for authenticated sessions.
+    // Two accepted callers, nothing else:
+    //  (1) a human with a valid SSO session carrying the evorastaff role, or
+    //  (2) the automation routine presenting the strong machine key.
     const principal = getPrincipal(request);
-    if (!principal || !principal.userId) {
-      return { status: 401, jsonBody: { error: 'Authentication required' } };
-    }
-    const editor = principal.userDetails || principal.userId;
+    const isEvoraStaff = !!(principal && principal.userId &&
+      Array.isArray(principal.userRoles) && principal.userRoles.includes('evorastaff'));
 
-    // Secondary defence-in-depth: optional shared secret, if configured.
-    const SECRET = process.env.PUBLISH_SECRET;
-    if (SECRET && request.headers.get('x-publish-secret') !== SECRET) {
+    const API_KEY = process.env.PUBLISH_API_KEY;
+    const presentedKey = request.headers.get('x-api-key');
+    const isAutomation = !!(API_KEY && presentedKey === API_KEY);
+
+    if (!isEvoraStaff && !isAutomation) {
       return { status: 401, jsonBody: { error: 'Unauthorized' } };
     }
+    const editor = isEvoraStaff
+      ? (principal.userDetails || principal.userId)
+      : 'automation (daily refresh)';
 
     // Read raw text first so we can enforce a size cap before parsing.
     let raw;

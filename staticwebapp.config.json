@@ -5,6 +5,10 @@
   },
   "routes": [
     {
+      "route": "/api/publish",
+      "allowedRoles": ["anonymous"]
+    },
+    {
       "route": "/api/*",
       "allowedRoles": ["evorastaff"]
     },
