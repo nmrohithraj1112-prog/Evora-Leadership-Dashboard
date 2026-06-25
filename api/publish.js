@@ -5,6 +5,8 @@ const TABLE_NAME = 'dashboarddata';
 const PARTITION_KEY = 'dashboard';
 const ROW_KEY = 'data';
 
+const MAX_BODY_BYTES = 512 * 1024; // 512 KB cap on incoming edit payload
+
 function merge3(base, mine, server) {
   const result = { ...server };
   for (const key of Object.keys({ ...base, ...mine })) {
@@ -13,6 +15,18 @@ function merge3(base, mine, server) {
     }
   }
   return result;
+}
+
+// Decode the identity Azure Static Web Apps injects after SSO login.
+// This header is set server-side by the SWA platform and cannot be forged by the browser.
+function getPrincipal(request) {
+  const header = request.headers.get('x-ms-client-principal');
+  if (!header) return null;
+  try {
+    return JSON.parse(Buffer.from(header, 'base64').toString('utf8'));
+  } catch {
+    return null;
+  }
 }
 
 app.http('data', {
@@ -45,17 +59,36 @@ app.http('publish', {
   methods: ['POST'],
   authLevel: 'anonymous',
   handler: async (request, context) => {
+    // Primary auth: require a valid signed-in identity from the SSO login.
+    // The platform injects x-ms-client-principal only for authenticated sessions.
+    const principal = getPrincipal(request);
+    if (!principal || !principal.userId) {
+      return { status: 401, jsonBody: { error: 'Authentication required' } };
+    }
+    const editor = principal.userDetails || principal.userId;
+
+    // Secondary defence-in-depth: optional shared secret, if configured.
     const SECRET = process.env.PUBLISH_SECRET;
     if (SECRET && request.headers.get('x-publish-secret') !== SECRET) {
       return { status: 401, jsonBody: { error: 'Unauthorized' } };
     }
 
+    // Read raw text first so we can enforce a size cap before parsing.
+    let raw;
+    try { raw = await request.text(); }
+    catch { return { status: 400, jsonBody: { error: 'Could not read body' } }; }
+    if (raw.length > MAX_BODY_BYTES) {
+      return { status: 413, jsonBody: { error: 'Payload too large' } };
+    }
+
     let body;
-    try { body = await request.json(); }
+    try { body = JSON.parse(raw); }
     catch { return { status: 400, jsonBody: { error: 'Invalid JSON body' } }; }
 
     const { ws, sum, baseline } = body;
-    if (!ws || !sum) return { status: 400, jsonBody: { error: 'Missing ws or sum in body' } };
+    if (!Array.isArray(ws) || !Array.isArray(sum)) {
+      return { status: 400, jsonBody: { error: 'ws and sum must be arrays' } };
+    }
 
     try {
       const connectionString = process.env.STORAGE_CONNECTION_STRING;
@@ -90,7 +123,14 @@ app.http('publish', {
         mergedSum = sum;
       }
 
-      const payload = { ws: mergedWs, sum: mergedSum, updatedAt: new Date().toISOString() };
+      const payload = {
+        ws: mergedWs,
+        sum: mergedSum,
+        updatedAt: new Date().toISOString(),
+        lastEditedBy: editor,
+        lastEditedAt: new Date().toISOString()
+      };
+      context.log(`Dashboard edited by ${editor} at ${payload.lastEditedAt}`);
 
       const entity = {
         partitionKey: PARTITION_KEY,
