@@ -1,6 +1,177 @@
 {
   "ws": [
     {
+      "id": "ja",
+      "d": 2,
+      "i": 2,
+      "t": 6,
+      "tot": 10,
+      "dList": [
+        {
+          "key": "ELUE-68",
+          "summary": "Job Architecture PHASE I — Discovery & Consolidation​"
+        },
+        {
+          "key": "ELUE-29",
+          "summary": "Finalize external for Job Architecture."
+        }
+      ],
+      "ipList": [
+        {
+          "key": "ELUE-73",
+          "summary": "Job Architecture PHASE II — Global Job Families & Levels​"
+        },
+        {
+          "key": "ELUE-1",
+          "summary": "Job Architecture"
+        }
+      ],
+      "tdList": [
+        {
+          "key": "ELUE-109",
+          "summary": "Provision of Salary details for Salary.com"
+        },
+        {
+          "key": "ELUE-95",
+          "summary": "Job Architecture PHASE VII — Rollout & Change Management​"
+        },
+        {
+          "key": "ELUE-92",
+          "summary": "Job Architecture PHASE VI — Global + Regional Localization​"
+        },
+        {
+          "key": "ELUE-88",
+          "summary": "Job Architecture PHASE V — Compensation & Salary Bands​"
+        },
+        {
+          "key": "ELUE-83",
+          "summary": "Job Architecture PHASE IV — Job Cards​"
+        },
+        {
+          "key": "ELUE-78",
+          "summary": "Job Architecture PHASE III — Competency Framework​"
+        }
+      ],
+      "hi": [
+        "completed",
+        "progress"
+      ],
+      "lo": [],
+      "sup": [],
+      "nx": [
+        "plan"
+      ],
+      "done": [
+        "completed"
+      ]
+    },
+    {
+      "id": "te",
+      "d": 0,
+      "i": 2,
+      "t": 8,
+      "tot": 10,
+      "dList": [],
+      "ipList": [
+        {
+          "key": "ELUE-128",
+          "summary": "Talent Evaluation 2.0: Global Performance Management Transformation"
+        },
+        {
+          "key": "ELUE-127",
+          "summary": "Phase 1: Foundation & Governance"
+        }
+      ],
+      "tdList": [
+        {
+          "key": "ELUE-149",
+          "summary": "Phase 9: Continuous Improvement & Scale"
+        },
+        {
+          "key": "ELUE-148",
+          "summary": "Phase 8: Year-End Implementation"
+        },
+        {
+          "key": "ELUE-147",
+          "summary": "Phase 7: Feedback Loop & Refinement"
+        },
+        {
+          "key": "ELUE-146",
+          "summary": "Phase 6: Mid-Year Review Pilot"
+        },
+        {
+          "key": "ELUE-145",
+          "summary": "Phase 5: Training Development & Delivery"
+        },
+        {
+          "key": "ELUE-141",
+          "summary": "Phase 4: Tools, Templates & System Build"
+        },
+        {
+          "key": "ELUE-134",
+          "summary": "Phase 3: Framework Design & Alignment"
+        },
+        {
+          "key": "ELUE-131",
+          "summary": "Phase 2: Change Management & Communication Strategy"
+        }
+      ],
+      "hi": [],
+      "lo": [],
+      "sup": [],
+      "nx": [
+        "plan"
+      ],
+      "done": []
+    },
+    {
+      "id": "ta",
+      "d": 0,
+      "i": 2,
+      "t": 5,
+      "tot": 7,
+      "dList": [],
+      "ipList": [
+        {
+          "key": "ELUE-156",
+          "summary": "OTAP Phase I - AS IS Diagnosis"
+        },
+        {
+          "key": "ELUE-2",
+          "summary": "Optimizing Talent Attraction and Acquisition"
+        }
+      ],
+      "tdList": [
+        {
+          "key": "ELUE-174",
+          "summary": "OTAP Phase VI - Rollout"
+        },
+        {
+          "key": "ELUE-169",
+          "summary": "OTAP Phase V - Pilot"
+        },
+        {
+          "key": "ELUE-165",
+          "summary": "OTAP Phase IV - Change management"
+        },
+        {
+          "key": "ELUE-162",
+          "summary": "OTAP Phase III - Governance and tooling"
+        },
+        {
+          "key": "ELUE-159",
+          "summary": "OTAP Phase II - Global process Design"
+        }
+      ],
+      "hi": [],
+      "lo": [],
+      "sup": [],
+      "nx": [
+        "plan"
+      ],
+      "done": []
+    },
+    {
       "id": "ha",
       "d": 28,
       "i": 12,
@@ -185,25 +356,32 @@
         }
       ],
       "hi": [
-        "Alignment with Sebastian Hohenester completed. For the merger, the shareholder structures of All4Clo",
-        "Hi <custom data-type=\"mention\" data-id=\"id-0\">@Karthik Setty</custom>, could you please provide a qu",
-        "First meeting is done, Initial calculations shared. Next step is to share the documentation to the f"
+        "completed",
+        "progress",
+        "live",
+        "milestone"
       ],
       "lo": [
-        "Alignment with Sebastian Hohenester completed. For the merger, the shareholder structures of All4Clo",
-        "call with Sebastian pending, will plan for next week"
+        "risk",
+        "delay",
+        "issue",
+        "critical"
       ],
       "sup": [
-        "Alignment with Sebastian Hohenester completed. For the merger, the shareholder structures of All4Clo",
-        "Transfer price is clear for IN. Sebastian need IN pricing and utilize for DE/CH. Proposal in review "
+        "require",
+        "dependencies",
+        "need"
       ],
       "nx": [
-        "Conversation is complete with Sebastian Hohenester. Post the alignment with Karthik, the checklist w",
-        "Alignment with Sebastian Hohenester completed. For the merger, the shareholder structures of All4Clo",
-        "IT inventory update is still ongoing and will be addressed as part of the tenant migration",
-        "Getting an external review on the transfer price for each entity."
+        "plan",
+        "will",
+        "alignment",
+        "next"
       ],
-      "done": []
+      "done": [
+        "completed",
+        "live"
+      ]
     },
     {
       "id": "esp",
@@ -445,10 +623,19 @@
           "summary": "Internal Comms & Governance"
         }
       ],
-      "hi": [],
+      "hi": [
+        "done"
+      ],
       "lo": [],
-      "sup": [],
-      "nx": [],
+      "sup": [
+        "require",
+        "need"
+      ],
+      "nx": [
+        "next",
+        "will",
+        "review"
+      ],
       "done": []
     },
     {
@@ -583,69 +770,41 @@
           "summary": "Create Strategy Office Target Operating Model - short, mid, long term"
         }
       ],
-      "hi": [],
-      "lo": [],
-      "sup": [],
-      "nx": [
-        "Candidates are being sourced, screened & interviewed for initial alignment!",
-        "JD is prepared - Candidates are being sourced, screened & interviewed for initial alignment!",
-        "So far 7-10 candidates have been screened, 3 have been assessed, more appropriate ones are being ass"
+      "hi": [
+        "done",
+        "completed",
+        "progress"
       ],
-      "done": []
-    },
-    {
-      "id": "ja",
-      "d": 0,
-      "i": 0,
-      "t": 0,
-      "tot": 0,
-      "dList": [],
-      "ipList": [],
-      "tdList": [],
-      "hi": [],
-      "lo": [],
-      "sup": [],
-      "nx": [],
-      "done": []
-    },
-    {
-      "id": "te",
-      "d": 0,
-      "i": 0,
-      "t": 0,
-      "tot": 0,
-      "dList": [],
-      "ipList": [],
-      "tdList": [],
-      "hi": [],
-      "lo": [],
-      "sup": [],
-      "nx": [],
-      "done": []
-    },
-    {
-      "id": "ta",
-      "d": 0,
-      "i": 0,
-      "t": 0,
-      "tot": 0,
-      "dList": [],
-      "ipList": [],
-      "tdList": [],
-      "hi": [],
-      "lo": [],
-      "sup": [],
-      "nx": [],
-      "done": []
+      "lo": [
+        "blocked",
+        "risk",
+        "critical",
+        "pending"
+      ],
+      "sup": [
+        "help",
+        "support",
+        "need",
+        "waiting for"
+      ],
+      "nx": [
+        "alignment",
+        "will",
+        "next",
+        "plan"
+      ],
+      "done": [
+        "completed"
+      ]
     }
   ],
-  "updatedAt": "2026-06-30T02:41:36.272Z",
-  "lastEditedBy": "automation (daily refresh)",
-  "lastEditedAt": "2026-06-30T02:41:36.272Z",
   "sum": {
-    "d": 61,
-    "i": 40,
-    "t": 29,
-    "tot": 130
-  }
+    "d": 63,
+    "i": 46,
+    "t": 48,
+    "tot": 157
+  },
+  "updatedAt": "2026-06-30T02:43:40.657Z",
+  "lastEditedBy": "automation (daily refresh)",
+  "lastEditedAt": "2026-06-30T02:43:40.657Z"
 }
