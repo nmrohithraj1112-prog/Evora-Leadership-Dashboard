@@ -5,6 +5,10 @@
   },
   "routes": [
     {
+      "route": "/data.json",
+      "allowedRoles": ["anonymous"]
+    },
+    {
       "route": "/api/publish",
       "allowedRoles": ["anonymous"]
     },
