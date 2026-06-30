@@ -1,12 +1,651 @@
 {
-  "ws": [],
-  "sum": {
-    "d": 0,
-    "i": 0,
-    "t": 0,
-    "tot": 0
-  },
-  "updatedAt": "2026-06-30T02:41:23.628Z",
+  "ws": [
+    {
+      "id": "ha",
+      "d": 28,
+      "i": 12,
+      "t": 3,
+      "tot": 43,
+      "dList": [
+        {
+          "key": "EAH1DP-73",
+          "summary": "Understand how Marketing currently is done in Allgeier CH"
+        },
+        {
+          "key": "EAH1DP-67",
+          "summary": "Finalise Target Operating for Evora CH Legal Entity - inclusive of leadership, way of working etc."
+        },
+        {
+          "key": "EAH1DP-66",
+          "summary": "Evaluate internal tools of collaboration and arrive at a decision paper"
+        },
+        {
+          "key": "EAH1DP-65",
+          "summary": "Evaluate Viva Engage and holistically look at a common communications platform for Evora Group"
+        },
+        {
+          "key": "EAH1DP-64",
+          "summary": "Create a single harmonized process for recruitment of DE resources for Evora Connect"
+        },
+        {
+          "key": "EAH1DP-62",
+          "summary": "Align with Alexander Parker to get MS story on one common story"
+        },
+        {
+          "key": "EAH1DP-61",
+          "summary": "Define when and how to get the Microsoft partnership status in Germany"
+        },
+        {
+          "key": "EAH1DP-60",
+          "summary": "Have a first conversation with MS Germany to tell our story"
+        },
+        {
+          "key": "EAH1DP-59",
+          "summary": "Understanding how CH MS Certifications can be used for DE as well"
+        },
+        {
+          "key": "EAH1DP-54",
+          "summary": "Align yearly targets for Revenue & EBITDA and execute goals towards it"
+        },
+        {
+          "key": "EAH1DP-52",
+          "summary": "Prepare for merger of Finance Systems - process and people wise"
+        },
+        {
+          "key": "EAH1DP-47",
+          "summary": "Align on data privacy concepts and documents; data privacy officer for merged entity. Definition and Harmonization of (future) risk and compliance systems"
+        },
+        {
+          "key": "EAH1DP-46",
+          "summary": "Plan IT Integration of ONE Finance System for the merged entity"
+        },
+        {
+          "key": "EAH1DP-45",
+          "summary": "Plan final timeline for merge of Allgeier CH + Evora CH + a4c CH into one entity"
+        },
+        {
+          "key": "EAH1DP-41",
+          "summary": "Set up a unified communications hub containing information & FAQs about the harmonization process"
+        },
+        {
+          "key": "EAH1DP-40",
+          "summary": "Establish a plan for internal communication publications"
+        },
+        {
+          "key": "EAH1DP-38",
+          "summary": "Set up collaboration guidelines for Innovation Topics"
+        },
+        {
+          "key": "EAH1DP-37",
+          "summary": "Define a shared innovation framework covering knowledge exchange, roles, processes, governance & decision-making"
+        },
+        {
+          "key": "EAH1DP-27",
+          "summary": "Establish plan for aligning ACH processes and Evora processes (finance)"
+        },
+        {
+          "key": "EAH1DP-26",
+          "summary": "Create an overview of ACH portfolio to Evora & A4C sales team & vice versa"
+        },
+        {
+          "key": "EAH1DP-25",
+          "summary": "Integration of existing Evora MS team with Allgeier CH Cluster as Evora Connect"
+        },
+        {
+          "key": "EAH1DP-24",
+          "summary": "Alignment on Global delivery between Evora & ACH"
+        },
+        {
+          "key": "EAH1DP-18",
+          "summary": "Alignment of expense policy"
+        },
+        {
+          "key": "EAH1DP-15",
+          "summary": "Harmonization of brands"
+        },
+        {
+          "key": "EAH1DP-14",
+          "summary": "Establish plan for \"End-to-End\" Go-to-Market"
+        },
+        {
+          "key": "EAH1DP-11",
+          "summary": "Set up a marketing strategy"
+        },
+        {
+          "key": "EAH1DP-10",
+          "summary": "Define future marketing team"
+        },
+        {
+          "key": "EAH1DP-3",
+          "summary": "Set up new Microsoft Tenant ready for Integration"
+        }
+      ],
+      "ipList": [
+        {
+          "key": "EAH1DP-78",
+          "summary": "Create Legal Merger execution Plan with Milestones & Checklist for Jan 1, 2027 Go-Live"
+        },
+        {
+          "key": "EAH1DP-68",
+          "summary": "IT Inventories"
+        },
+        {
+          "key": "EAH1DP-48",
+          "summary": "Gain Clear understanding of cost rates on transfer pricing and mapping the ACH Resources to the Evora Levels"
+        },
+        {
+          "key": "EAH1DP-43",
+          "summary": "Create \"after harmonization\"-stories"
+        },
+        {
+          "key": "EAH1DP-42",
+          "summary": "Set up communication toolkits for Leadership"
+        },
+        {
+          "key": "EAH1DP-39",
+          "summary": "Create connecting opportunities between Evora & ACH employees"
+        },
+        {
+          "key": "EAH1DP-22",
+          "summary": "Execute Merger Timeline successfully - critical steps to be focused first"
+        },
+        {
+          "key": "EAH1DP-17",
+          "summary": "Identify people & culture processes at ACH & Evora and start harmonize them"
+        },
+        {
+          "key": "EAH1DP-16",
+          "summary": "Establish aligned onboarding & payroll processes"
+        },
+        {
+          "key": "EAH1DP-6",
+          "summary": "Establish plan for the integration of the MS portfolio into our strategy"
+        },
+        {
+          "key": "EAH1DP-5",
+          "summary": "Establish process/plan for harmonised IT operations (Short, Mid, Long term)"
+        },
+        {
+          "key": "EAH1DP-1",
+          "summary": "Establish plan and execute for Go-live of Personio in ACH"
+        }
+      ],
+      "tdList": [
+        {
+          "key": "EAH1DP-77",
+          "summary": "Conduct an induction session with ACH, walk through Evora's journey"
+        },
+        {
+          "key": "EAH1DP-53",
+          "summary": "Establish collaboration process/plan for tools like Lucid, Atlassian etc."
+        },
+        {
+          "key": "EAH1DP-2",
+          "summary": "Define success criteria for the Microsoft Portfolio for next 3 years"
+        }
+      ],
+      "hi": [
+        "Alignment with Sebastian Hohenester completed. For the merger, the shareholder structures of All4Clo",
+        "Hi <custom data-type=\"mention\" data-id=\"id-0\">@Karthik Setty</custom>, could you please provide a qu",
+        "First meeting is done, Initial calculations shared. Next step is to share the documentation to the f"
+      ],
+      "lo": [
+        "Alignment with Sebastian Hohenester completed. For the merger, the shareholder structures of All4Clo",
+        "call with Sebastian pending, will plan for next week"
+      ],
+      "sup": [
+        "Alignment with Sebastian Hohenester completed. For the merger, the shareholder structures of All4Clo",
+        "Transfer price is clear for IN. Sebastian need IN pricing and utilize for DE/CH. Proposal in review "
+      ],
+      "nx": [
+        "Conversation is complete with Sebastian Hohenester. Post the alignment with Karthik, the checklist w",
+        "Alignment with Sebastian Hohenester completed. For the merger, the shareholder structures of All4Clo",
+        "IT inventory update is still ongoing and will be addressed as part of the tenant migration",
+        "Getting an external review on the transfer price for each entity."
+      ],
+      "done": []
+    },
+    {
+      "id": "esp",
+      "d": 21,
+      "i": 18,
+      "t": 18,
+      "tot": 57,
+      "dList": [
+        {
+          "key": "ESP-134",
+          "summary": "Recruitment of Web Marketing Specialist"
+        },
+        {
+          "key": "ESP-132",
+          "summary": "Recruitment of P&C Operations Associate (German Speaking)"
+        },
+        {
+          "key": "ESP-131",
+          "summary": "Recruitment of US TA support"
+        },
+        {
+          "key": "ESP-130",
+          "summary": "Recruitment of German P&C Ops support"
+        },
+        {
+          "key": "ESP-125",
+          "summary": "ESP Folder architecture & IAM"
+        },
+        {
+          "key": "ESP-120",
+          "summary": "Transportation facility for ESP hires"
+        },
+        {
+          "key": "ESP-119",
+          "summary": "ESP Touchbase to Evora IN (All Evorians) comms"
+        },
+        {
+          "key": "ESP-103",
+          "summary": "Kick off AS-IS process understanding "
+        },
+        {
+          "key": "ESP-102",
+          "summary": "Socialise fin team about ESP & optimization of processes"
+        },
+        {
+          "key": "ESP-101",
+          "summary": "Post intro comms into the finance slack channel"
+        },
+        {
+          "key": "ESP-100",
+          "summary": "Create slack channel with Finance process SPOCs for kick off"
+        },
+        {
+          "key": "ESP-98",
+          "summary": "Do a detailed view of HR ops hire BOT (Gantt chart)"
+        },
+        {
+          "key": "ESP-94",
+          "summary": "SLA for IT & Asset Request"
+        },
+        {
+          "key": "ESP-93",
+          "summary": "Finance team - Comms within ESP"
+        },
+        {
+          "key": "ESP-87",
+          "summary": "Set ESP Steerco connect "
+        },
+        {
+          "key": "ESP-83",
+          "summary": "Set ESP Core Ops Connect "
+        },
+        {
+          "key": "ESP-81",
+          "summary": "Evora hybrid policy cascade to ESP hires"
+        },
+        {
+          "key": "ESP-80",
+          "summary": "AS IS Org structure of P&C team across regions/entities"
+        },
+        {
+          "key": "ESP-79",
+          "summary": "HARTS net pay & Evora salary structure alignment"
+        },
+        {
+          "key": "ESP-78",
+          "summary": "CTC structure & New Labour Code alignment"
+        },
+        {
+          "key": "ESP-64",
+          "summary": "Location Strategy"
+        }
+      ],
+      "ipList": [
+        {
+          "key": "ESP-133",
+          "summary": "Gen 2: Marketing"
+        },
+        {
+          "key": "ESP-123",
+          "summary": "Hire IT Manager for India"
+        },
+        {
+          "key": "ESP-121",
+          "summary": "Simplified ESP pricing model"
+        },
+        {
+          "key": "ESP-113",
+          "summary": "Follow Naming convention for existing channels & new channel setup"
+        },
+        {
+          "key": "ESP-108",
+          "summary": "Gen 2: IT Ops"
+        },
+        {
+          "key": "ESP-107",
+          "summary": "Hire Head of ESP"
+        },
+        {
+          "key": "ESP-106",
+          "summary": "Hire ESP Finance Lead"
+        },
+        {
+          "key": "ESP-105",
+          "summary": "Hire Sr. Financial Accountant (Sonja's replacement)"
+        },
+        {
+          "key": "ESP-99",
+          "summary": "Gen 1: Fin Ops"
+        },
+        {
+          "key": "ESP-97",
+          "summary": "Gen 1: P&C Ops "
+        },
+        {
+          "key": "ESP-76",
+          "summary": "Recruitment Contract"
+        },
+        {
+          "key": "ESP-75",
+          "summary": "Onboarding Guidelines"
+        },
+        {
+          "key": "ESP-74",
+          "summary": "Legal Entity Setup - SOW"
+        },
+        {
+          "key": "ESP-73",
+          "summary": "Legal Entity setup - NDA"
+        },
+        {
+          "key": "ESP-72",
+          "summary": "ESP Pricing model"
+        },
+        {
+          "key": "ESP-61",
+          "summary": "Legal Entity Setup - MSA"
+        },
+        {
+          "key": "ESP-55",
+          "summary": "Gen 0: Setup and Design"
+        },
+        {
+          "key": "ESP-3",
+          "summary": "Review Contract - Continuation + termination"
+        }
+      ],
+      "tdList": [
+        {
+          "key": "ESP-138",
+          "summary": "Grant Renuka Desshpande read access to Evora Policies folder (ESP-relevant policies)"
+        },
+        {
+          "key": "ESP-135",
+          "summary": "AS IS diagnostic of Finance process"
+        },
+        {
+          "key": "ESP-122",
+          "summary": "Create a separate channel for ESP absorption"
+        },
+        {
+          "key": "ESP-118",
+          "summary": "Fin Head to align on SLAs, KPIs & metrics for finance processes  in ESP"
+        },
+        {
+          "key": "ESP-117",
+          "summary": "Align on IJP initiative"
+        },
+        {
+          "key": "ESP-114",
+          "summary": "Change Contracts for  Non-ESP people"
+        },
+        {
+          "key": "ESP-110",
+          "summary": "Define the scope  based on legal in IN"
+        },
+        {
+          "key": "ESP-109",
+          "summary": "Gen 3: Sales Ops"
+        },
+        {
+          "key": "ESP-104",
+          "summary": "MiniCXO transition to ESP to be discussed with Karthik & Sreema"
+        },
+        {
+          "key": "ESP-92",
+          "summary": "'What's going on?' Comms within ESPians"
+        },
+        {
+          "key": "ESP-91",
+          "summary": "ESP Monthly update to core ops team"
+        },
+        {
+          "key": "ESP-90",
+          "summary": "'ESP Global level' Comms for global evora - Q3 Townhall"
+        },
+        {
+          "key": "ESP-89",
+          "summary": "'ESP in Detail' Comms for evora IN people leadership "
+        },
+        {
+          "key": "ESP-88",
+          "summary": "Org Comms Plan"
+        },
+        {
+          "key": "ESP-86",
+          "summary": "Schedule Teams call for Tool Gate Review 1, 3, 5"
+        },
+        {
+          "key": "ESP-85",
+          "summary": "Create channel for ESP hire performance discussion"
+        },
+        {
+          "key": "ESP-84",
+          "summary": "Create channel for ESP hiring Status "
+        },
+        {
+          "key": "ESP-82",
+          "summary": "Internal Comms & Governance"
+        }
+      ],
+      "hi": [],
+      "lo": [],
+      "sup": [],
+      "nx": [],
+      "done": []
+    },
+    {
+      "id": "ocm",
+      "d": 12,
+      "i": 10,
+      "t": 8,
+      "tot": 30,
+      "dList": [
+        {
+          "key": "ESOH-59",
+          "summary": "Timo alignment on P&C way forward & topics - Comms"
+        },
+        {
+          "key": "ESOH-52",
+          "summary": "Clarifying Billing for ESP Partners who join Evora"
+        },
+        {
+          "key": "ESOH-51",
+          "summary": "Agenda for Strategy Office 2026 Workshop - May 7th"
+        },
+        {
+          "key": "ESOH-28",
+          "summary": "Put together slides for ACH Hour on 100-Day harmonization, projects, pitch and new org structure"
+        },
+        {
+          "key": "ESOH-23",
+          "summary": "Haripreeth joins 25th May - Hiring Marketing Comms Technical expert for maintaining website content and branding"
+        },
+        {
+          "key": "ESOH-22",
+          "summary": "ESP - Hiring of U.S. Tech Tal Acquisition Specialist (Laurin/Flo) in the Americas for Jan-Erik - Imthias (DOJ-10th Jun 26)"
+        },
+        {
+          "key": "ESOH-11",
+          "summary": "Strategy, OKR & Goals Comms Cascade - Americas"
+        },
+        {
+          "key": "ESOH-10",
+          "summary": "Strategy, OKR & Goals Comms Cascade - IN"
+        },
+        {
+          "key": "ESOH-9",
+          "summary": "Was not Needed - Strategy, OKR & Goals Comms Cascade - EU"
+        },
+        {
+          "key": "ESOH-8",
+          "summary": "Chetan joined 26th March - Hiring of Innovation Business Lead "
+        },
+        {
+          "key": "ESOH-5",
+          "summary": "Support for Thomas Kredel No longer Needed"
+        },
+        {
+          "key": "ESOH-3",
+          "summary": "Create a template for OKR Tracking 2026"
+        }
+      ],
+      "ipList": [
+        {
+          "key": "ESOH-60",
+          "summary": "ESP - Hiring of Head of ESP"
+        },
+        {
+          "key": "ESOH-58",
+          "summary": "ESP - Hiring of ESP Finance Lead - India Role"
+        },
+        {
+          "key": "ESOH-57",
+          "summary": "ESP - Hiring of Sr. Financial Accountant - Sonja's replacement"
+        },
+        {
+          "key": "ESOH-55",
+          "summary": "Setting up of ESP in Evora India"
+        },
+        {
+          "key": "ESOH-54",
+          "summary": "Job Architecture"
+        },
+        {
+          "key": "ESOH-53",
+          "summary": "Talent Evaluation Assessment - 2.0"
+        },
+        {
+          "key": "ESOH-30",
+          "summary": "MiniCXO for Timo - Sathana already supporting sine 11 May 26"
+        },
+        {
+          "key": "ESOH-29",
+          "summary": "ESP - Hiring of IT Manager for India Operations"
+        },
+        {
+          "key": "ESOH-7",
+          "summary": "ESP - Hiring of Innovation Technical Lead - Nikhilesh (DOJ-15th Jul 26)"
+        },
+        {
+          "key": "ESOH-1",
+          "summary": "Evora & ACH Harmonisation: Create Routine Updates on Progress"
+        }
+      ],
+      "tdList": [
+        {
+          "key": "ESOH-56",
+          "summary": "Strategy office Comms - One pager"
+        },
+        {
+          "key": "ESOH-44",
+          "summary": "Consolidation and documentation of all decision, processes and plans ahead"
+        },
+        {
+          "key": "ESOH-43",
+          "summary": "Evora & ACH: Confluence Page Creation"
+        },
+        {
+          "key": "ESOH-39",
+          "summary": "Overall Comms around Evora Strategy: ACH - Ongoing"
+        },
+        {
+          "key": "ESOH-31",
+          "summary": "Overall Comms around Evora Strategy: Evora - Ongoing"
+        },
+        {
+          "key": "ESOH-25",
+          "summary": "OMA : Organisational Maturity Assessment - when and why and how we want to do this?"
+        },
+        {
+          "key": "ESOH-24",
+          "summary": "Innovation Campaign - On-going"
+        },
+        {
+          "key": "ESOH-6",
+          "summary": "Create Strategy Office Target Operating Model - short, mid, long term"
+        }
+      ],
+      "hi": [],
+      "lo": [],
+      "sup": [],
+      "nx": [
+        "Candidates are being sourced, screened & interviewed for initial alignment!",
+        "JD is prepared - Candidates are being sourced, screened & interviewed for initial alignment!",
+        "So far 7-10 candidates have been screened, 3 have been assessed, more appropriate ones are being ass"
+      ],
+      "done": []
+    },
+    {
+      "id": "ja",
+      "d": 0,
+      "i": 0,
+      "t": 0,
+      "tot": 0,
+      "dList": [],
+      "ipList": [],
+      "tdList": [],
+      "hi": [],
+      "lo": [],
+      "sup": [],
+      "nx": [],
+      "done": []
+    },
+    {
+      "id": "te",
+      "d": 0,
+      "i": 0,
+      "t": 0,
+      "tot": 0,
+      "dList": [],
+      "ipList": [],
+      "tdList": [],
+      "hi": [],
+      "lo": [],
+      "sup": [],
+      "nx": [],
+      "done": []
+    },
+    {
+      "id": "ta",
+      "d": 0,
+      "i": 0,
+      "t": 0,
+      "tot": 0,
+      "dList": [],
+      "ipList": [],
+      "tdList": [],
+      "hi": [],
+      "lo": [],
+      "sup": [],
+      "nx": [],
+      "done": []
+    }
+  ],
+  "updatedAt": "2026-06-30T02:41:36.272Z",
   "lastEditedBy": "automation (daily refresh)",
-  "lastEditedAt": "2026-06-30T02:41:23.628Z"
+  "lastEditedAt": "2026-06-30T02:41:36.272Z",
+  "sum": {
+    "d": 61,
+    "i": 40,
+    "t": 29,
+    "tot": 130
+  }
 }
