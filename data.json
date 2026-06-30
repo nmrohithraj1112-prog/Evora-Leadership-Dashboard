@@ -5,76 +5,355 @@
       "num": 1,
       "name": "Job Architecture",
       "lead": "Sarath VR",
-      "pct": 17,
+      "pct": 20,
       "st": "on",
       "proj": "Level Up — E&C",
-      "d": 6,
-      "i": 5,
-      "t": 29,
-      "tot": 40
+      "d": 2,
+      "i": 2,
+      "t": 6,
+      "tot": 10,
+      "hi": [
+        "Regional job family taxonomy complete (Sarath VR)",
+        "Global job family taxonomy in progress — 7 rows remaining (ELUE-73)"
+      ],
+      "lo": [],
+      "sup": [],
+      "nx": [
+        "Complete global job family taxonomy (Phase II — ELUE-73)",
+        "Progress to Phase III — Competency Framework"
+      ],
+      "done": [
+        "Phase I Discovery & Consolidation complete (ELUE-68)",
+        "Finalized external job architecture docs (ELUE-29)"
+      ],
+      "dList": [
+        "ELUE-68",
+        "ELUE-29"
+      ],
+      "ipList": [
+        "ELUE-1",
+        "ELUE-73"
+      ],
+      "tdList": [
+        "ELUE-78",
+        "ELUE-83",
+        "ELUE-88",
+        "ELUE-92",
+        "ELUE-95",
+        "ELUE-109"
+      ]
     },
     {
       "id": "te",
       "num": 2,
       "name": "Talent Evaluation 2.0",
       "lead": "Hari Ram",
-      "pct": 20,
+      "pct": 0,
       "st": "on",
       "proj": "Level Up — E&C",
       "d": 0,
       "i": 2,
       "t": 8,
-      "tot": 10
+      "tot": 10,
+      "hi": [
+        "Talent Eval 2.0 go-ahead received Apr 6, 2026 (Nameeta Kustagi)",
+        "Phase 1 Foundation & Governance in progress (Hari Ram)",
+        "Mid-Year Review Pilot targeted July 2026"
+      ],
+      "lo": [
+        "Phase 1 Foundation past original due date of Apr 29, 2026"
+      ],
+      "sup": [],
+      "nx": [
+        "Complete Phase 1 Foundation & Governance (ELUE-127)",
+        "Launch Mid-Year Review Pilot (July 2026)"
+      ],
+      "done": [],
+      "dList": [],
+      "ipList": [
+        "ELUE-128",
+        "ELUE-127"
+      ],
+      "tdList": [
+        "ELUE-131",
+        "ELUE-134",
+        "ELUE-141",
+        "ELUE-145",
+        "ELUE-146",
+        "ELUE-147",
+        "ELUE-148",
+        "ELUE-149"
+      ]
     },
     {
       "id": "ta",
       "num": 3,
       "name": "Optimizing Talent Attraction & Acquisition",
       "lead": "Renuka Desshpande",
-      "pct": 27,
+      "pct": 0,
       "st": "on",
       "proj": "Level Up — E&C",
-      "d": 3,
-      "i": 5,
-      "t": 1,
-      "tot": 9
+      "d": 0,
+      "i": 2,
+      "t": 5,
+      "tot": 7,
+      "hi": [
+        "OTAP Phase I AS IS Diagnosis in progress — stakeholder interviews underway across US, Europe & India (Renuka Desshpande)"
+      ],
+      "lo": [],
+      "sup": [],
+      "nx": [
+        "Complete AS IS Diagnosis and validate regional process maps (US, Europe, India)",
+        "Progress to Phase II — Global Process Design"
+      ],
+      "done": [],
+      "dList": [],
+      "ipList": [
+        "ELUE-2",
+        "ELUE-156"
+      ],
+      "tdList": [
+        "ELUE-159",
+        "ELUE-162",
+        "ELUE-165",
+        "ELUE-169",
+        "ELUE-174"
+      ]
     },
     {
       "id": "esp",
       "num": 4,
       "name": "ESP — Evora Service Partner",
       "lead": "Srimathi Ravi",
-      "pct": 48,
+      "pct": 37,
       "st": "on",
       "proj": "Evora Service Partner",
-      "d": 0,
-      "i": 5,
-      "t": 12,
-      "tot": 17
+      "d": 21,
+      "i": 18,
+      "t": 18,
+      "tot": 57,
+      "hi": [
+        "7 candidates shortlisted for Head of ESP — Assessment Centre completed Jun 27",
+        "21 of 57 tasks done (37%)",
+        "Simplified ESP pricing model in active development (ESP-121)",
+        "Gen 2 streams: Marketing (ESP-133) and IT Ops (ESP-108) active"
+      ],
+      "lo": [
+        "Head of ESP hiring decision pending post Assessment Centre (outcome expected)"
+      ],
+      "sup": [],
+      "nx": [
+        "Confirm Head of ESP selection post Assessment Centre",
+        "Advance Finance Lead India (ESP-106) and IT Manager India (ESP-123) hiring",
+        "Progress MSA with Evora India for ESP India setup"
+      ],
+      "done": [
+        "Gen 1 Fin Ops and P&C Ops onboarded",
+        "21 ESP tasks completed including partner onboarding milestones"
+      ],
+      "dList": [
+        "ESP-134",
+        "ESP-132",
+        "ESP-131",
+        "ESP-130",
+        "ESP-125",
+        "ESP-120",
+        "ESP-119",
+        "ESP-103",
+        "ESP-102",
+        "ESP-101",
+        "ESP-100",
+        "ESP-98",
+        "ESP-94",
+        "ESP-93",
+        "ESP-87",
+        "ESP-83",
+        "ESP-81",
+        "ESP-80",
+        "ESP-79",
+        "ESP-78",
+        "ESP-64"
+      ],
+      "ipList": [
+        "ESP-133",
+        "ESP-123",
+        "ESP-121",
+        "ESP-113",
+        "ESP-108",
+        "ESP-107",
+        "ESP-106",
+        "ESP-105",
+        "ESP-99",
+        "ESP-97",
+        "ESP-76",
+        "ESP-75",
+        "ESP-74",
+        "ESP-73",
+        "ESP-72",
+        "ESP-61",
+        "ESP-55",
+        "ESP-3"
+      ],
+      "tdList": [
+        "ESP-138",
+        "ESP-135",
+        "ESP-122",
+        "ESP-118",
+        "ESP-117",
+        "ESP-114",
+        "ESP-110",
+        "ESP-109",
+        "ESP-104",
+        "ESP-92",
+        "ESP-91",
+        "ESP-90",
+        "ESP-89",
+        "ESP-88",
+        "ESP-86",
+        "ESP-85",
+        "ESP-84",
+        "ESP-82"
+      ]
     },
     {
       "id": "ha",
       "num": 5,
       "name": "Evora-ACH Harmonization",
       "lead": "Hari Ram",
-      "pct": 34,
+      "pct": 65,
       "st": "on",
       "d": 28,
-      "i": 20,
-      "t": 22,
-      "tot": 70
+      "i": 12,
+      "t": 3,
+      "tot": 43,
+      "hi": [
+        "Transfer pricing initial calculations shared with regional management (Karthik Setty, Jun 12)",
+        "28 of 43 tasks done (65%) — significant milestone progress",
+        "Legal merger critical path: shareholder structure of A4C must be resolved first"
+      ],
+      "lo": [
+        "Plan B (sell A4C CH to Evora CH) requires Exec Board agreement between A4C, Evora & Allgeier Group",
+        "Flo working with Allgeier Group on valuation — outcome pending"
+      ],
+      "sup": [
+        "Exec Board decision needed on Plan B to unblock legal merger critical path"
+      ],
+      "nx": [
+        "Exec Board decision on Plan B — sell A4C CH to Evora CH",
+        "Flo to finalize Allgeier Group negotiations on A4C CH valuation",
+        "Share transfer pricing documentation to full regional management"
+      ],
+      "done": [
+        "Finance, Marketing, Legal identified and aligned as critical merger first steps",
+        "28 EAH1DP harmonization tasks completed across all workstreams"
+      ],
+      "dList": [
+        "EAH1DP-73",
+        "EAH1DP-67",
+        "EAH1DP-66",
+        "EAH1DP-65",
+        "EAH1DP-64",
+        "EAH1DP-62",
+        "EAH1DP-61",
+        "EAH1DP-60",
+        "EAH1DP-59",
+        "EAH1DP-54",
+        "EAH1DP-52",
+        "EAH1DP-47",
+        "EAH1DP-46",
+        "EAH1DP-45",
+        "EAH1DP-41",
+        "EAH1DP-40",
+        "EAH1DP-38",
+        "EAH1DP-37",
+        "EAH1DP-27",
+        "EAH1DP-26",
+        "EAH1DP-25",
+        "EAH1DP-24",
+        "EAH1DP-18",
+        "EAH1DP-15",
+        "EAH1DP-14",
+        "EAH1DP-11",
+        "EAH1DP-10",
+        "EAH1DP-3"
+      ],
+      "ipList": [
+        "EAH1DP-78",
+        "EAH1DP-68",
+        "EAH1DP-48",
+        "EAH1DP-43",
+        "EAH1DP-42",
+        "EAH1DP-39",
+        "EAH1DP-22",
+        "EAH1DP-17",
+        "EAH1DP-16",
+        "EAH1DP-6",
+        "EAH1DP-5",
+        "EAH1DP-1"
+      ],
+      "tdList": [
+        "EAH1DP-77",
+        "EAH1DP-53",
+        "EAH1DP-2"
+      ]
     },
     {
       "id": "ocm",
       "num": 6,
       "name": "OCM & Communications",
       "lead": "Hari Ram",
-      "pct": 48,
+      "pct": 43,
       "st": "on",
-      "d": 21,
-      "i": 5,
-      "t": 22,
-      "tot": 48
+      "d": 9,
+      "i": 4,
+      "t": 8,
+      "tot": 21,
+      "hi": [
+        "Sathana supporting Timo as MiniCXO since 11 May 2026 — collaboration fruitful",
+        "Strategy Office 2026 Workshop agenda completed (ESOH-51)",
+        "Routine harmonisation progress updates active (ESOH-1)"
+      ],
+      "lo": [
+        "MiniCXO permanent candidate search for Timo proceeding at slow pace"
+      ],
+      "sup": [],
+      "nx": [
+        "Strategy office comms one-pager (ESOH-56)",
+        "Confluence page creation for Evora & ACH harmonisation (ESOH-43)",
+        "OMA organisational maturity assessment planning (ESOH-25)"
+      ],
+      "done": [
+        "Strategy/OKR Comms Cascades completed (Americas & India)",
+        "ACH Hour slides on harmonization and org structure produced",
+        "OKR Tracking template created for 2026"
+      ],
+      "dList": [
+        "ESOH-59",
+        "ESOH-52",
+        "ESOH-51",
+        "ESOH-28",
+        "ESOH-11",
+        "ESOH-10",
+        "ESOH-9",
+        "ESOH-5",
+        "ESOH-3"
+      ],
+      "ipList": [
+        "ESOH-54",
+        "ESOH-53",
+        "ESOH-30",
+        "ESOH-1"
+      ],
+      "tdList": [
+        "ESOH-56",
+        "ESOH-44",
+        "ESOH-43",
+        "ESOH-39",
+        "ESOH-31",
+        "ESOH-25",
+        "ESOH-24",
+        "ESOH-6"
+      ]
     },
     {
       "id": "rec",
@@ -86,7 +365,30 @@
       "d": 9,
       "i": 4,
       "t": 0,
-      "tot": 13
+      "tot": 13,
+      "hi": [
+        "Head of ESP — 7 candidates at Assessment Centre (completed Jun 27) — decision expected",
+        "Haripreeth (Marketing Comms Tech Expert) joined 25 May 2026",
+        "Imthias (U.S. TA Specialist for Americas, Jan-Erik) joined Jun 10 2026",
+        "Nikhilesh (Innovation Technical Lead) DOJ Jul 15 2026"
+      ],
+      "lo": [],
+      "sup": [],
+      "nx": [
+        "Confirm Head of ESP hire decision post Assessment Centre (top priority)",
+        "Track Finance Lead India (ESP) and Sr. Financial Accountant searches",
+        "MiniCXO search for Timo ongoing"
+      ],
+      "done": [],
+      "dList": [],
+      "ipList": [
+        "ESOH-60",
+        "ESOH-58",
+        "ESOH-57",
+        "ESOH-29",
+        "ESOH-7"
+      ],
+      "tdList": []
     },
     {
       "id": "il",
@@ -95,7 +397,19 @@
       "lead": "Hari Ram",
       "pct": null,
       "st": "on",
-      "phase": "Scoping"
+      "phase": "Scoping",
+      "d": 0,
+      "i": 0,
+      "t": 0,
+      "tot": 0,
+      "hi": [],
+      "lo": [],
+      "sup": [],
+      "nx": [],
+      "done": [],
+      "dList": [],
+      "ipList": [],
+      "tdList": []
     },
     {
       "id": "fp",
@@ -104,19 +418,45 @@
       "lead": "Srimathi Ravi",
       "pct": null,
       "st": "on",
-      "phase": "Ongoing"
+      "phase": "Ongoing",
+      "d": 0,
+      "i": 0,
+      "t": 0,
+      "tot": 0,
+      "hi": [],
+      "lo": [],
+      "sup": [],
+      "nx": [],
+      "done": [],
+      "dList": [],
+      "ipList": [],
+      "tdList": []
     },
     {
       "id": "ind",
       "num": 10,
       "name": "IND Projects",
       "lead": "Savio James Abraham",
-      "pct": 46,
+      "pct": 0,
       "st": "mon",
       "d": 0,
       "i": 1,
-      "t": 1,
-      "tot": 2
+      "t": 0,
+      "tot": 1,
+      "hi": [
+        "MSA being discussed with Evora India for ESP India setup (Sakthisree Venkatesan)"
+      ],
+      "lo": [],
+      "sup": [],
+      "nx": [
+        "Finalize MSA with Evora India to enable ESP India setup"
+      ],
+      "done": [],
+      "dList": [],
+      "ipList": [
+        "ESOH-55"
+      ],
+      "tdList": []
     }
   ],
   "sum": [
@@ -124,43 +464,43 @@
       "n": "Job Architecture",
       "l": "Sarath VR",
       "s": "on",
-      "p": 17
+      "p": 20
     },
     {
       "n": "Talent Evaluation 2.0",
       "l": "Hari Ram",
       "s": "on",
-      "p": 20
+      "p": 0
     },
     {
       "n": "Optimizing Talent Attraction & Acquisition",
       "l": "Renuka Desshpande",
       "s": "on",
-      "p": 27
+      "p": 0
     },
     {
       "n": "ESP — Evora Service Partner",
       "l": "Srimathi Ravi",
       "s": "on",
-      "p": 48
+      "p": 37
     },
     {
       "n": "Evora-ACH Harmonization",
       "l": "Hari Ram",
       "s": "on",
-      "p": 34
+      "p": 65
     },
     {
       "n": "OCM & Communications",
       "l": "Hari Ram",
       "s": "on",
-      "p": 48
+      "p": 43
     },
     {
       "n": "Recruitment",
       "l": "Renuka Desshpande",
       "s": "on",
-      "p": 55
+      "p": 69
     },
     {
       "n": "Innovation Lab",
@@ -178,10 +518,10 @@
       "n": "IND Projects",
       "l": "Savio James Abraham",
       "s": "mon",
-      "p": 46
+      "p": 0
     }
   ],
-  "updatedAt": "2026-06-30T02:08:40.589Z",
+  "updatedAt": "2026-06-30T02:23:41.299Z",
   "lastEditedBy": "automation (daily refresh)",
-  "lastEditedAt": "2026-06-30T02:08:40.592Z"
+  "lastEditedAt": "2026-06-30T02:23:41.312Z"
 }
