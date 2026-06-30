@@ -1,21 +1,14 @@
 const { app } = require('@azure/functions');
-const { TableClient } = require('@azure/data-tables');
 
-const TABLE_NAME = 'dashboarddata';
-const PARTITION_KEY = 'dashboard';
-const ROW_KEY = 'data';
+// GitHub is the single datastore: the dashboard reads /data.json (static, deployed
+// from the repo) and every save commits data.json back to the repo, which triggers
+// a Static Web Apps redeploy. No Azure Table Storage involved.
+const GITHUB_OWNER = 'nmrohithraj1112-prog';
+const GITHUB_REPO = 'Evora-Leadership-Dashboard';
+const GITHUB_BRANCH = 'main';
+const FILE_PATH = 'data.json';
 
 const MAX_BODY_BYTES = 512 * 1024; // 512 KB cap on incoming edit payload
-
-function merge3(base, mine, server) {
-  const result = { ...server };
-  for (const key of Object.keys({ ...base, ...mine })) {
-    if (JSON.stringify(mine[key]) !== JSON.stringify(base[key])) {
-      result[key] = mine[key];
-    }
-  }
-  return result;
-}
 
 // Decode the identity Azure Static Web Apps injects after SSO login.
 // This header is set server-side by the SWA platform and cannot be forged by the browser.
@@ -28,32 +21,6 @@ function getPrincipal(request) {
     return null;
   }
 }
-
-app.http('data', {
-  methods: ['GET'],
-  authLevel: 'anonymous',
-  handler: async (request, context) => {
-    try {
-      const connectionString = process.env.STORAGE_CONNECTION_STRING;
-      if (!connectionString) {
-        return { status: 500, jsonBody: { error: 'STORAGE_CONNECTION_STRING not configured' } };
-      }
-
-      const tableClient = TableClient.fromConnectionString(connectionString, TABLE_NAME);
-
-      try {
-        const entity = await tableClient.getEntity(PARTITION_KEY, ROW_KEY);
-        const data = JSON.parse(entity.data);
-        return { jsonBody: data };
-      } catch (err) {
-        return { jsonBody: { ws: [], sum: [], updatedAt: new Date().toISOString() } };
-      }
-    } catch (err) {
-      context.log('Error fetching data:', err);
-      return { status: 500, jsonBody: { error: err.message || 'Failed to fetch data' } };
-    }
-  }
-});
 
 app.http('publish', {
   methods: ['POST'],
@@ -77,6 +44,11 @@ app.http('publish', {
       ? (principal.userDetails || principal.userId)
       : 'automation (daily refresh)';
 
+    const token = process.env.GITHUB_TOKEN;
+    if (!token) {
+      return { status: 500, jsonBody: { error: 'GITHUB_TOKEN not configured' } };
+    }
+
     // Read raw text first so we can enforce a size cap before parsing.
     let raw;
     try { raw = await request.text(); }
@@ -89,65 +61,62 @@ app.http('publish', {
     try { body = JSON.parse(raw); }
     catch { return { status: 400, jsonBody: { error: 'Invalid JSON body' } }; }
 
-    const { ws, sum, baseline } = body;
+    const { ws, sum } = body;
     if (!Array.isArray(ws) || !Array.isArray(sum)) {
       return { status: 400, jsonBody: { error: 'ws and sum must be arrays' } };
     }
 
+    const payload = {
+      ws,
+      sum,
+      updatedAt: new Date().toISOString(),
+      lastEditedBy: editor,
+      lastEditedAt: new Date().toISOString()
+    };
+    const contentB64 = Buffer.from(JSON.stringify(payload, null, 2)).toString('base64');
+
+    const apiBase = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${FILE_PATH}`;
+    const ghHeaders = {
+      'Authorization': `Bearer ${token}`,
+      'Accept': 'application/vnd.github+json',
+      'User-Agent': 'evora-dashboard',
+      'X-GitHub-Api-Version': '2022-11-28'
+    };
+
     try {
-      const connectionString = process.env.STORAGE_CONNECTION_STRING;
-      if (!connectionString) {
-        return { status: 500, jsonBody: { error: 'STORAGE_CONNECTION_STRING not configured' } };
+      // Look up the current blob sha so we can update (not just create) the file.
+      let sha;
+      const getRes = await fetch(`${apiBase}?ref=${GITHUB_BRANCH}`, { headers: ghHeaders });
+      if (getRes.ok) {
+        const j = await getRes.json();
+        sha = j.sha;
       }
 
-      const tableClient = TableClient.fromConnectionString(connectionString, TABLE_NAME);
+      const putRes = await fetch(apiBase, {
+        method: 'PUT',
+        headers: { ...ghHeaders, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: `Dashboard update by ${editor} (${payload.updatedAt})`,
+          content: contentB64,
+          branch: GITHUB_BRANCH,
+          ...(sha ? { sha } : {})
+        })
+      });
 
-      let server;
-      try {
-        const entity = await tableClient.getEntity(PARTITION_KEY, ROW_KEY);
-        server = JSON.parse(entity.data);
-      } catch (err) {
-        server = { ws: [], sum: [] };
+      if (putRes.status === 409) {
+        // Stale sha — someone else committed first. Let the client retry.
+        return { status: 409, jsonBody: { error: 'Conflict — concurrent update, please retry' } };
+      }
+      if (!putRes.ok) {
+        const t = await putRes.text();
+        return { status: 502, jsonBody: { error: 'GitHub commit failed', detail: t.slice(0, 300) } };
       }
 
-      let mergedWs, mergedSum;
-      if (baseline) {
-        mergedWs = ws.map((mine, i) => {
-          const base = (baseline.ws || [])[i] || mine;
-          const srv  = (server.ws  || [])[i] || mine;
-          return merge3(base, mine, srv);
-        });
-        mergedSum = sum.map((mine, i) => {
-          const base = (baseline.sum || [])[i] || mine;
-          const srv  = (server.sum  || [])[i] || mine;
-          return merge3(base, mine, srv);
-        });
-      } else {
-        mergedWs  = ws;
-        mergedSum = sum;
-      }
-
-      const payload = {
-        ws: mergedWs,
-        sum: mergedSum,
-        updatedAt: new Date().toISOString(),
-        lastEditedBy: editor,
-        lastEditedAt: new Date().toISOString()
-      };
-      context.log(`Dashboard edited by ${editor} at ${payload.lastEditedAt}`);
-
-      const entity = {
-        partitionKey: PARTITION_KEY,
-        rowKey: ROW_KEY,
-        data: JSON.stringify(payload)
-      };
-
-      await tableClient.upsertEntity(entity, 'Merge');
-
-      return { jsonBody: { ok: true, merged: payload } };
+      context.log(`data.json committed by ${editor} at ${payload.updatedAt}`);
+      return { jsonBody: { ok: true, updatedAt: payload.updatedAt } };
     } catch (err) {
       context.log('Error:', err);
-      return { status: 500, jsonBody: { error: err.message || 'Failed to update data' } };
+      return { status: 500, jsonBody: { error: err.message || 'Failed to commit data' } };
     }
   }
 });
